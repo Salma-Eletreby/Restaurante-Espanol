@@ -177,11 +177,11 @@
                 "img": "https://img.freepik.com/premium-photo/close-up-food-served-plate_1048944-48225.jpg?w=740",
                 "labels": ["El Cuchillo","El Tenedor","El Plato","El Tazón","La Taza"],
                 "answer": [
-                    {"x":13,"y":123},
-                    {"x":13,"y":123},
-                    {"x":13,"y":123},
-                    {"x":13,"y":123},
-                    {"x":13,"y":123}
+                    {"x":200,"y":75,"label":"El Cuchillo"},
+                    {"x":275,"y":90,"label":"La Taza"},
+                    {"x":350,"y":225,"label":"El Tenedor"},
+                    {"x":375,"y":90,"label":"El Tazón"},
+                    {"x":200,"y":220,"label":"El Plato"}
                 ]
             }
         ]

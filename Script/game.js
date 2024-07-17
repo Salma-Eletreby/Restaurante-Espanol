@@ -1,7 +1,9 @@
 let state = {
     cardIndex: 0,
     lvlIndex: 0,
-    checkAnswer: false
+    checkAnswer: false,
+    score: 0,
+    name: ""
 }
 
 function setState(newState,data) {
@@ -69,18 +71,22 @@ function render(data) {
         state = {
             cardIndex: state.cardIndex,
             lvlIndex: state.lvlIndex,
-            checkAnswer: true
+            checkAnswer: true,
+            score: state.score,
+            name: state.name
         }
 
     } else if(data[state.lvlIndex].type=="sort"){
         const choicesHTML = data[state.lvlIndex].elements[state.cardIndex].labels.map((c, i) => `
-                <div id="draggable-${i}" class="draggable-label" draggable="true" ondragstart="onDragStart(event);">
+                <div id="draggable-${i}" class="draggable-label" ${c.ignore==false ? 'draggable="true"' : 'draggable="false" style="background-color: rgba(0, 0, 0, 0);"'} draggable="true" ondragstart="onDragStart(event);">
                     ${c.txt}
                 </div>
             `).join('');
 
         const sortedHTML = data[state.lvlIndex].elements[state.cardIndex].answer.map((c, i) => `
-            <div id="zone-${i}" class="label-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="zone-${i}" class="label-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);" ${c.ignore==false ? '' : ' style="background-color: rgba(0, 0, 0, 0);"'}">
+            ${c.ignore==true?`${c.txt}`:''}
+            </div>
             `).join('');
 
         cardHTML = `
@@ -93,13 +99,57 @@ function render(data) {
                     <div class="sorted-labels">
                     ${sortedHTML}
                     </div>
+                    <div id="sentence"></div>
             </div>
             `
 
         state = {
             cardIndex: state.cardIndex,
             lvlIndex: state.lvlIndex,
-            checkAnswer: true
+            checkAnswer: true,
+            score: state.score,
+            name: state.name
+        }
+    }else if(data[state.lvlIndex].type=="labels"){
+        const choicesHTML = data[state.lvlIndex].elements[state.cardIndex].labels.map((c, i) => `
+            <div id="draggable-${i}" class="draggable-label" draggable="true" ondragstart="onDragStart(event);">
+                ${c}
+            </div>
+        `).join('');
+
+        const areasHTML = data[state.lvlIndex].elements[state.cardIndex].answer.map((c, i) => `
+            <div id="zone-${i}" class="label-dropzone img-drop" ondragover="onDragOver(event);" ondrop="onDrop(event);"  style="left: ${c.x}px; top: ${c.y}px;color:white">
+            ${c.ignore==true?`${c.txt}`:''}${i}
+            </div>
+            `).join(''); 
+
+        cardHTML = `
+            <h1>${data[state.lvlIndex].title}</h1>
+            <h4>${data[state.lvlIndex].desc}</h4>
+            <div class="label-picture">
+                <div class="labels-to-sort">
+                        ${choicesHTML}
+                </div>
+                <div id="labelled-picture" style="
+                width: 100%;
+                height: 100%;
+                background-image: url('${data[state.lvlIndex].elements[state.cardIndex].img}');
+                background-size: contain;
+                background-position: center; 
+                background-repeat: no-repeat;
+                max-height:262px
+                ">
+                ${areasHTML}
+                </div>
+            </div>
+        `
+
+        state = {
+            cardIndex: state.cardIndex,
+            lvlIndex: state.lvlIndex,
+            checkAnswer: true,
+            score: state.score,
+            name: state.name
         }
     }
 
@@ -117,14 +167,47 @@ function checkAnswer(data){
         if(selectedChoice!= null && answer.id!=selectedChoice.id){
             var wrongLabel =document.querySelector(`label[for="${selectedChoice.id}"]`);
             wrongLabel.style.backgroundColor = "lightsalmon"
+        } else{
+            state.score = state.score+100
         }
+    }else if(data[state.lvlIndex].type=="sort"){
+        data[state.lvlIndex].elements[state.cardIndex].answer.forEach((a,i) => {
+            if(a.ignore == false){
+                var studentAns = document.getElementById(`zone-${i}`).textContent.replace(/\s+/g, '')
+                
+                if(studentAns.toLowerCase()==a.txt.toLowerCase()){
+                    document.getElementById(`zone-${i}`).style.backgroundColor= "lightgreen"
+                    state.score = state.score+100
+                }else{
+                    document.getElementById(`zone-${i}`).style.backgroundColor= "lightsalmon"
+                }
+            }
+        });
+
+        var sentence = data[state.lvlIndex].elements[state.cardIndex].answer.map(item => item.txt).join(' ');
+        document.getElementById("sentence").innerHTML+=`<h4>Answer: ${sentence}</h4>`
+    }else if(data[state.lvlIndex].type=="labels"){
+        data[state.lvlIndex].elements[state.cardIndex].answer.forEach((a,i) => {
+            var studentAns = document.getElementById(`zone-${i}`).textContent.replace(/\d+/g, '').replace(/\s+/g, ' ').trim();  
+            console.log(studentAns);
+            if(studentAns.toLowerCase()==a.label.toLowerCase()){
+                document.getElementById(`zone-${i}`).style.backgroundColor= "lightgreen"
+                state.score = state.score+100
+            }else{
+                document.getElementById(`zone-${i}`).style.backgroundColor= "lightsalmon"
+            }
+        });
     }
 
     state = {
         cardIndex: state.cardIndex,
         lvlIndex: state.lvlIndex,
-        checkAnswer: false
+        checkAnswer: false,
+        score: state.score,
+        name: state.name
     }
+
+    document.getElementById("score").innerHTML = `Score: ${state.score}`
 }
 
 fetch("https://salma-eletreby.github.io/Restaurante-Espanol/Data/spanishFood.json")
@@ -139,7 +222,9 @@ fetch("https://salma-eletreby.github.io/Restaurante-Espanol/Data/spanishFood.jso
                 { 
                     cardIndex: 0,
                     lvlIndex: ++state.lvlIndex,
-                    checkAnswer: false
+                    checkAnswer: false,
+                    score: state.score,
+                    name: state.name
                 },
                 data)
         } else{
@@ -147,7 +232,9 @@ fetch("https://salma-eletreby.github.io/Restaurante-Espanol/Data/spanishFood.jso
                 { 
                     cardIndex: ++state.cardIndex,
                     lvlIndex: state.lvlIndex,
-                    checkAnswer: false
+                    checkAnswer: false,
+                    score: state.score,
+                    name: state.name
                 },
                 data)
         }
