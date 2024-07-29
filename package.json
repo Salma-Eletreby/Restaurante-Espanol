@@ -1,0 +1,17 @@
+{
+  "name": "restaurante-espanol",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}
