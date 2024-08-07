@@ -1,381 +1,462 @@
 [
-    {
-        "id":1,
-        "title":"Food - Cognates",
-        "desc": "Many roots for words are shared between English and Spanish",
-        "type": "vocab",
-        "elements":[
-            {
-                "id": 1,
-                "spanish": "La Pizza",
-                "english": "Pizza",
-                "arabic": "بيتزا",
-                "img": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?t=st=1720624798~exp=1720628398~hmac=8064bc70b623d5c0a304f6fa96b6550c009864057bc8494edba9bffcf06fd4e9&w=740",
-                "audio": "https://www.dropbox.com/scl/fi/imjef3bkiw2fgsysqqyhy/pizza.mp3?rlkey=90393qjob29r7we8b51s6ck7h&st=h071de64&dl=1"
-            },{
-                "id": 2,
-                "spanish": "Los Espaguetis",
-                "english": "Spaghetti",
-                "arabic": "معكرونة",
-                "img": "https://img.freepik.com/free-photo/tasty-appetizing-classic-italian-spaghetti-pasta-with-tomato-sauce-cheese-parmesan-basil-plate-ingredients-cooking-pasta-dark-table-flat-lay-top-view-copy-spce_1150-45812.jpg?t=st=1720625717~exp=1720629317~hmac=27eb47ea75ca454a97ca717395ebcc937a438b8bcc21235cf7b0c159c5a38626&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/icx4n4kpvaslrfnc2lyvq/spaghetti.mp3?rlkey=s938xs93k7rwjn58jrnbylrcv&st=jsfzy05o&dl=1"
-            },{
-                "id": 3,
-                "spanish": "La Hamburguesa",
-                "english": "Hamburger",
-                "arabic": "همبرغر",
-                "img": "https://img.freepik.com/free-photo/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon_2829-5398.jpg?t=st=1720626157~exp=1720629757~hmac=6a880f8e5721eb2407a6b66b23d53fbffee361e9b85e19db9809d5206eaa8ba3&w=740",
-                "audio": "https://www.dropbox.com/scl/fi/zfr1n4q90yplig2jmxerk/hamburger.mp3?rlkey=mb6w3g6i6w0tvvcdgmv8ua6dc&st=wz0jaryt&dl=1"
-            },
-            {
-                "id": 4,
-                "spanish": "La Ensalada",
-                "english": "Salad",
-                "arabic": "سلطة",
-                "img": "https://img.freepik.com/free-photo/flat-lay-salad-with-chicken-sesame-seeds_23-2148700369.jpg?t=st=1720626039~exp=1720629639~hmac=02cdb592d0ed957d000ba483fa154d72b214fc050ab952ca29075ff765ebee67&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/t4di6yxk3iurkdpq3esli/salad.mp3?rlkey=lxzqao0k0fg8n0wdl4g5zcved&st=iuuy86fr&dl=1"
-            }
+  {
+    "id": 1,
+    "title": "Food - Cognates",
+    "desc": "Many roots for words are shared between English and Spanish",
+    "type": "vocab",
+    "elements": [
+      {
+        "id": 1,
+        "spanish": "La Pizza",
+        "english": "Pizza",
+        "arabic": "بيتزا",
+        "img": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?t=st=1720624798~exp=1720628398~hmac=8064bc70b623d5c0a304f6fa96b6550c009864057bc8494edba9bffcf06fd4e9&w=740",
+        "audio": "https://www.dropbox.com/scl/fi/imjef3bkiw2fgsysqqyhy/pizza.mp3?rlkey=90393qjob29r7we8b51s6ck7h&st=h071de64&dl=1"
+      },
+      {
+        "id": 2,
+        "spanish": "Los Espaguetis",
+        "english": "Spaghetti",
+        "arabic": "معكرونة",
+        "img": "https://img.freepik.com/free-photo/tasty-appetizing-classic-italian-spaghetti-pasta-with-tomato-sauce-cheese-parmesan-basil-plate-ingredients-cooking-pasta-dark-table-flat-lay-top-view-copy-spce_1150-45812.jpg?t=st=1720625717~exp=1720629317~hmac=27eb47ea75ca454a97ca717395ebcc937a438b8bcc21235cf7b0c159c5a38626&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/icx4n4kpvaslrfnc2lyvq/spaghetti.mp3?rlkey=s938xs93k7rwjn58jrnbylrcv&st=jsfzy05o&dl=1"
+      },
+      {
+        "id": 3,
+        "spanish": "La Hamburguesa",
+        "english": "Hamburger",
+        "arabic": "همبرغر",
+        "img": "https://img.freepik.com/free-photo/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon_2829-5398.jpg?t=st=1720626157~exp=1720629757~hmac=6a880f8e5721eb2407a6b66b23d53fbffee361e9b85e19db9809d5206eaa8ba3&w=740",
+        "audio": "https://www.dropbox.com/scl/fi/zfr1n4q90yplig2jmxerk/hamburger.mp3?rlkey=mb6w3g6i6w0tvvcdgmv8ua6dc&st=wz0jaryt&dl=1"
+      },
+      {
+        "id": 4,
+        "spanish": "La Ensalada",
+        "english": "Salad",
+        "arabic": "سلطة",
+        "img": "https://img.freepik.com/free-photo/flat-lay-salad-with-chicken-sesame-seeds_23-2148700369.jpg?t=st=1720626039~exp=1720629639~hmac=02cdb592d0ed957d000ba483fa154d72b214fc050ab952ca29075ff765ebee67&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/t4di6yxk3iurkdpq3esli/salad.mp3?rlkey=lxzqao0k0fg8n0wdl4g5zcved&st=iuuy86fr&dl=1"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Food",
+    "desc": "Not all words are the same in English and Spanish",
+    "type": "vocab",
+    "elements": [
+      {
+        "id": 1,
+        "spanish": "Las Papas Fritas",
+        "english": "French Fries",
+        "arabic": "بطاطس مقلية",
+        "img": "https://img.freepik.com/free-photo/crispy-french-fries-with-ketchup-mayonnaise_1150-26588.jpg?t=st=1720626956~exp=1720630556~hmac=385fe326d3f22a12371c8ac3fe38038a229efdc3b096f3d30e8459e87fed3ce6&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/9055clc3t95xysj9uv1t8/fried.mp3?rlkey=c6z5wmi7yh0e6qvnv70zcnkrf&st=tgq3brf0&dl=1"
+      },
+      {
+        "id": 2,
+        "spanish": "El Bocadillo",
+        "english": "Sandwich",
+        "arabic": "ساندويتش",
+        "img": "https://img.freepik.com/free-photo/front-view-tasty-ham-sandwiches-with-french-fries-dark-surface_179666-34644.jpg?t=st=1720627067~exp=1720630667~hmac=e195b3a88ceffaf7a526e52328d2957fcf3fb45737ecec0a0e153292ce4f21a9&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/rwh1ktc6oeppurqcsu1kt/sandwich.mp3?rlkey=x1itfuhcaiq2cfyi8pe8zcwpj&st=1bili3jy&dl=1"
+      },
+      {
+        "id": 3,
+        "spanish": "El Perro Caliente",
+        "english": "Hot Dog",
+        "arabic": "نقانق",
+        "img": "https://img.freepik.com/free-photo/high-angle-delicious-hot-dog-fries_23-2149235977.jpg?t=st=1720627367~exp=1720630967~hmac=c52f8352aeb12db03ce4c09db0f4b273b19ebfdeaf07f85dbd2929d40df9a98c&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/fb4718lheg4sk412rp49e/hot-dog.mp3?rlkey=sud64qkco7ew7qlg26ogec7ud&st=2jt3e73u&dl=1"
+      },
+      {
+        "id": 4,
+        "spanish": "El Helado",
+        "english": "Ice Cream",
+        "arabic": "بوظة",
+        "img": "https://img.freepik.com/free-photo/delicious-ice-cream-studio_23-2150696576.jpg?t=st=1720627516~exp=1720631116~hmac=b63ec34d6642c4d7a3aecb0c882acbaaab392fe51e08c3ff66c40c8c72f2312d&w=360",
+        "audio": "https://www.dropbox.com/scl/fi/7mpepr6nhfzjx4vd84ps6/ice-scream.mp3?rlkey=utonyod1wr9myohiqavv5dvy6&st=1scpehnw&dl=1"
+      },
+      {
+        "id": 5,
+        "spanish": "Las Verduras",
+        "english": "Vegetables",
+        "arabic": "خضروات",
+        "img": "https://img.freepik.com/free-photo/bottom-view-vegetables-green-red-tomatoes-bell-peppers-cutting-board-greens-bowl-knife-cucumbers-red-tablecloth-black-table_140725-146228.jpg?t=st=1720627235~exp=1720630835~hmac=5c929c4f9710e1779ab54060183070bd78b270386b4818811c5d38894cb726ca&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/gbm5wl43ktb0usx66q8bn/vegetables.mp3?rlkey=hveqt4xu1hnmewx14pxg9kz6z&st=zg8562pe&dl=1"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Level 1 - End of Level",
+    "desc": "Choose the correct word that describes the image",
+    "type": "MCQ",
+    "elements": [
+      {
+        "id": 1,
+        "img": "https://img.freepik.com/free-photo/delicious-ice-cream-studio_23-2150696576.jpg?t=st=1720627516~exp=1720631116~hmac=b63ec34d6642c4d7a3aecb0c882acbaaab392fe51e08c3ff66c40c8c72f2312d&w=360",
+        "choices": ["El Pan", "El Helado", "El Pastel"],
+        "answer": "El Helado"
+      },
+      {
+        "id": 2,
+        "img": "https://img.freepik.com/free-photo/high-angle-delicious-hot-dog-fries_23-2149235977.jpg?t=st=1720627367~exp=1720630967~hmac=c52f8352aeb12db03ce4c09db0f4b273b19ebfdeaf07f85dbd2929d40df9a98c&w=826",
+        "choices": ["El Polo", "El Jamon", "El Perro Caliente"],
+        "answer": "El Perro Caliente"
+      },
+      {
+        "id": 3,
+        "img": "https://img.freepik.com/free-photo/crispy-french-fries-with-ketchup-mayonnaise_1150-26588.jpg?t=st=1720626956~exp=1720630556~hmac=385fe326d3f22a12371c8ac3fe38038a229efdc3b096f3d30e8459e87fed3ce6&w=826",
+        "choices": ["Los Bombones", "Las Papas Fritas", "Las Salchihas"],
+        "answer": "Las Papas Fritas"
+      },
+      {
+        "id": 4,
+        "img": "https://img.freepik.com/free-photo/bottom-view-vegetables-green-red-tomatoes-bell-peppers-cutting-board-greens-bowl-knife-cucumbers-red-tablecloth-black-table_140725-146228.jpg?t=st=1720627235~exp=1720630835~hmac=5c929c4f9710e1779ab54060183070bd78b270386b4818811c5d38894cb726ca&w=826",
+        "choices": ["Las Verduras", "La mantequilla", "La Fruta"],
+        "answer": "Las Verduras"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Kitchen Utensils",
+    "desc": "In a restaurant, you might need to ask for more utensils",
+    "type": "vocab",
+    "elements": [
+      {
+        "id": 1,
+        "spanish": "El Cuchillo",
+        "english": "Knife",
+        "arabic": "سكين",
+        "img": "https://img.freepik.com/premium-photo/set-kitchen-knifes_105428-383.jpg?w=740",
+        "audio": "https://www.dropbox.com/scl/fi/kqo4w11lvpiwudnifo73u/knife.mp3?rlkey=rfrbu87j1unpcr2a87ir46b02&st=ohpjcw1n&dl=1"
+      },
+      {
+        "id": 2,
+        "spanish": "El Plato",
+        "english": "Plate",
+        "arabic": "طبق",
+        "img": "https://img.freepik.com/premium-photo/white-porcelain-plate-wooden-table_1102019-5.jpg?w=996",
+        "audio": "https://www.dropbox.com/scl/fi/xjh5jzzjgf9yr9izx9r7l/Plate.mp3?rlkey=nx7d22lwem723o4fa567rqk0v&st=ni33xje1&dl=1"
+      },
+      {
+        "id": 3,
+        "spanish": "El Tenedor",
+        "english": "Fork",
+        "arabic": "شوكة",
+        "img": "https://img.freepik.com/premium-photo/fork-isolated-white_103864-343.jpg?w=826",
+        "audio": "https://www.dropbox.com/scl/fi/qz64ikl9u6bkchy7k5uje/fork.mp3?rlkey=gd7o04uudmqwyjb5qm20rzt7r&st=dea8wlpp&dl=1"
+      },
+      {
+        "id": 4,
+        "spanish": "El Tazón",
+        "english": "Bowl",
+        "arabic": "صَحن",
+        "img": "https://img.freepik.com/premium-psd/ceramic-bowl-isolated-alpha-layer_253984-7535.jpg?w=826",
+        "audio": "https://www.dropbox.com/scl/fi/4rfmu35ha2ysqi83dnkc9/bowl.mp3?rlkey=fxwimim1xl8k2c0h62gao81qr&st=iubv1a57&dl=1"
+      },
+      {
+        "id": 5,
+        "spanish": "La Cuchara",
+        "english": "Spoon",
+        "arabic": "ملعقة",
+        "img": "https://img.freepik.com/premium-photo/spoon_488220-3574.jpg?w=900",
+        "audio": "https://www.dropbox.com/scl/fi/yvmndlarobv0z5aympm0c/spoon.mp3?rlkey=qm8iba8z3049i67egxdjem14f&st=brtuor0k&dl=1"
+      },
+      {
+        "id": 6,
+        "spanish": "La Taza",
+        "english": "Cup",
+        "arabic": "كوب",
+        "img": "https://img.freepik.com/free-vector/realistic-white-cup_1284-45598.jpg?t=st=1720957277~exp=1720960877~hmac=c0c305eec831b9362220c6ec16fe86442cbcf4358ca21c604301bde6ad1d441a&w=740",
+        "audio": "https://www.dropbox.com/scl/fi/w1qzwoy58rhuvwsvhwt9t/cup.mp3?rlkey=rjiokrx7ygbwbd41wj3y8705q&st=vbpzwfpe&dl=1"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Kitchen Appliances",
+    "desc": "In a restaurant, you might need to ask for more utensils",
+    "type": "vocab",
+    "elements": [
+      {
+        "id": 1,
+        "spanish": "Nevera",
+        "english": "Refrigerator",
+        "arabic": "ثلاجة",
+        "img": "https://img.freepik.com/free-vector/set-two-isolated-refrigerator-fridge-realistic-images-with-two-views-opened-closed-cabinet_1284-27089.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
+        "audio": "https://www.dropbox.com/scl/fi/p8jvap6u84bj3kgmeqmyn/Nevera.mp3?rlkey=eylws9tpv1diubg0myse31g8p&st=yni82h1l&dl=1"
+      },
+      {
+        "id": 2,
+        "spanish": "Horno",
+        "english": "Oven",
+        "arabic": "فرن",
+        "img": "https://img.freepik.com/free-vector/realistic-compact-oven-with-digital-display-timer-pre-set-cooking-programs_1441-1680.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
+        "audio": "https://www.dropbox.com/scl/fi/ok3w9tmm8iuy2lh9bech9/Horno.mp3?rlkey=d7in8iqp1t5uwlz0cxqyssaub&st=hlfsdhsy&dl=1"
+      },
+      {
+        "id": 3,
+        "spanish": "Estufa",
+        "english": "Stove",
+        "arabic": "موقد",
+        "img": "https://img.freepik.com/free-vector/kitchen-appliance-gas-cooking-surface-cooktop_134830-659.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
+        "audio": "https://www.dropbox.com/scl/fi/70taq4td8hhqgwk8ny2zq/Estufa.mp3?rlkey=6s8lcetlnc0ad02q0fdjbppk5&st=gy9vt0q3&dl=1"
+      },
+      {
+        "id": 4,
+        "spanish": "Licadora",
+        "english": "Blender",
+        "arabic": "الخلاط",
+        "img": "https://img.freepik.com/free-vector/flat-smoothies-blender-glass-illustration_23-2148956218.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
+        "audio": "https://www.dropbox.com/scl/fi/vm7hcsuwyximzgrfn0r3l/Licadora.mp3?rlkey=70dibjgmai9acnwo71qaohchu&st=xzv6c7zx&dl=1"
+      },
+      {
+        "id": 5,
+        "spanish": "Lavavajillas",
+        "english": "Dishwasher",
+        "arabic": "غسالة الأواني",
+        "img": "https://img.freepik.com/free-vector/3d-realistic-white-dishwasher-machine-with-three-metal-racks-filled-with-clean-plates-glass_1441-1862.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
+        "audio": "https://www.dropbox.com/scl/fi/52zhyc6mi4mrcgxv8o428/Lavavajillas.mp3?rlkey=l1n4stfsi4nx2e7zq0y9o75ma&st=fr4c57v3&dl=1"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Level 2 - End of Level",
+    "desc": "Drag the labels to the correct position on to the image ",
+    "type": "labels",
+    "elements": [
+      {
+        "id": 1,
+        "img": "https://img.freepik.com/premium-photo/close-up-food-served-plate_1048944-48225.jpg?w=740",
+        "labels": ["El Cuchillo", "El Tenedor", "El Plato", "El Tazón", "La Taza"],
+        "answer": [
+          { "x": 400, "y": 125, "label": "El Cuchillo" },
+          { "x": 650, "y": 125, "label": "La Taza" },
+          { "x": 850, "y": 500, "label": "El Tenedor" },
+          { "x": 900, "y": 125, "label": "El Tazón" },
+          { "x": 600, "y": 500, "label": "El Plato" }
         ]
-    },
-    {
-        "id":2,
-        "title":"Food",
-        "desc": "Not all words are the same in English and Spanish",
-        "type": "vocab",
-        "elements":[
-            {
-                "id": 1,
-                "spanish": "Las Papas Fritas",
-                "english": "French Fries",
-                "arabic": "بطاطس مقلية",
-                "img": "https://img.freepik.com/free-photo/crispy-french-fries-with-ketchup-mayonnaise_1150-26588.jpg?t=st=1720626956~exp=1720630556~hmac=385fe326d3f22a12371c8ac3fe38038a229efdc3b096f3d30e8459e87fed3ce6&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/9055clc3t95xysj9uv1t8/fried.mp3?rlkey=c6z5wmi7yh0e6qvnv70zcnkrf&st=tgq3brf0&dl=1"
-            },{
-                "id": 2,
-                "spanish": "El Bocadillo",
-                "english": "Sandwich",
-                "arabic": "ساندويتش",
-                "img": "https://img.freepik.com/free-photo/front-view-tasty-ham-sandwiches-with-french-fries-dark-surface_179666-34644.jpg?t=st=1720627067~exp=1720630667~hmac=e195b3a88ceffaf7a526e52328d2957fcf3fb45737ecec0a0e153292ce4f21a9&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/rwh1ktc6oeppurqcsu1kt/sandwich.mp3?rlkey=x1itfuhcaiq2cfyi8pe8zcwpj&st=1bili3jy&dl=1"
-            },{
-                "id": 3,
-                "spanish": "El Perro Caliente",
-                "english": "Hot Dog",
-                "arabic": "نقانق",
-                "img": "https://img.freepik.com/free-photo/high-angle-delicious-hot-dog-fries_23-2149235977.jpg?t=st=1720627367~exp=1720630967~hmac=c52f8352aeb12db03ce4c09db0f4b273b19ebfdeaf07f85dbd2929d40df9a98c&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/fb4718lheg4sk412rp49e/hot-dog.mp3?rlkey=sud64qkco7ew7qlg26ogec7ud&st=2jt3e73u&dl=1"
-            },
-            {
-                "id": 4,
-                "spanish": "El Helado",
-                "english": "Ice Cream",
-                "arabic": "بوظة",
-                "img": "https://img.freepik.com/free-photo/delicious-ice-cream-studio_23-2150696576.jpg?t=st=1720627516~exp=1720631116~hmac=b63ec34d6642c4d7a3aecb0c882acbaaab392fe51e08c3ff66c40c8c72f2312d&w=360",
-                "audio": "https://www.dropbox.com/scl/fi/7mpepr6nhfzjx4vd84ps6/ice-scream.mp3?rlkey=utonyod1wr9myohiqavv5dvy6&st=1scpehnw&dl=1"
-            },{
-                "id": 5,
-                "spanish": "Las Verduras",
-                "english": "Vegetables",
-                "arabic": "خضروات",
-                "img": "https://img.freepik.com/free-photo/bottom-view-vegetables-green-red-tomatoes-bell-peppers-cutting-board-greens-bowl-knife-cucumbers-red-tablecloth-black-table_140725-146228.jpg?t=st=1720627235~exp=1720630835~hmac=5c929c4f9710e1779ab54060183070bd78b270386b4818811c5d38894cb726ca&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/gbm5wl43ktb0usx66q8bn/vegetables.mp3?rlkey=hveqt4xu1hnmewx14pxg9kz6z&st=zg8562pe&dl=1"
-            }
+      },
+      {
+        "id": 2,
+        "img": "https://img.freepik.com/free-vector/kitchen-appliances-concept-illustration_114360-7217.jpg?t=st=1723057404~exp=1723061004~hmac=b743df0765d40252512ad3300ce40ca053488934d8d548d116f75b2ab93af3a2&w=826",
+        "labels": ["Nevera", "Horno", "Licadora", "Estufa"],
+        "answer": [
+          { "x": 300, "y": 300, "label": "Nevera" },
+          { "x": 700, "y": 550, "label": "Horno" },
+          { "x": 850, "y": 400, "label": "Licadora" },
+          { "x": 750, "y": 450, "label": "Estufa" }
         ]
-    },{
-        "id":3,
-        "title":"Level 1 - End of Level",
-        "desc": "Choose the correct word that describes the image",
-        "type": "MCQ",
-        "elements":[
-            {
-                "id": 1,
-                "img": "https://img.freepik.com/free-photo/delicious-ice-cream-studio_23-2150696576.jpg?t=st=1720627516~exp=1720631116~hmac=b63ec34d6642c4d7a3aecb0c882acbaaab392fe51e08c3ff66c40c8c72f2312d&w=360",
-                "choices": ["El Pan","El Helado","El Pastel"],
-                "answer": "El Helado"
-            },
-            {
-                "id": 2,
-                "img": "https://img.freepik.com/free-photo/high-angle-delicious-hot-dog-fries_23-2149235977.jpg?t=st=1720627367~exp=1720630967~hmac=c52f8352aeb12db03ce4c09db0f4b273b19ebfdeaf07f85dbd2929d40df9a98c&w=826",
-                "choices": ["El Polo","El Jamon","El Perro Caliente"],
-                "answer": "El Perro Caliente"
-            },
-            {
-                "id": 3,
-                "img": "https://img.freepik.com/free-photo/crispy-french-fries-with-ketchup-mayonnaise_1150-26588.jpg?t=st=1720626956~exp=1720630556~hmac=385fe326d3f22a12371c8ac3fe38038a229efdc3b096f3d30e8459e87fed3ce6&w=826",
-                "choices": ["Los Bombones","Las Papas Fritas","Las Salchihas"],
-                "answer": "Las Papas Fritas"
-            },
-            {
-                "id": 4,
-                "img": "https://img.freepik.com/free-photo/bottom-view-vegetables-green-red-tomatoes-bell-peppers-cutting-board-greens-bowl-knife-cucumbers-red-tablecloth-black-table_140725-146228.jpg?t=st=1720627235~exp=1720630835~hmac=5c929c4f9710e1779ab54060183070bd78b270386b4818811c5d38894cb726ca&w=826",
-                "choices": ["Las Verduras","La mantequilla","La Fruta"],
-                "answer": "Las Verduras"
-            }
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "How to order in a restaurant",
+    "desc": "Learn how to start a sentence to talk with your server",
+    "type": "vocab",
+    "elements": [
+      {
+        "id": 1,
+        "spanish": "Quisiera...",
+        "english": "I would like",
+        "arabic": "أود",
+        "img": "https://img.freepik.com/free-photo/young-happy-waiter-using-digital-tablet-while-talking-couple-taking-their-order-cafe_637285-540.jpg?t=st=1721161722~exp=1721165322~hmac=1e7f41cf1df87cd918d405e7e7c81e15c6a641f708e44174029e7732945b149e&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/f3mqrzvo4r9fij3zd6rz7/Quisiera.mp3?rlkey=s3wgwr50laa4qp7dsv3cngawn&st=9rw2cyrj&dl=1"
+      },
+      {
+        "id": 2,
+        "spanish": "Para mí,...",
+        "english": "For me,...",
+        "arabic": "لي",
+        "img": "https://img.freepik.com/premium-photo/happy-waiter-using-touchpad-showing-menu-couple-cafe_637285-512.jpg?w=826",
+        "audio": "https://www.dropbox.com/scl/fi/libzmziu6vqpxuyntr26k/Para-m.mp3?rlkey=1urlp5aotulibwvhk2lylmi80&st=s60ljla3&dl=1"
+      },
+      {
+        "id": 3,
+        "spanish": "Me gustaría...",
+        "english": "I would like...",
+        "arabic": "أود",
+        "img": "https://img.freepik.com/free-photo/young-happy-waiter-using-digital-tablet-while-talking-couple-taking-their-order-cafe_637285-540.jpg?t=st=1721161722~exp=1721165322~hmac=1e7f41cf1df87cd918d405e7e7c81e15c6a641f708e44174029e7732945b149e&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/ylgk8d239qc5sez62vm33/Me-gustar-a.mp3?rlkey=dhvj8wbb5abpeu825p9odfgbn&st=w3gezoq0&dl=1"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Order in a restaurant",
+    "desc": "Learn how to form sentences with all you have learnt",
+    "type": "vocab",
+    "elements": [
+      {
+        "id": 1,
+        "spanish": "Quisiera el pollo a la parrilla, por favor.",
+        "english": "I would like the grilled chicken, please.",
+        "arabic": "أريد الدجاج المشوي من فضلك",
+        "img": "https://img.freepik.com/free-photo/couple-sitting-cafe-choosing-order-form-meu-while-communicating-with-waiter_637285-602.jpg?t=st=1721162646~exp=1721166246~hmac=0e0e76da7b2ee0fc51a99ed33b20e0edbf897639d30d168108d395d3d991cc1a&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/yg28nrtm7829hl6uy0qfj/temp1.mp3?rlkey=xr24b57fgb454mpy48ygz99oz&st=xdb308ua&dl=1"
+      },
+      {
+        "id": 2,
+        "spanish": "Puedo tener una ensalada de la casa?",
+        "english": "Can I have a house salad?",
+        "arabic": "هل يمكنني الحصول على سلطة المنزل؟",
+        "img": "https://img.freepik.com/premium-photo/young-waiter-protective-face-mask-gloves-with-ordered-meals-ready-serving-covid2019_217236-3826.jpg?w=826",
+        "audio": "https://www.dropbox.com/scl/fi/r6wktygc8lf02leneku49/temp2.mp3?rlkey=7r95veopctcu3tij3oo6bxa6c&st=ktx5yx92&dl=1"
+      },
+      {
+        "id": 3,
+        "spanish": "Puedo ordenar el filete de salmón, por favor?",
+        "english": "May I order the salmon fillet, please?",
+        "arabic": "هل لي أن أطلب شرائح سمك السلمون، من فضلك؟",
+        "img": "https://img.freepik.com/free-photo/happy-waiter-serving-meal-couple-lunch-time-restaurant_637285-1922.jpg?t=st=1721162865~exp=1721166465~hmac=e442d2da3388ff7b69e7514cd545b52557853e273b79ae2dbe425823ec41f897&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/rzj4t5uagg39zfto5yies/temp3.mp3?rlkey=je872nvtt2txh2ijxq4ij2cbz&st=xsedf9uz&dl=1"
+      },
+      {
+        "id": 4,
+        "spanish": "Tomaré la lasaña, por favor.",
+        "english": "I'll have the lasagna, please.",
+        "arabic": "سآخذ اللازانيا، من فضلك",
+        "img": "https://img.freepik.com/free-photo/couple-ordering-food-restaurant_23-2149269232.jpg?t=st=1721162841~exp=1721166441~hmac=65da070bb2c0945666ceb4b88d8bf05876d11f01fa6373ce6790d3e016dc6439&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/wdqvrz4qjpv9gqt0zyfvz/temp4.mp3?rlkey=ofej8nlrucnkcvdwn7moqftsw&st=9yefwkfj&dl=1"
+      },
+      {
+        "id": 5,
+        "spanish": "Por favor, tráigame una botella de agua.",
+        "english": "Please bring me a bottle of water.",
+        "arabic": "من فضلك أحضر لي زجاجة ماء",
+        "img": "https://img.freepik.com/free-photo/young-trans-man-with-apron-working-as-waiter_23-2149409809.jpg?t=st=1721162715~exp=1721166315~hmac=f3c8f8b85ca7cccbe4bd3810b00926dc667d2968a4d58f1a01aa2e667829fc41&w=826",
+        "audio": "https://www.dropbox.com/scl/fi/beuvjp4d6obwyt8fgn4q6/temp5.mp3?rlkey=73vh6e7v68zwwwt7h625k6hvt&st=dupk9kcv&dl=1"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Level 3 - End of Level",
+    "desc": "sort the colored words in each of the following sentences to form a correct sentence.",
+    "type": "sort",
+    "elements": [
+      {
+        "id": 1,
+        "labels": [
+          { "txt": "parrilla", "ignore": false },
+          { "txt": "el", "ignore": false },
+          { "txt": "la", "ignore": false },
+          { "txt": "a", "ignore": false },
+          { "txt": "quisiera", "ignore": false },
+          { "txt": "pollo", "ignore": false },
+          { "txt": ",", "ignore": true },
+          { "txt": "favor", "ignore": false },
+          { "txt": "por", "ignore": false }
+        ],
+        "answer": [
+          { "txt": "quisiera", "ignore": false },
+          { "txt": "el", "ignore": false },
+          { "txt": "pollo", "ignore": false },
+          { "txt": "a", "ignore": false },
+          { "txt": "la", "ignore": false },
+          { "txt": "parrilla", "ignore": false },
+          { "txt": ",", "ignore": true },
+          { "txt": "por", "ignore": false },
+          { "txt": "favor", "ignore": false }
         ]
-    },
-    {
-        "id":4,
-        "title":"Kitchen Utensils",
-        "desc": "In a restaurant, you might need to ask for more utensils",
-        "type": "vocab",
-        "elements":[
-            {
-                "id": 1,
-                "spanish": "El Cuchillo",
-                "english": "Knife",
-                "arabic": "سكين",
-                "img": "https://img.freepik.com/premium-photo/set-kitchen-knifes_105428-383.jpg?w=740",
-                "audio": "https://www.dropbox.com/scl/fi/kqo4w11lvpiwudnifo73u/knife.mp3?rlkey=rfrbu87j1unpcr2a87ir46b02&st=ohpjcw1n&dl=1"
-            },{
-                "id": 2,
-                "spanish": "El Plato",
-                "english": "Plate",
-                "arabic": "طبق",
-                "img": "https://img.freepik.com/premium-photo/white-porcelain-plate-wooden-table_1102019-5.jpg?w=996",
-                "audio": "https://www.dropbox.com/scl/fi/xjh5jzzjgf9yr9izx9r7l/Plate.mp3?rlkey=nx7d22lwem723o4fa567rqk0v&st=ni33xje1&dl=1"
-            },{
-                "id": 3,
-                "spanish": "El Tenedor",
-                "english": "Fork",
-                "arabic": "شوكة",
-                "img": "https://img.freepik.com/premium-photo/fork-isolated-white_103864-343.jpg?w=826",
-                "audio": "https://www.dropbox.com/scl/fi/qz64ikl9u6bkchy7k5uje/fork.mp3?rlkey=gd7o04uudmqwyjb5qm20rzt7r&st=dea8wlpp&dl=1"
-            },
-            {
-                "id": 4,
-                "spanish": "El Tazón",
-                "english": "Bowl",
-                "arabic": "صَحن",
-                "img": "https://img.freepik.com/premium-psd/ceramic-bowl-isolated-alpha-layer_253984-7535.jpg?w=826",
-                "audio": "https://www.dropbox.com/scl/fi/4rfmu35ha2ysqi83dnkc9/bowl.mp3?rlkey=fxwimim1xl8k2c0h62gao81qr&st=iubv1a57&dl=1"
-            },
-            {
-                "id": 5,
-                "spanish": "La Cuchara",
-                "english": "Spoon",
-                "arabic": "ملعقة",
-                "img": "https://img.freepik.com/premium-photo/spoon_488220-3574.jpg?w=900",
-                "audio": "https://www.dropbox.com/scl/fi/yvmndlarobv0z5aympm0c/spoon.mp3?rlkey=qm8iba8z3049i67egxdjem14f&st=brtuor0k&dl=1"
-            },{
-                "id": 6,
-                "spanish": "La Taza",
-                "english": "Cup",
-                "arabic": "كوب",
-                "img": "https://img.freepik.com/free-vector/realistic-white-cup_1284-45598.jpg?t=st=1720957277~exp=1720960877~hmac=c0c305eec831b9362220c6ec16fe86442cbcf4358ca21c604301bde6ad1d441a&w=740",
-                "audio": "https://www.dropbox.com/scl/fi/w1qzwoy58rhuvwsvhwt9t/cup.mp3?rlkey=rjiokrx7ygbwbd41wj3y8705q&st=vbpzwfpe&dl=1"
-            }
-
+      },
+      {
+        "id": 2,
+        "labels": [
+          { "txt": "tomaré", "ignore": false },
+          { "txt": "lasaña", "ignore": false },
+          { "txt": "por", "ignore": false },
+          { "txt": "favor", "ignore": false },
+          { "txt": "la", "ignore": false },
+          { "txt": ",", "ignore": true }
+        ],
+        "answer": [
+          { "txt": "tomaré", "ignore": false },
+          { "txt": "la", "ignore": false },
+          { "txt": "lasaña", "ignore": false },
+          { "txt": "por", "ignore": false },
+          { "txt": ",", "ignore": true },
+          { "txt": "favor", "ignore": false }
         ]
-    },{
-        "id":5,
-        "title":"Level 2 - End of Level",
-        "desc": "Drag the labels to the correct position on to the image ",
-        "type": "labels",
-        "elements":[
-            {
-                "id": 1,
-                "img": "https://img.freepik.com/premium-photo/close-up-food-served-plate_1048944-48225.jpg?w=740",
-                "labels": ["El Cuchillo","El Tenedor","El Plato","El Tazón","La Taza"],
-                "answer": [
-                    {"x":200,"y":75,"label":"El Cuchillo"},
-                    {"x":275,"y":90,"label":"La Taza"},
-                    {"x":350,"y":225,"label":"El Tenedor"},
-                    {"x":375,"y":90,"label":"El Tazón"},
-                    {"x":200,"y":220,"label":"El Plato"}
-                ]
-            }
+      },
+      {
+        "id": 3,
+        "labels": [
+          { "txt": "puedo", "ignore": true },
+          { "txt": "una", "ignore": false },
+          { "txt": "la", "ignore": false },
+          { "txt": "ensalada", "ignore": false },
+          { "txt": "tener", "ignore": false },
+          { "txt": "casa", "ignore": false },
+          { "txt": "de", "ignore": false },
+          { "txt": "?", "ignore": true }
+        ],
+        "answer": [
+          { "txt": "puedo", "ignore": true },
+          { "txt": "tener", "ignore": false },
+          { "txt": "una", "ignore": false },
+          { "txt": "ensalada", "ignore": false },
+          { "txt": "de", "ignore": false },
+          { "txt": "la", "ignore": false },
+          { "txt": "casa", "ignore": false },
+          { "txt": "?", "ignore": true }
         ]
-    },{
-        "id":6,
-        "title":"How to order in a restaurant",
-        "desc": "Learn how to start a sentence to talk with your server",
-        "type": "vocab",
-        "elements":[
-            {
-                "id": 1,
-                "spanish": "Quisiera...",
-                "english": "I would like",
-                "arabic": "أود",
-                "img": "https://img.freepik.com/free-photo/young-happy-waiter-using-digital-tablet-while-talking-couple-taking-their-order-cafe_637285-540.jpg?t=st=1721161722~exp=1721165322~hmac=1e7f41cf1df87cd918d405e7e7c81e15c6a641f708e44174029e7732945b149e&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/f3mqrzvo4r9fij3zd6rz7/Quisiera.mp3?rlkey=s3wgwr50laa4qp7dsv3cngawn&st=9rw2cyrj&dl=1"
-            },{
-                "id": 2,
-                "spanish": "Para mí,...",
-                "english": "For me,...",
-                "arabic": "لي",
-                "img": "https://img.freepik.com/premium-photo/happy-waiter-using-touchpad-showing-menu-couple-cafe_637285-512.jpg?w=826",
-                "audio": "https://www.dropbox.com/scl/fi/libzmziu6vqpxuyntr26k/Para-m.mp3?rlkey=1urlp5aotulibwvhk2lylmi80&st=s60ljla3&dl=1"
-            },{
-                "id": 3,
-                "spanish": "Me gustaría...",
-                "english": "I would like...",
-                "arabic": "أود",
-                "img": "https://img.freepik.com/free-photo/young-happy-waiter-using-digital-tablet-while-talking-couple-taking-their-order-cafe_637285-540.jpg?t=st=1721161722~exp=1721165322~hmac=1e7f41cf1df87cd918d405e7e7c81e15c6a641f708e44174029e7732945b149e&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/ylgk8d239qc5sez62vm33/Me-gustar-a.mp3?rlkey=dhvj8wbb5abpeu825p9odfgbn&st=w3gezoq0&dl=1"
-            }
+      },
+      {
+        "id": 4,
+        "labels": [
+          { "txt": "puedo", "ignore": true },
+          { "txt": "el", "ignore": false },
+          { "txt": "filete", "ignore": false },
+          { "txt": "ordenar", "ignore": false },
+          { "txt": "salmón", "ignore": false },
+          { "txt": ",", "ignore": true },
+          { "txt": "por", "ignore": false },
+          { "txt": "favor", "ignore": false },
+          { "txt": "de", "ignore": false },
+          { "txt": "?", "ignore": true }
+        ],
+        "answer": [
+          { "txt": "puedo", "ignore": true },
+          { "txt": "ordenar", "ignore": false },
+          { "txt": "el", "ignore": false },
+          { "txt": "filete", "ignore": false },
+          { "txt": "de", "ignore": false },
+          { "txt": "salmón", "ignore": false },
+          { "txt": ",", "ignore": true },
+          { "txt": "por", "ignore": false },
+          { "txt": "favor", "ignore": false },
+          { "txt": "?", "ignore": true }
         ]
-    },{
-        "id":7,
-        "title":"Order in a restaurant",
-        "desc": "Learn how to form sentences with all you have learnt",
-        "type": "vocab",
-        "elements":[
-            {
-                "id": 1,
-                "spanish": "Quisiera el pollo a la parrilla, por favor.",
-                "english": "I would like the grilled chicken, please.",
-                "arabic": "أريد الدجاج المشوي من فضلك",
-                "img": "https://img.freepik.com/free-photo/couple-sitting-cafe-choosing-order-form-meu-while-communicating-with-waiter_637285-602.jpg?t=st=1721162646~exp=1721166246~hmac=0e0e76da7b2ee0fc51a99ed33b20e0edbf897639d30d168108d395d3d991cc1a&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/yg28nrtm7829hl6uy0qfj/temp1.mp3?rlkey=xr24b57fgb454mpy48ygz99oz&st=xdb308ua&dl=1"
-            },{
-                "id": 2,
-                "spanish": "Puedo tener una ensalada de la casa?",
-                "english": "Can I have a house salad?",
-                "arabic": "هل يمكنني الحصول على سلطة المنزل؟",
-                "img": "https://img.freepik.com/premium-photo/young-waiter-protective-face-mask-gloves-with-ordered-meals-ready-serving-covid2019_217236-3826.jpg?w=826",
-                "audio": "https://www.dropbox.com/scl/fi/r6wktygc8lf02leneku49/temp2.mp3?rlkey=7r95veopctcu3tij3oo6bxa6c&st=ktx5yx92&dl=1"
-            },{
-                "id": 3,
-                "spanish": "Puedo ordenar el filete de salmón, por favor?",
-                "english": "May I order the salmon fillet, please?",
-                "arabic": "هل لي أن أطلب شرائح سمك السلمون، من فضلك؟",
-                "img": "https://img.freepik.com/free-photo/happy-waiter-serving-meal-couple-lunch-time-restaurant_637285-1922.jpg?t=st=1721162865~exp=1721166465~hmac=e442d2da3388ff7b69e7514cd545b52557853e273b79ae2dbe425823ec41f897&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/rzj4t5uagg39zfto5yies/temp3.mp3?rlkey=je872nvtt2txh2ijxq4ij2cbz&st=xsedf9uz&dl=1"
-            },{
-                "id": 4,
-                "spanish": "Tomaré la lasaña, por favor.",
-                "english": "I'll have the lasagna, please.",
-                "arabic": "سآخذ اللازانيا، من فضلك",
-                "img": "https://img.freepik.com/free-photo/couple-ordering-food-restaurant_23-2149269232.jpg?t=st=1721162841~exp=1721166441~hmac=65da070bb2c0945666ceb4b88d8bf05876d11f01fa6373ce6790d3e016dc6439&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/wdqvrz4qjpv9gqt0zyfvz/temp4.mp3?rlkey=ofej8nlrucnkcvdwn7moqftsw&st=9yefwkfj&dl=1"
-            },{
-                "id": 5,
-                "spanish": "Por favor, tráigame una botella de agua.",
-                "english": "Please bring me a bottle of water.",
-                "arabic": "من فضلك أحضر لي زجاجة ماء",
-                "img": "https://img.freepik.com/free-photo/young-trans-man-with-apron-working-as-waiter_23-2149409809.jpg?t=st=1721162715~exp=1721166315~hmac=f3c8f8b85ca7cccbe4bd3810b00926dc667d2968a4d58f1a01aa2e667829fc41&w=826",
-                "audio": "https://www.dropbox.com/scl/fi/beuvjp4d6obwyt8fgn4q6/temp5.mp3?rlkey=73vh6e7v68zwwwt7h625k6hvt&st=dupk9kcv&dl=1"
-            }
+      },
+      {
+        "id": 5,
+        "labels": [
+          { "txt": "por", "ignore": true },
+          { "txt": "favor", "ignore": true },
+          { "txt": ",", "ignore": true },
+          { "txt": "de", "ignore": false },
+          { "txt": "agua", "ignore": false },
+          { "txt": "tráigame", "ignore": false },
+          { "txt": "botella", "ignore": false },
+          { "txt": "una", "ignore": false }
+        ],
+        "answer": [
+          { "txt": "por", "ignore": true },
+          { "txt": "favor", "ignore": true },
+          { "txt": ",", "ignore": true },
+          { "txt": "tráigame", "ignore": false },
+          { "txt": "una", "ignore": false },
+          { "txt": "botella", "ignore": false },
+          { "txt": "de", "ignore": false },
+          { "txt": "agua", "ignore": false }
         ]
-    },{
-        "id":8,
-        "title":"Level 3 - End of Level",
-        "desc": "sort the colored words in each of the following sentences to form a correct sentence.",
-        "type": "sort",
-        "elements":[
-            {
-                "id": 1,
-                "labels": [
-                    {"txt":"parrilla","ignore":false},
-                    {"txt":"el","ignore":false},
-                    {"txt":"la","ignore":false},
-                    {"txt":"a","ignore":false},
-                    {"txt":"quisiera","ignore":false},
-                    {"txt":"pollo","ignore":false},
-                    {"txt":",","ignore":true},
-                    {"txt":"favor","ignore":false},
-                    {"txt":"por","ignore":false}
-                ],
-                "answer": [
-                    {"txt":"quisiera","ignore":false}, 
-                    {"txt":"el","ignore":false}, 
-                    {"txt":"pollo","ignore":false}, 
-                    {"txt":"a","ignore":false}, 
-                    {"txt":"la","ignore":false}, 
-                    {"txt":"parrilla","ignore":false},
-                    {"txt":",","ignore":true},
-                    {"txt":"por","ignore":false}, 
-                    {"txt":"favor","ignore":false}
-                ]
-            },{
-                "id": 2,
-                "labels": [
-                    {"txt":"tomaré","ignore":false}, 
-                    {"txt":"lasaña","ignore":false}, 
-                    {"txt":"por","ignore":false}, 
-                    {"txt":"favor","ignore":false},
-                    {"txt":"la","ignore":false},
-                    {"txt":",","ignore":true}
-                ],
-                "answer": [
-                    {"txt":"tomaré","ignore":false}, 
-                    {"txt":"la","ignore":false},
-                    {"txt":"lasaña","ignore":false}, 
-                    {"txt":"por","ignore":false}, 
-                    {"txt":",","ignore":true},
-                    {"txt":"favor","ignore":false}
-                ]
-            },{
-                "id": 3,
-                "labels": [
-                    {"txt":"puedo","ignore":true}, 
-                    {"txt":"una","ignore":false},
-                    {"txt":"la","ignore":false} ,
-                    {"txt":"ensalada","ignore":false} ,
-                    {"txt":"tener","ignore":false}, 
-                    {"txt":"casa","ignore":false} ,
-                    {"txt":"de","ignore":false},
-                    {"txt":"?","ignore":true}
-                ],
-                "answer": [
-                    {"txt":"puedo","ignore":true},
-                    {"txt":"tener","ignore":false},
-                    {"txt":"una","ignore":false},
-                    {"txt":"ensalada","ignore":false} ,
-                    {"txt":"de","ignore":false},
-                    {"txt":"la","ignore":false} ,
-                    {"txt":"casa","ignore":false} ,
-                    {"txt":"?","ignore":true}
-                ]
-            },{
-                "id": 4,
-                "labels": [
-                    {"txt":"puedo","ignore":true}, 
-                    {"txt":"el","ignore":false},
-                    {"txt":"filete" ,"ignore":false} ,
-                    {"txt":"ordenar","ignore":false} ,
-                    {"txt":"salmón","ignore":false}, 
-                    {"txt":",","ignore":true},
-                    {"txt":"por","ignore":false} ,
-                    {"txt":"favor","ignore":false},
-                    {"txt":"de","ignore":false},
-                    {"txt":"?","ignore":true}
-                ],
-                "answer": [
-                    {"txt":"puedo","ignore":true}, 
-                    {"txt":"ordenar","ignore":false} ,
-                    {"txt":"el","ignore":false},
-                    {"txt":"filete" ,"ignore":false} ,
-                    {"txt":"de","ignore":false},
-                    {"txt":"salmón","ignore":false}, 
-                    {"txt":",","ignore":true},
-                    {"txt":"por","ignore":false} ,
-                    {"txt":"favor","ignore":false},
-                    {"txt":"?","ignore":true}
-                ]
-            },{
-                "id": 5,
-                "labels": [
-                    {"txt":"por","ignore":true}, 
-                    {"txt":"favor","ignore":true},
-                    {"txt":",","ignore":true},
-                    {"txt":"de" ,"ignore":false} ,
-                    {"txt":"agua","ignore":false} ,
-                    {"txt":"tráigame","ignore":false}, 
-                    {"txt":"botella","ignore":false} ,
-                    {"txt":"una","ignore":false}
-                ],
-                "answer": [
-                    {"txt":"por","ignore":true}, 
-                    {"txt":"favor","ignore":true},
-                    {"txt":",","ignore":true},
-                    {"txt":"tráigame","ignore":false},
-                    {"txt":"una","ignore":false},
-                    {"txt":"botella","ignore":false} ,
-                    {"txt":"de" ,"ignore":false} ,
-                    {"txt":"agua","ignore":false}
-                ]
-            }
-        ]
-    }
+      }
+    ]
+  }
 ]
