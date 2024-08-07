@@ -536,6 +536,7 @@ function checkAnswer(data) {
         if (studentAns.toLowerCase() == a.txt.toLowerCase()) {
           document.getElementById(`zone-${i}`).style.backgroundColor = "lightgreen";
           state.score = state.score + 10;
+          state.questionScore = state.questionScore + 10;
         } else {
           document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
         }
@@ -545,6 +546,7 @@ function checkAnswer(data) {
 
     var sentence = data[state.lvlIndex].elements[state.cardIndex].answer.map((item) => item.txt).join(" ");
     document.getElementById("sentence").innerHTML += `<h4>Answer: ${sentence}</h4>`;
+    
   } else if (data[state.lvlIndex].type == "labels") {
     document.getElementsByClassName("labels-to-sort")[0].innerHTML = ``;
     data[state.lvlIndex].elements[state.cardIndex].answer.forEach((a, i) => {
@@ -558,6 +560,7 @@ function checkAnswer(data) {
 
       if (studentAns.toLowerCase() == a.label.toLowerCase()) {
         document.getElementById(`zone-${i}`).style.backgroundColor = "lightgreen";
+        state.questionScore = state.questionScore + 10;
         state.score = state.score + 10;
       } else {
         document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
@@ -595,23 +598,6 @@ fetch("/api/game")
         );
         state.showReward = false;
       } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length && state.lvlIndex + 1 == data.length) {
-        // var cardHTML = `
-        //     <h1>Congratulations</h1>
-        //     <h4> You have reached the end of this stage!</h4>
-        //     <div class="enter-score">
-        //         <h3>New High Score!</h3>
-        //         <h5>Enter your username to go onto the leaderboard</h5>
-        //         <div>
-        //             <label for="user">User:</label>
-        //             <input type="text" id="user" name="user">
-        //         <div>
-        //         <p>Score: ${state.score}</p>
-        //         <div id="button-nav">
-        //             <button type="button" id="nextStageButton">Go to Next Stage</button>
-        //             <a href="index.html" onclick="AddToLeaderboard()" >Go back to Leaderboard</a>
-        //         </div>
-        //     </div>
-        //     `;
 
         var cardHTML = `
    <div class="results-summary-container">
