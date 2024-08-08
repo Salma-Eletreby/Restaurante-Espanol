@@ -26,7 +26,7 @@
         "spanish": "La Hamburguesa",
         "english": "Hamburger",
         "arabic": "همبرغر",
-        "img": "https://img.freepik.com/free-photo/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon_2829-5398.jpg?t=st=1720626157~exp=1720629757~hmac=6a880f8e5721eb2407a6b66b23d53fbffee361e9b85e19db9809d5206eaa8ba3&w=740",
+        "img": "https://img.freepik.com/free-photo/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon_2829-5398.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
         "audio": "https://www.dropbox.com/scl/fi/zfr1n4q90yplig2jmxerk/hamburger.mp3?rlkey=mb6w3g6i6w0tvvcdgmv8ua6dc&st=wz0jaryt&dl=1"
       },
       {
@@ -96,26 +96,32 @@
       {
         "id": 1,
         "img": "https://img.freepik.com/free-photo/delicious-ice-cream-studio_23-2150696576.jpg?t=st=1720627516~exp=1720631116~hmac=b63ec34d6642c4d7a3aecb0c882acbaaab392fe51e08c3ff66c40c8c72f2312d&w=360",
-        "choices": ["El Pan", "El Helado", "El Pastel"],
+        "choices": ["La Pizza", "El Helado", "Los Espaguetis"],
         "answer": "El Helado"
       },
       {
         "id": 2,
         "img": "https://img.freepik.com/free-photo/high-angle-delicious-hot-dog-fries_23-2149235977.jpg?t=st=1720627367~exp=1720630967~hmac=c52f8352aeb12db03ce4c09db0f4b273b19ebfdeaf07f85dbd2929d40df9a98c&w=826",
-        "choices": ["El Polo", "El Jamon", "El Perro Caliente"],
+        "choices": ["La Ensalada", "La Hamburguesa", "El Perro Caliente"],
         "answer": "El Perro Caliente"
       },
       {
         "id": 3,
         "img": "https://img.freepik.com/free-photo/crispy-french-fries-with-ketchup-mayonnaise_1150-26588.jpg?t=st=1720626956~exp=1720630556~hmac=385fe326d3f22a12371c8ac3fe38038a229efdc3b096f3d30e8459e87fed3ce6&w=826",
-        "choices": ["Los Bombones", "Las Papas Fritas", "Las Salchihas"],
+        "choices": ["El Helado", "Las Papas Fritas", "El Perro Caliente"],
         "answer": "Las Papas Fritas"
       },
       {
         "id": 4,
         "img": "https://img.freepik.com/free-photo/bottom-view-vegetables-green-red-tomatoes-bell-peppers-cutting-board-greens-bowl-knife-cucumbers-red-tablecloth-black-table_140725-146228.jpg?t=st=1720627235~exp=1720630835~hmac=5c929c4f9710e1779ab54060183070bd78b270386b4818811c5d38894cb726ca&w=826",
-        "choices": ["Las Verduras", "La mantequilla", "La Fruta"],
+        "choices": ["Las Verduras", "El Bocadillo", "La Fruta"],
         "answer": "Las Verduras"
+      },
+      {
+        "id": 5,
+        "img": "https://img.freepik.com/free-photo/flat-lay-salad-with-chicken-sesame-seeds_23-2148700369.jpg?t=st=1720626039~exp=1720629639~hmac=02cdb592d0ed957d000ba483fa154d72b214fc050ab952ca29075ff765ebee67&w=826",
+        "choices": ["Los Espaguetis", "La Hamburguesa", "La Ensalada"],
+        "answer": "La Ensalada"
       }
     ]
   },
@@ -237,7 +243,7 @@
           { "x": 400, "y": 125, "label": "El Cuchillo" },
           { "x": 650, "y": 125, "label": "La Taza" },
           { "x": 850, "y": 500, "label": "El Tenedor" },
-          { "x": 900, "y": 125, "label": "El Tazón" },
+          { "x": 900, "y": 160, "label": "El Tazón" },
           { "x": 600, "y": 500, "label": "El Plato" }
         ]
       },

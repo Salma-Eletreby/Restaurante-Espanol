@@ -24,7 +24,10 @@ body {
 .sort-area,
 .label-picture,
 .enter-score,
-#reward-img {
+#reward-img,
+#title-screen,
+#user-details,
+#questions-prev{
   position: relative;
   width: 75%;
   height: 80%;
@@ -39,7 +42,135 @@ body {
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#reward-img {
+#title-chef{
+  height: 50%;
+  position: inherit;
+  left: 30rem;
+  top: 10rem;
+}
+
+#user-details{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#questions-prev{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#title-speech {
+	position: absolute;
+  margin: 1.5rem;
+  top: 1rem;
+  padding: 1rem;
+	background: #d9abab;
+	border-radius: .4em;
+  font-size: 3em;
+}
+
+#title-speech:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 36px solid transparent;
+	border-top-color: #d9abab;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -18px;
+	margin-bottom: -36px;
+}
+
+/* From Uiverse.io by KSAplay */ 
+.btn {
+  padding: 0.5em 2em 0.5em 2.5em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 15px;
+  color: #fff6fb;
+  letter-spacing: 0.3em;
+  text-shadow: -2px 2px 5px #FD3084;
+  background-color: transparent;
+  border: 2px solid #FEB1DE;
+  box-shadow: 0 0 0px 1px #F11271,
+    0 0 10px 2px #FD3084,
+    inset 0 0 0px 1px #F11271,
+    inset 0 0 10px 2px #FD3084;
+  transition: 100ms;
+}
+
+.btn:hover {
+  box-shadow: 0 0 0px 1px #F11271,
+    0 0 10px 2px #FD3084,
+    inset 0 0 0px 1px #F11271,
+    inset 0 0 30px 2px #FD3084;
+  text-shadow: 0 0 10px #FD3084;
+  transform: translateY(-5px);
+}
+
+.btn:active {
+  box-shadow: 0 0 0px 1px #F11271,
+    0 0 25px 2px #FD3084,
+    inset 0 0 0px 1px #F11271,
+    inset 0 0 30px 2px #FD3084;
+  transform: translateY(1px);
+}
+
+#Layer_1{
+  position: absolute;
+  left: 105rem;
+  top: 47rem;
+  height: 20%;
+}
+
+.tooltipChef {
+  position: absolute;
+  left: 107rem;
+  top: 35rem;
+  /* opacity: 0; */
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 1px, white 1px),
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, white 1px),
+    linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, white 1px),
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, white 1px),
+    linear-gradient(white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px),
+    linear-gradient(-90deg, #aaa 1px, white 1px),
+    linear-gradient(-90deg, white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px),
+    linear-gradient(#aaa 1px, white 1px), #f2f2f2;
+  background-size: 4px 4px, 4px 4px, 80px 80px, 80px 80px, 80px 80px, 80px 80px,
+    80px 80px, 80px 80px;
+  padding: 5px 10px;
+  border: 1px solid rgb(206, 204, 204);
+
+  height: 200px;
+  width: 170px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.2s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+  font-size: 25px;
+  font-weight: 600;
+  text-shadow: 10px salmon;
+
+  transition: opacity 1s ease-out;
+}
+
+
+#Layer_1:hover .tooltipChef {
+  /* top: -90px; */
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+#reward-img,#title-screen {
   background-color: rgba(255, 255, 255, 0);
   background-blend-mode: lighten;
   box-shadow: 0 0 0 0px #ffffff80;
@@ -156,6 +287,7 @@ body {
   margin-right: 20rem;
   gap: 10rem;
   padding: 1rem;
+  opacity: 0;
 }
 
 #score {
@@ -179,17 +311,19 @@ body {
 .labels-to-sort,
 .sorted-labels {
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sorted-labels {
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .label-dropzone {
   background-color: darkblue;
-  width: 4rem;
+  min-width: 4rem;
   padding: 1rem;
 }
 
@@ -1182,8 +1316,8 @@ h4 {
 }
 
 .btn {
-  width: 240px;
-  padding: 10px;
+  width: 30%;
+  padding: 3rem;
   color: #ffffff;
   background-image: linear-gradient(to right, #aa076b, #61045f);
   border: none;
@@ -1195,6 +1329,12 @@ h4 {
   cursor: pointer;
   margin: 20px 0 2px 0;
   transition: all 0.3s;
+
+  position: absolute;
+  left: 30rem;
+  top: 30rem;
+  font-size: 3rem;
+
 }
 
 .btn:hover {
@@ -1412,4 +1552,150 @@ h4 {
   to {
     transform: translateY(250px);
   }
+}
+
+/* From Uiverse.io by 0xnihilism */ 
+.input__container {
+  position: relative;
+  background: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  border: 4px solid #000;
+  max-width: 350px;
+  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  transform: rotateX(10deg) rotateY(-10deg);
+  perspective: 1000px;
+  box-shadow: 10px 10px 0 #000;
+}
+
+.input__container:hover {
+  transform: rotateX(5deg) rotateY(1 deg) scale(1.05);
+  box-shadow: 25px 25px 0 -5px #e9b50b, 25px 25px 0 0 #000;
+}
+
+.shadow__input {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: translateZ(-50px);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 107, 107, 0.4) 0%,
+    rgba(255, 107, 107, 0.1) 100%
+  );
+  filter: blur(20px);
+}
+
+.input__button__shadow {
+  cursor: pointer;
+  border: 3px solid #000;
+  background: #e9b50b;
+  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transform: translateZ(20px);
+  position: relative;
+  z-index: 3;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.input__button__shadow:hover {
+  background: #e9b50b;
+  transform: translateZ(10px) translateX(-5px) translateY(-5px);
+  box-shadow: 5px 5px 0 0 #000;
+}
+
+.input__button__shadow svg {
+  fill: #000;
+  width: 25px;
+  height: 25px;
+}
+
+.input__search {
+  width: 100%;
+  outline: none;
+  border: 3px solid #000;
+  padding: 15px;
+  font-size: 18px;
+  background: #fff;
+  color: #000;
+  transform: translateZ(10px);
+  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  z-index: 3;
+  font-family: "Roboto", Arial, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.input__search::placeholder {
+  color: #666;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.input__search:hover,
+.input__search:focus {
+  background: #f0f0f0;
+  transform: translateZ(20px) translateX(-5px) translateY(-5px);
+  box-shadow: 5px 5px 0 0 #000;
+}
+
+.input__container::before {
+  content: "USERNAME";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: #e9b50b;
+  color: #000;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 14px;
+  transform: translateZ(50px);
+  z-index: 4;
+  border: 2px solid #000;
+}
+
+.age_input::before {
+  content: "AGE";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: #e9b50b;
+  color: #000;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 14px;
+  transform: translateZ(50px);
+  z-index: 4;
+  border: 2px solid #000;
+}
+
+.skill-level{
+  display: flex;
+  font-size: 3rem;
+}
+
+.skill-level input[type="radio"] {
+  border: 0px;
+  transform: scale(2.5);
+  margin-right: 1.5em;
+}
+
+#questions-prev img{
+  height: 40%;
+}
+
+.q-prev{
+  height: 30%;
 }
