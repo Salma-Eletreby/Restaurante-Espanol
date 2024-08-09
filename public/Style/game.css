@@ -1252,7 +1252,7 @@ h4 {
 }
 
 .heading-secondary {
-  font-size: 24px;
+  font-size: 3rem;
   font-weight: 600;
   margin-top: 20px;
   letter-spacing: 2px;
@@ -1265,7 +1265,7 @@ h4 {
 }
 
 .paragraph {
-  font-size: 17px;
+  font-size: 1.5rem;
   line-height: 1.4;
   color: hsl(221, 100%, 96%);
 }
@@ -1697,5 +1697,25 @@ h4 {
 }
 
 .q-prev{
+  height: 30%;
+}
+
+#badge{
+  position: absolute;
+  top: -2rem;
+  left: -5rem;
+  height: 50%;
+}
+
+#position{
+  position: absolute;
+  top: 15rem;
+  left: 6.5rem;
+  font-size: 3rem;
+}
+
+#first-place{
+  position: absolute;
+  top: 5.5rem;
   height: 30%;
 }

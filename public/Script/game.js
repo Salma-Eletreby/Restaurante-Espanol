@@ -6,7 +6,7 @@ let state = {
   name: "",
   age:0,
   questionScore: 0,
-  rewardImgStatus: 0,
+  rewardImgStatus: [],
   showReward: false,
 };
 
@@ -65,7 +65,7 @@ window.toggleCard = function (card) {
 
 function render(data) {
   var cardHTML = ``;
-
+  
   if (state.showReward == true) {
     var failSoundHtml = `
     <audio autoplay>
@@ -83,8 +83,17 @@ function render(data) {
 
     if (data[state.lvlIndex].type == "MCQ") {
       if (state.questionScore >= 30) {
+        var leaderboardHTML = `
+        <div>
+        <svg id="badge" version="1.1" id="_x34_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <g> <polygon style="fill:#59AED3;" points="236.065,345.134 193.183,353.739 191.462,354.097 171.814,317.813 151.09,279.377 135.744,251.124 128.215,237.141 84.258,155.823 0,0 53.351,7.243 116.312,123.769 158.046,200.856 164.572,212.903 196.912,272.708 206.378,290.205 231.189,336.098 231.189,336.17 231.26,336.17 "></polygon> <polygon style="fill:#FFFFFF;" points="280.919,336.202 236.089,345.138 53.369,7.209 106.928,14.426 259.094,295.819 "></polygon> <polygon style="fill:#E26377;" points="325.557,327.207 280.954,336.17 280.883,336.027 259.083,295.798 256,290.062 231.26,244.311 231.117,244.096 201.214,188.737 194.832,176.977 148.581,91.5 106.918,14.413 160.269,21.584 180.706,59.375 237.857,164.93 244.67,177.551 254.781,196.195 256,198.561 280.74,244.311 283.106,248.686 290.779,262.812 294.508,269.696 305.622,290.205 312.65,303.184 "></polygon> </g> <g> <polygon style="fill:#59AED3;" points="512,0 510.135,3.442 383.785,237.141 383.713,237.284 376.256,251.124 360.91,279.377 340.186,317.813 320.538,354.097 318.817,353.739 275.935,345.134 280.74,336.242 280.883,336.027 305.622,290.205 315.088,272.708 347.428,212.903 353.954,200.856 458.649,7.243 507.339,0.646 "></polygon> <polygon style="fill:#FFFFFF;" points="458.649,7.243 353.954,200.856 347.428,212.903 315.088,272.708 305.622,290.205 280.883,336.027 280.74,336.242 275.935,345.134 256,341.118 231.26,336.17 231.117,336.17 231.189,336.098 252.917,295.798 256,290.062 280.74,244.311 280.883,244.096 310.785,188.737 317.167,176.977 405.082,14.413 "></polygon> <polygon style="fill:#E26377;" points="405.082,14.413 317.167,176.977 310.785,188.737 280.883,244.096 280.74,244.311 256,290.062 252.917,295.798 231.189,336.098 231.117,336.17 186.442,327.207 199.35,303.184 206.378,290.205 217.492,269.696 221.221,262.812 228.894,248.686 231.26,244.311 256,198.561 257.219,196.195 267.33,177.551 274.142,164.93 351.731,21.584 "></polygon> </g> </g> <path style="fill:#F2D58E;" d="M404.007,311.789c0,81.748-66.259,148.007-148.007,148.007c-25.242,0-49.049-6.31-69.844-17.497 c-25.744-13.768-46.898-34.922-60.666-60.665c-11.187-20.796-17.497-44.603-17.497-69.845c0-27.249,7.314-52.706,20.222-74.648 c7.96-13.625,18.071-25.887,29.831-36.285c10.972-9.752,23.305-17.784,36.787-23.879c13.41-6.095,27.823-10.254,43.025-12.047 c5.952-0.789,11.976-1.147,18.143-1.147c2.079,0,4.159,0.071,6.239,0.143c0.932,0.072,1.936,0.143,2.868,0.215 c3.012,0.072,6.023,0.358,8.964,0.789h0.071c15.202,1.793,29.616,5.952,43.025,12.047c13.481,6.096,25.815,14.127,36.786,23.879 c11.76,10.398,21.871,22.66,29.831,36.285c5.665,9.609,10.254,19.935,13.553,30.763c0.43,1.506,0.932,3.083,1.362,4.661 c0.431,1.577,0.861,3.155,1.219,4.733c0.43,1.793,0.861,3.585,1.219,5.45c0.43,2.151,0.86,4.303,1.147,6.526 c0.359,2.438,0.717,4.876,0.932,7.386c0.287,2.51,0.502,5.02,0.574,7.529C403.935,306.698,404.007,309.208,404.007,311.789z"></path> <path style="fill:#E6BF7B;" d="M256.007,446.525c-74.299,0-134.736-60.438-134.736-134.73s60.438-134.736,134.736-134.736 c74.286,0,134.724,60.444,134.724,134.736S330.292,446.525,256.007,446.525z"></path> <g style="opacity:0.5;"> <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="134.8072" y1="308.9319" x2="377.1929" y2="308.9319"> <stop offset="0.4926" style="stop-color:#F5E5BB"></stop> <stop offset="0.9901" style="stop-color:#F5E0AF"></stop> </linearGradient> <polygon style="fill:url(#SVGID_1_);" points="255.994,384.819 181.087,424.194 195.4,340.791 134.807,281.725 218.54,269.553 255.994,193.669 293.434,269.553 377.193,281.725 316.587,340.791 330.887,424.194 "></polygon> </g> </g> <path style="opacity:0.08;fill:#040000;" d="M383.785,237.141l-0.072,0.144c5.593,9.609,10.182,19.791,13.625,30.619 c0.43,1.506,0.932,3.083,1.362,4.661c0.431,1.577,0.861,3.155,1.219,4.733c0.43,1.793,0.861,3.585,1.219,5.45 c0.43,2.151,0.86,4.303,1.147,6.526c0.359,2.438,0.717,4.876,0.932,7.386c0.287,2.51,0.502,5.02,0.574,7.529 c0.143,2.51,0.215,5.02,0.215,7.601c0,81.748-66.259,148.007-148.007,148.007V163.783c2.079,0,4.159,0.071,6.239,0.143 c0.932,0.072,1.936,0.143,2.868,0.215c3.012,0.215,5.952,0.502,8.964,0.86v-0.072h0.071l77.589-143.346l53.351-7.171l53.567-7.171 l48.69-6.597L512,0l-1.865,3.442L383.785,237.141z"></path> </g> </g></svg>
+        <p id="position">6th Place</p>
+        </div>
+        `
+        document.getElementById("game-area").innerHTML += leaderboardHTML;
+
         document.getElementById("game-area").innerHTML += trumpetHtml;
-        state.rewardImgStatus = state.rewardImgStatus + 1;
+        state.rewardImgStatus.push("block1")
+        
         document.getElementById("reward-title").textContent = "Congratulations!";
         document.getElementById("reward-sub").textContent = "You have unlocked part of the image";
 
@@ -153,8 +162,19 @@ function render(data) {
         document.getElementById("block2").style.paddingBottom = "18em";
       }
     } else if (data[state.lvlIndex].type == "labels") {
-      state.rewardImgStatus = state.rewardImgStatus + 1;
+      state.rewardImgStatus.forEach(p => {
+        document.getElementById(`${p}`).style.opacity = "0%";
+      })
+
+      var leaderboardHTML = `
+      <div>
+      <svg id="badge" version="1.1" id="_x34_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <g> <polygon style="fill:#59AED3;" points="236.065,345.134 193.183,353.739 191.462,354.097 171.814,317.813 151.09,279.377 135.744,251.124 128.215,237.141 84.258,155.823 0,0 53.351,7.243 116.312,123.769 158.046,200.856 164.572,212.903 196.912,272.708 206.378,290.205 231.189,336.098 231.189,336.17 231.26,336.17 "></polygon> <polygon style="fill:#FFFFFF;" points="280.919,336.202 236.089,345.138 53.369,7.209 106.928,14.426 259.094,295.819 "></polygon> <polygon style="fill:#E26377;" points="325.557,327.207 280.954,336.17 280.883,336.027 259.083,295.798 256,290.062 231.26,244.311 231.117,244.096 201.214,188.737 194.832,176.977 148.581,91.5 106.918,14.413 160.269,21.584 180.706,59.375 237.857,164.93 244.67,177.551 254.781,196.195 256,198.561 280.74,244.311 283.106,248.686 290.779,262.812 294.508,269.696 305.622,290.205 312.65,303.184 "></polygon> </g> <g> <polygon style="fill:#59AED3;" points="512,0 510.135,3.442 383.785,237.141 383.713,237.284 376.256,251.124 360.91,279.377 340.186,317.813 320.538,354.097 318.817,353.739 275.935,345.134 280.74,336.242 280.883,336.027 305.622,290.205 315.088,272.708 347.428,212.903 353.954,200.856 458.649,7.243 507.339,0.646 "></polygon> <polygon style="fill:#FFFFFF;" points="458.649,7.243 353.954,200.856 347.428,212.903 315.088,272.708 305.622,290.205 280.883,336.027 280.74,336.242 275.935,345.134 256,341.118 231.26,336.17 231.117,336.17 231.189,336.098 252.917,295.798 256,290.062 280.74,244.311 280.883,244.096 310.785,188.737 317.167,176.977 405.082,14.413 "></polygon> <polygon style="fill:#E26377;" points="405.082,14.413 317.167,176.977 310.785,188.737 280.883,244.096 280.74,244.311 256,290.062 252.917,295.798 231.189,336.098 231.117,336.17 186.442,327.207 199.35,303.184 206.378,290.205 217.492,269.696 221.221,262.812 228.894,248.686 231.26,244.311 256,198.561 257.219,196.195 267.33,177.551 274.142,164.93 351.731,21.584 "></polygon> </g> </g> <path style="fill:#F2D58E;" d="M404.007,311.789c0,81.748-66.259,148.007-148.007,148.007c-25.242,0-49.049-6.31-69.844-17.497 c-25.744-13.768-46.898-34.922-60.666-60.665c-11.187-20.796-17.497-44.603-17.497-69.845c0-27.249,7.314-52.706,20.222-74.648 c7.96-13.625,18.071-25.887,29.831-36.285c10.972-9.752,23.305-17.784,36.787-23.879c13.41-6.095,27.823-10.254,43.025-12.047 c5.952-0.789,11.976-1.147,18.143-1.147c2.079,0,4.159,0.071,6.239,0.143c0.932,0.072,1.936,0.143,2.868,0.215 c3.012,0.072,6.023,0.358,8.964,0.789h0.071c15.202,1.793,29.616,5.952,43.025,12.047c13.481,6.096,25.815,14.127,36.786,23.879 c11.76,10.398,21.871,22.66,29.831,36.285c5.665,9.609,10.254,19.935,13.553,30.763c0.43,1.506,0.932,3.083,1.362,4.661 c0.431,1.577,0.861,3.155,1.219,4.733c0.43,1.793,0.861,3.585,1.219,5.45c0.43,2.151,0.86,4.303,1.147,6.526 c0.359,2.438,0.717,4.876,0.932,7.386c0.287,2.51,0.502,5.02,0.574,7.529C403.935,306.698,404.007,309.208,404.007,311.789z"></path> <path style="fill:#E6BF7B;" d="M256.007,446.525c-74.299,0-134.736-60.438-134.736-134.73s60.438-134.736,134.736-134.736 c74.286,0,134.724,60.444,134.724,134.736S330.292,446.525,256.007,446.525z"></path> <g style="opacity:0.5;"> <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="134.8072" y1="308.9319" x2="377.1929" y2="308.9319"> <stop offset="0.4926" style="stop-color:#F5E5BB"></stop> <stop offset="0.9901" style="stop-color:#F5E0AF"></stop> </linearGradient> <polygon style="fill:url(#SVGID_1_);" points="255.994,384.819 181.087,424.194 195.4,340.791 134.807,281.725 218.54,269.553 255.994,193.669 293.434,269.553 377.193,281.725 316.587,340.791 330.887,424.194 "></polygon> </g> </g> <path style="opacity:0.08;fill:#040000;" d="M383.785,237.141l-0.072,0.144c5.593,9.609,10.182,19.791,13.625,30.619 c0.43,1.506,0.932,3.083,1.362,4.661c0.431,1.577,0.861,3.155,1.219,4.733c0.43,1.793,0.861,3.585,1.219,5.45 c0.43,2.151,0.86,4.303,1.147,6.526c0.359,2.438,0.717,4.876,0.932,7.386c0.287,2.51,0.502,5.02,0.574,7.529 c0.143,2.51,0.215,5.02,0.215,7.601c0,81.748-66.259,148.007-148.007,148.007V163.783c2.079,0,4.159,0.071,6.239,0.143 c0.932,0.072,1.936,0.143,2.868,0.215c3.012,0.215,5.952,0.502,8.964,0.86v-0.072h0.071l77.589-143.346l53.351-7.171l53.567-7.171 l48.69-6.597L512,0l-1.865,3.442L383.785,237.141z"></path> </g> </g></svg>
+      <p id="position">4th Place</p>
+      </div>
+      `
       if (state.questionScore >= 50) {
+      state.rewardImgStatus.push("block2")
+
         document.getElementById("game-area").innerHTML += trumpetHtml;
         document.getElementById("reward-title").textContent = "Congratulations!";
         document.getElementById("reward-sub").textContent = "You have unlocked part of the image";
@@ -223,21 +243,19 @@ function render(data) {
         document.getElementById("block2").style.paddingBottom = "18em";
       }
     } else if (data[state.lvlIndex].type == "sort") {
-      state.rewardImgStatus = state.rewardImgStatus + 1;
 
-      //remove before pushing
-      state.rewardImgStatus = 3;
-      state.questionScore = 80;
+      state.rewardImgStatus.forEach(p => {
+        document.getElementById(`${p}`).style.opacity = "0%";
+      })
 
       if (state.questionScore >= 80) {
         document.getElementById("game-area").innerHTML += trumpetHtml;
         document.getElementById("block3").style.opacity = "0%";
 
-        //remove before pushing
-        document.getElementById("block1").style.opacity = "0%";
-        document.getElementById("block2").style.opacity = "0%";
+      state.rewardImgStatus.push("block3")
 
-        if (state.rewardImgStatus == 3) {
+        if (state.rewardImgStatus.length == 3) {
+          document.getElementById("block3").style.opacity = "0%";
           document.getElementById("reward-title").textContent = "You unlocked the image!";
           document.getElementById("reward-sub").textContent = "Hover over each image to learn more about it.";
 
@@ -252,6 +270,7 @@ function render(data) {
             <p>Pablo Ruiz Picasso was a Spanish painter, sculptor, printmaker, and theater designer who spent most of his life in France. Painting in a naturalistic manner through his childhood and adolescence, he became one of the best-known figures in 20th-century art</p>
             `;
         } else {
+          document.getElementById("block3").style.opacity = "0%";
           document.getElementById("reward-title").textContent = "Congratulations!";
           document.getElementById("reward-sub").textContent = "You have unlocked part of the image";
         }
@@ -489,18 +508,17 @@ function render(data) {
     state.checkAnswer = true
 
     document.getElementById("game-area").innerHTML = cardHTML;
-
-    setTimeout(function () {
-      document.getElementById("tooltipChef").style.opacity = "0";
-    }, 2000);
-
-    document.getElementById("Layer_1").addEventListener("mouseover", function () {
-      document.getElementById("tooltipChef").style.opacity = "1";
-    });
-
-    document.getElementById("Layer_1").addEventListener("mouseout", function () {
-      document.getElementById("tooltipChef").style.opacity = "0";
-    });
+      setTimeout(function () {
+        document.getElementById("tooltipChef").style.opacity = "0";
+      }, 2000);
+  
+      document.getElementById("Layer_1").addEventListener("mouseover", function () {
+        document.getElementById("tooltipChef").style.opacity = "1";
+      });
+  
+      document.getElementById("Layer_1").addEventListener("mouseout", function () {
+        document.getElementById("tooltipChef").style.opacity = "0";
+      });
   } else if (data[state.lvlIndex].type == "sort") {
     const choicesHTML = data[state.lvlIndex].elements[state.cardIndex].labels
       .map(
@@ -546,6 +564,8 @@ function render(data) {
       checkAnswer: true,
       score: state.score,
       name: state.name,
+      age: state.age,
+      rewardImgStatus: state.rewardImgStatus
     };
 
     document.getElementById("game-area").innerHTML = cardHTML;
@@ -612,6 +632,8 @@ function render(data) {
       checkAnswer: true,
       score: state.score,
       name: state.name,
+      age: state.age,
+      rewardImgStatus: state.rewardImgStatus
     };
 
     document.getElementById("game-area").innerHTML = cardHTML;
@@ -704,6 +726,8 @@ function checkAnswer(data) {
     document.getElementById("sentence").style.textShadow = "0 0 15px white, 0 0 25px white, 0 0 50px white";
   } else if (data[state.lvlIndex].type == "labels") {
     document.getElementsByClassName("labels-to-sort")[0].innerHTML = ``;
+    state.checkAnswer = false;
+    
     data[state.lvlIndex].elements[state.cardIndex].answer.forEach((a, i) => {
       var studentAns = document.getElementById(`zone-${i}`).textContent.replace(/\d+/g, "").replace(/\s+/g, " ").trim();
 
@@ -720,7 +744,6 @@ function checkAnswer(data) {
       } else {
         document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
       }
-      state.checkAnswer = false;
     });
   }
 
@@ -742,7 +765,8 @@ fetch("/api/game")
           checkAnswer: false,
           score: state.score,
           name: state.name,
-          age: state.age
+          age: state.age,
+          rewardImgStatus: state.rewardImgStatus
         },
         data
       );
@@ -756,6 +780,7 @@ fetch("/api/game")
           var userName = document.getElementById("name").value
           var userAge = document.getElementById("age").value
           
+          
           if(userName==""){                
               document.getElementById("name").style.border="0.2rem solid red"
           }
@@ -763,17 +788,20 @@ fetch("/api/game")
               document.getElementById("age").style.border="0.2rem solid red"
           }
           if(userName != "" && userAge != ""){
+            
             setState(
               {
                 cardIndex: 0,
                 lvlIndex: 1 + state.lvlIndex,
                 checkAnswer: false,
                 score: state.score,
-                name: state.name,
-                age: state.age
+                name: userName,
+                age: userAge,
+                rewardImgStatus: state.rewardImgStatus
               },
               data
             );
+            
           }
         } else{
           setState(
@@ -783,7 +811,8 @@ fetch("/api/game")
               checkAnswer: false,
               score: state.score,
               name: state.name,
-              age: state.age
+              age: state.age,
+              rewardImgStatus: state.rewardImgStatus
             },
             data
           );
@@ -805,8 +834,12 @@ fetch("/api/game")
         );
         state.showReward = false;
       } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length && state.lvlIndex + 1 == data.length) {
+        AddToLeaderboard()
         var cardHTML = `
    <div class="results-summary-container">
+   <div>
+   <svg id="first-place" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#428bc1" d="M46.1 2L34.8 18.9h5.6L53 2z"> </path> <path fill="#e8e8e8" d="M40.4 2L29.2 18.9h5.6L46.1 2z"> </path> <path fill="#ed4c5c" d="M34.8 2L23.6 18.9h5.6L40.4 2z"> </path> <g fill="#ffce31"> <circle cx="32" cy="41.4" r="20.6"> </circle> <path d="M21.7 15.1c-.5 0-.9.4-.9.9v8.4c0 .5.4.9.9.9h20.6c.5 0 .9-.4.9-.9V16c0-.5-.4-.9-.9-.9H21.7m19.7 6.6c0 .5-.4.9-.9.9H23.6c-.5 0-.9-.4-.9-.9v-3.8c0-.5.4-.9.9-.9h16.9c.5 0 .9.4.9.9v3.8"> </path> </g> <path d="M14.3 43.8c0-11.2 8.6-20.3 19.6-21.1c-.5 0-1.1-.1-1.6-.1c-10.5 0-19 8.5-19 19.1c0 3.1.8 6.1 2.1 8.7c-.7-2.1-1.1-4.3-1.1-6.6" opacity=".5" fill="#89664c"> </path> <path d="M39.9 57.3C49.2 51.1 52 39 46.6 29.6l.9 1.2c5.8 8.6 3.4 20.3-5.3 26.2c-2.6 1.8-5.5 2.8-8.4 3.1c2.2-.6 4.2-1.5 6.1-2.8" opacity=".33" fill="#ffffff"> </path> <path fill="#ed4c5c" d="M23.6 18.9h5.6L17.9 2H11z"> </path> <path fill="#e8e8e8" d="M29.2 18.9h5.6L23.6 2h-5.7z"> </path> <path opacity=".5" fill="#3e4347" d="M32.9 4.8L30.1 9l6.6 9.9h3.7l1-1.4z"> </path> <path fill="#428bc1" d="M34.8 18.9h5.6L29.2 2h-5.6z"> </path> <g fill="#89664c"> <path d="M26.8 35.2v1c1 0 1.9-.2 2.8-.6v-1.4c-.8.6-1.7.9-2.8 1" opacity=".5"> </path> <path opacity=".5" d="M33.4 28.7h.9v21.6h-.9z"> </path> <path opacity=".5" d="M37.2 51.2V54H26.8v1h11.3v-3.8z"> </path> </g> <g fill="#ffffff"> <path opacity=".33" d="M34.3 50.3h2.8v.9h-2.8z"> </path> <path d="M30.6 28.7h2.8v-.9h-3.8c0 2.1-1.7 3.8-3.8 3.8v3.7c.3 0 .6 0 .9-.1v-2.8c2.2.1 3.9-1.6 3.9-3.7" opacity=".33"> </path> <path d="M30.6 51.2v-16c-.3.2-.6.3-.9.5v14.6h-3.8V54h.9v-2.8h3.8" opacity=".33"> </path> </g> </g></svg>
+   </div>
       <div class="confetti">
         <div class="confetti-piece"></div>
         <div class="confetti-piece"></div>
@@ -838,19 +871,8 @@ fetch("/api/game")
           <p class="paragraph">
             We will send a certicate to your email to share your success with family and friends!
           </p>
-        </div>
-        <div style="font-size:20pt; color:white;">
-            <label for="user">Name:</label>
-            <input type="text" id="user" name="user" style="font-size:20pt; ">
-        </div>
-        <br>
-        <div style="font-size:20pt; color:white;">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" style="font-size:20pt; ">
         </div>    
         <div class="summary__cta">
-          <button class="btn btn__continue">Continue 
-        </button>
         </div>
       </div>
     </div>
@@ -868,6 +890,7 @@ fetch("/api/game")
               score: state.score,
               name: state.name,
               age: state.age,
+              rewardImgStatus: state.rewardImgStatus
             },
             data
           );
@@ -878,8 +901,7 @@ fetch("/api/game")
         if (
           data[state.lvlIndex].type == "vocab" &&
           state.cardIndex == 0 &&
-          confirm(`By clicking OK you cannot go back to this slide!
-          This warning will be displayed once a section`)
+          confirm(`By clicking OK you cannot go back to this slide!\nThis warning will be displayed once a section`)
         ) {
           setState(
             {
@@ -888,7 +910,8 @@ fetch("/api/game")
               checkAnswer: false,
               score: state.score,
               name: state.name,
-              age: state.age
+              age: state.age,
+              rewardImgStatus: state.rewardImgStatus
             },
             data
           );
@@ -900,7 +923,8 @@ fetch("/api/game")
               checkAnswer: false,
               score: state.score,
               name: state.name,
-              age: state.age
+              age: state.age,
+              rewardImgStatus: state.rewardImgStatus
             },
             data
           );
@@ -912,7 +936,8 @@ fetch("/api/game")
               checkAnswer: false,
               score: state.score,
               name: state.name,
-              age: state.age
+              age: state.age,
+              rewardImgStatus: state.rewardImgStatus
             },
             data
           );
@@ -926,12 +951,10 @@ fetch("/api/game")
   });
 
 window.AddToLeaderboard = async function (event) {
-  state.name = document.getElementById("user").value;
-
   let user = {
     userName: state.name,
+    age: state.age,
     score: state.score,
-    ignore: false,
   };
 
   const response = await fetch("/api/scores", {
@@ -942,15 +965,3 @@ window.AddToLeaderboard = async function (event) {
     body: JSON.stringify(user),
   });
 };
-
-function LoadNextStage() {
-  AddToLeaderboard();
-  var cardHTML = `
-            <h1>New Stage: Talking with a friend</h1>
-            <h4>Learn how to mantain small talk with your spanish friend!</h4>
-            <div class="enter-score">
-                <div class="loader"></div>
-            </div>
-            `;
-  document.getElementById("game-area").innerHTML = cardHTML;
-}
