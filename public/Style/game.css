@@ -5,7 +5,7 @@ body {
 }
 
 body {
-  background-image: url("https://img.freepik.com/free-photo/tabletop-looking-out-empty-restaurant_23-2147701293.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid");
+  background-image: url("images/image\ 1.webp");
   background-color: rgba(255, 255, 255, 0.5);
   background-blend-mode: lighten;
   background-size: cover;
@@ -49,12 +49,6 @@ body {
   top: 10rem;
 }
 
-#user-details{
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
 #questions-prev{
   display: flex;
   flex-direction: column;
@@ -85,41 +79,6 @@ body {
 	border-right: 0;
 	margin-left: -18px;
 	margin-bottom: -36px;
-}
-
-/* From Uiverse.io by KSAplay */ 
-.btn {
-  padding: 0.5em 2em 0.5em 2.5em;
-  font-size: 1em;
-  font-weight: bold;
-  border-radius: 15px;
-  color: #fff6fb;
-  letter-spacing: 0.3em;
-  text-shadow: -2px 2px 5px #FD3084;
-  background-color: transparent;
-  border: 2px solid #FEB1DE;
-  box-shadow: 0 0 0px 1px #F11271,
-    0 0 10px 2px #FD3084,
-    inset 0 0 0px 1px #F11271,
-    inset 0 0 10px 2px #FD3084;
-  transition: 100ms;
-}
-
-.btn:hover {
-  box-shadow: 0 0 0px 1px #F11271,
-    0 0 10px 2px #FD3084,
-    inset 0 0 0px 1px #F11271,
-    inset 0 0 30px 2px #FD3084;
-  text-shadow: 0 0 10px #FD3084;
-  transform: translateY(-5px);
-}
-
-.btn:active {
-  box-shadow: 0 0 0px 1px #F11271,
-    0 0 25px 2px #FD3084,
-    inset 0 0 0px 1px #F11271,
-    inset 0 0 30px 2px #FD3084;
-  transform: translateY(1px);
 }
 
 #Layer_1{
@@ -170,15 +129,10 @@ body {
   transition-duration: 0.3s;
 }
 
-#reward-img,#title-screen {
+#title-screen {
   background-color: rgba(255, 255, 255, 0);
   background-blend-mode: lighten;
   box-shadow: 0 0 0 0px #ffffff80;
-}
-
-.reward-title{
-  position: absolute;
-  top: 0.3em;
 }
 
 .reward-sub{
@@ -287,7 +241,7 @@ body {
   margin-right: 20rem;
   gap: 10rem;
   padding: 1rem;
-  opacity: 0;
+  display: none;
 }
 
 #score {
@@ -330,11 +284,6 @@ body {
 .img-drop {
   position: absolute;
   opacity: 50%;
-}
-
-h1 {
-  margin: 0px;
-  margin-top: 2rem;
 }
 
 .label-picture {
@@ -458,10 +407,6 @@ audio {
 
 .element {
   gap: 3rem;
-}
-
-h1 {
-  font-size: 3em;
 }
 
 h4 {
@@ -1316,7 +1261,7 @@ h4 {
 }
 
 .btn {
-  width: 30%;
+  /* width: 30%; */
   padding: 3rem;
   color: #ffffff;
   background-image: linear-gradient(to right, #aa076b, #61045f);
@@ -1718,4 +1663,227 @@ h4 {
   position: absolute;
   top: 5.5rem;
   height: 30%;
+}
+
+/* new styling */
+#Matador{
+  margin-top: 18rem;
+  margin-left: 50rem;
+} 
+
+#speech-bubble-1{
+  position: absolute;
+  top: 8rem;
+  left: 30rem;
+  transform: scale(2) rotateY(180deg);;
+}
+
+#speech-1{
+  position: absolute  ;
+  top: 6rem;
+  left: 28rem;
+  font-size: 2.5rem;
+  white-space: pre; /* Preserve spaces */
+  overflow: hidden;
+  text-align: center;
+}
+
+#title-screen{
+  height: 100%;
+  width:100%;
+  display: block;
+}
+
+#play-btn {
+  margin-top: -1rem;
+  margin-left: 5rem;
+  text-align: center;
+  padding: 0.5em 2em 0.5em 2.5em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 15px;
+  color: #fff6fb;
+  letter-spacing: 0.3em;
+  text-shadow: -2px 2px 5px #FD3084;
+  background-color: transparent;
+  border: 2px solid #FEB1DE;
+  box-shadow: 0 0 0px 1px #F11271,
+    0 0 10px 2px #FD3084,
+    inset 0 0 0px 1px #F11271,
+    inset 0 0 10px 2px #FD3084;
+  transition: 100ms;
+}
+
+/* age/name screen */
+.coolinput {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: static;
+}
+
+.coolinput label.text {
+  font-size: 100%;
+  color: #000000;
+  font-weight: 700;
+  position: relative;
+  top: 0.5rem;
+  margin: 0 0 0 7px;
+  padding: 0 3px;
+  width: fit-content;
+  background-color: white;
+}
+
+.coolinput input[type="text"].input {
+  padding: 11px 10px;
+  font-size: 100%;
+  border: 2px #000000 solid;
+  border-radius: 5px;
+}
+
+.coolinput input[type="text"].input:focus {
+  outline: none;
+}
+
+.coolinput input[type="number"].input {
+  padding: 11px 10px;
+  font-size: 100%;
+  border: 2px #000000 solid;
+  border-radius: 5px;
+}
+
+.coolinput input[type="number"].input:focus {
+  outline: none;
+}
+
+#user-details{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 50%;
+  height: 80%;
+}
+
+#Matador1{
+  position: absolute;
+  top: 18rem;
+  left: 62rem;
+}
+
+#tooltip{
+  position: absolute;
+  top: 6rem;
+  left: 64rem;
+  transform: scale(0.5);
+}
+
+#tip-1{
+  position: absolute;
+  top: 12rem;
+  left: 66rem;
+  /* padding: 0.2rem; */
+  position: absolute;
+  top: 11.5rem;
+  left: 69.5rem;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+}
+
+/* reward screen */
+#reward-img{
+  width: 50%;
+  height: 70%;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#reward-title{
+  font-family:"Playfair Display", serif; 
+  font-weight: bold;
+  text-shadow:  0 0 35px white, 0 0 45px white, 0 0 70px white;
+  font-size: 3rem;
+  margin-top: -1rem;
+}
+
+#reward-score{
+  display: flex;
+}
+
+#reward-score p{
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+#img-reward{
+  width: 50%;
+  height: auto;
+  filter: blur(6px);
+}
+
+@media screen and (min-width: 1920px){
+  #Matador{
+    transform: scale(3) rotateY(180deg);
+    margin-top: 80rem; 
+    margin-left: 170rem;
+  } 
+  
+  #speech-bubble-1{
+    transform: scale(6) rotateY(180deg);
+    top: 40rem;
+    left: 100rem;
+  }
+  
+  #speech-1{
+    transform: scale(3);
+    top: 35rem;
+    left: 98rem;
+  }
+
+  #play-btn{
+    transform: scale(3);
+    top: 95rem;
+    left: 100rem;
+  }
+
+  #Matador1{
+    transform: scale(3) rotateY(180deg);
+    top: 80rem;
+    left: 200rem;
+  } 
+
+  #tooltip{
+    transform: scale(0.8);
+    top: 20rem;
+    left: 190rem;
+  }
+
+  #tip-1{
+    font-size: 5rem;
+    top: 32rem;
+    left: 202rem;
+  }
+
+  .coolinput{
+    transform: scale(4);
+    margin: 20rem;
+  }
+
+  /* reward */
+  #img-reward{
+    width: 100%;
+    filter: blur(12px);
+  }
+
+  #reward-title{
+    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
+    font-size: 8rem;
+  }
+
+  #reward-score p{
+    font-size: 5rem;
+  }
+
+  #reward-img{
+    gap: 5rem;
+  }
 }
