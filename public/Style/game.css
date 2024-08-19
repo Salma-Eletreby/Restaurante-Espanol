@@ -27,9 +27,10 @@ body {
 #reward-img,
 #title-screen,
 #user-details,
-#questions-prev{
+#questions-prev,
+#reward-img-1{
   position: relative;
-  width: 75%;
+  width: 70%;
   height: 80%;
   background-color: #f2f2f2ae;
   border-radius: 10px;
@@ -151,10 +152,6 @@ body {
   gap: 0.5rem;
 }
 
-.vocab-img img {
-  height: 30em;
-}
-
 .card svg {
   width: 48px;
   fill: #333;
@@ -199,14 +196,6 @@ body {
   transform: scale(0);
 }
 
-.card__title {
-  margin: 0;
-  color: black;
-  font-size: 50pt;
-  font-weight: bold;
-  text-shadow: 0 0 15px white, 0 0 25px white, 0 0 50px white;
-}
-
 .card__description {
   margin: 10px 0 0;
   font-size: 14px;
@@ -237,16 +226,20 @@ body {
 #nav {
   display: flex;
   justify-content: space-between;
-  margin-left: 20rem;
-  margin-right: 20rem;
   gap: 10rem;
-  padding: 1rem;
   display: none;
+  align-items: center;
+  margin-left: 12rem;
+  margin-right: 12rem;
+  margin-top: 0.5rem;
 }
 
 #score {
   font-size: 25pt;
   margin-top: 0.5em;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 50%;
 }
 
 /* For game */
@@ -323,7 +316,6 @@ body {
   text-align: center;
 }
 
-/* From Uiverse.io by vinodjangid07 */
 .Btn-Container {
   display: flex;
   width: 170px;
@@ -335,6 +327,7 @@ body {
   align-items: center;
   border: none;
   cursor: pointer;
+  transform: scale(0.7);
 }
 
 .icon-Container {
@@ -379,12 +372,6 @@ body {
   }
 }
 
-.spanish {
-  font-size: 50pt;
-  font-weight: bold;
-  margin: 0.3rem;
-}
-
 audio {
   border: 0.1rem solid rgba(0, 0, 0, 0.361);
   border-radius: 25px;
@@ -399,6 +386,7 @@ audio {
   margin-left: 0.5em;
   height: 4em;
 }
+
 .choices input[type="radio"] {
   border: 0px;
   height: 4em;
@@ -407,10 +395,6 @@ audio {
 
 .element {
   gap: 3rem;
-}
-
-h4 {
-  font-size: 2em;
 }
 
 #MCQAnswer {
@@ -786,7 +770,7 @@ h4 {
   justify-content: center;
 
   position: absolute;
-  top: 45em;
+  top: 55em;
 }
 
 .circle.circle_animate {
@@ -1820,6 +1804,180 @@ h4 {
   filter: blur(6px);
 }
 
+/* vocab styling */
+#data-title{
+  margin-top: 1rem;
+  text-shadow:  0 0 35px white, 0 0 45px white, 0 0 70px white;
+}
+
+#data-subtitle{
+  margin-top: -1rem;
+  text-shadow:  0 0 35px white, 0 0 45px white, 0 0 70px white;
+}
+
+#progress-bar-outside {
+  width: 2000%;
+  height: 30px; 
+  background-color: lightgray;
+  border-radius: 15px; 
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#progress-bar-inside {
+  height: 100%;
+  background-color: green;
+  border-radius: 15px 0 0 15px; 
+  transition: width 0.4s ease; 
+  white-space: pre
+}
+
+#Matador2{
+  position: absolute;
+  top: 20rem;
+  left: 65rem;
+  transform: scale(0.8) rotateY(180deg);
+}
+
+#tooltip2{
+  position: fixed;
+  top: 12rem;
+  left: 70rem;
+}
+
+#tip-2{
+  position: absolute;
+  top: 14rem;
+  left: 71.5rem;
+  font-weight: bold;
+}
+
+.vocab-img img {
+  height: 10em;
+}
+
+.spanish {
+  font-size: 50pt;
+  font-weight: bold;
+  margin: 0.3rem;
+}
+
+.card__title {
+  margin: 0;
+  color: black;
+  font-size: 50pt;
+  font-weight: bold;
+  text-shadow: 0 0 15px white, 0 0 25px white, 0 0 50px white;
+}
+
+/* leaderboard + reward screen */
+#leaderboard {
+  width: 50%;
+  position: absolute;
+  left: -8rem;
+  top: -5rem;
+  transform: scale(0.5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #141a39;
+  cursor: default;
+}
+
+tr {
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.2rem;
+  background-color: #f9f9f9;
+  border: 0.1em solid lightgray;
+}
+
+td {
+  height: 5rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.number {
+  width: 1rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.name {
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.points {
+  font-weight: bold;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.points:first-child {
+  width: 10rem;
+}
+
+.gold-medal {
+  height: 3rem;
+  margin-left: 1.5rem;
+}
+
+.ribbon {
+  width: 42rem;
+  height: 5.5rem;
+  top: -0.5rem;
+  background-color: #5c5be5;
+  position: absolute;
+  left: -1rem;
+  -webkit-box-shadow: 0px 15px 11px -6px #7a7a7d;
+  box-shadow: 0px 15px 11px -6px #7a7a7d;
+}
+
+.ribbon::before {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.8rem;
+  left: 0.35rem;
+  transform: rotate(45deg);
+  background-color: #5c5be5;
+  position: absolute;
+  z-index: -1;
+}
+
+.ribbon::after {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.8rem;
+  right: 0.35rem;
+  transform: rotate(45deg);
+  background-color: #5c5be5;
+  position: absolute;
+  z-index: -1;
+}
+
+#img-reward-1{
+  height: 100%;
+  width: auto;
+  filter: blur(6px);
+}
+
+#reward-img-1{
+  background-color: rgba(255, 255, 255, 0);
+  background-blend-mode: lighten;
+  box-shadow: none;
+}
+
 @media screen and (min-width: 1920px){
   #Matador{
     transform: scale(3) rotateY(180deg);
@@ -1885,5 +2043,112 @@ h4 {
 
   #reward-img{
     gap: 5rem;
+  }
+
+  /* vocab */
+  #Matador2{
+    transform: scale(3) rotateY(180deg);
+    top: 80rem;
+    left: 200rem;
+  } 
+
+  #tooltip2{
+    transform: scale(0.8);
+    top: 20rem;
+    left: 190rem;
+  }
+
+  #tip-2{
+    font-size: 4rem;
+    top: 32rem;
+    left: 202rem;
+  }
+
+  #data-title{
+    margin-top: 0.5rem;
+    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
+    font-size: 8rem;
+  }
+  
+  #data-subtitle{
+    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
+    font-size: 5rem;
+  }
+
+  .card{
+    width: 65%;
+  }
+
+  .vocab-img img {
+    height: 40em;
+  }
+
+  .spanish{
+    font-size: 200pt;
+  }
+
+  audio{
+    transform: scale(1.5);
+  }
+
+  #nav{
+    margin-left: 42rem;
+    margin-right: 42rem;
+    margin-top: 5rem;
+  }
+
+  #next{
+    transform: scale(2.5);
+  }
+
+  #left-side{
+    transform: scale(3);
+  }
+
+  .card__title {
+    font-size: 250pt;
+  }
+
+  /* MCQ */
+  .choices label {
+    font-size: 7rem;
+  }
+
+  .choices input[type="radio"] {
+    transform: scale(6);
+  }
+
+  #incorrect, #correct{
+    font-size: 8rem;
+    margin: 3rem
+  }
+
+  .card{
+    width: 65%;
+  }
+  /* reward + leaderboard */
+  #reward-sub{
+    font-size: 5rem;
+  }
+
+  #leaderboard{
+    transform: scale(1);
+    width: 28%;
+    left: 3rem;
+    top: 4rem;
+  }
+
+  .name, .points{
+    font-size: 3rem;
+  }
+
+  .ribbon{
+    width: 100%;
+    height: 7rem;
+  }
+
+  .animation{
+    transform: scale(2);
+    top: 60em;
   }
 }
