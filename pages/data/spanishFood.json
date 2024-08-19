@@ -226,6 +226,14 @@
         "arabic": "غسالة الأواني",
         "img": "https://img.freepik.com/free-vector/3d-realistic-white-dishwasher-machine-with-three-metal-racks-filled-with-clean-plates-glass_1441-1862.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
         "audio": "https://www.dropbox.com/scl/fi/52zhyc6mi4mrcgxv8o428/Lavavajillas.mp3?rlkey=l1n4stfsi4nx2e7zq0y9o75ma&st=fr4c57v3&dl=1"
+      },
+      {
+        "id": 6,
+        "spanish": "Tostadora",
+        "english": "Toaster",
+        "arabic": "محمصة",
+        "img": "https://img.freepik.com/free-vector/toaster-bread-food-technology_138676-2033.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
+        "audio": "https://www.dropbox.com/scl/fi/nsoglp71t5c3u3x0qfz1w/toaster.mp3?rlkey=rvqc3w9s1wwc3ik36ibe43gzg&st=izbcn1m9&dl=1"
       }
     ]
   },
@@ -237,25 +245,27 @@
     "elements": [
       {
         "id": 1,
-        "img": "https://img.freepik.com/premium-photo/close-up-food-served-plate_1048944-48225.jpg?w=740",
-        "labels": ["El Cuchillo", "El Tenedor", "El Plato", "El Tazón", "La Taza"],
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Food-plate-toast-restaurant_%2824031208550%29.jpg/2560px-Food-plate-toast-restaurant_%2824031208550%29.jpg",
+        "labels": ["El Cuchillo", "El Tenedor", "El Plato", "El Tazón", "La Taza","La Cuchara"],
         "answer": [
-          { "x": 400, "y": 125, "label": "El Cuchillo" },
-          { "x": 650, "y": 125, "label": "La Taza" },
-          { "x": 850, "y": 500, "label": "El Tenedor" },
-          { "x": 900, "y": 160, "label": "El Tazón" },
-          { "x": 600, "y": 500, "label": "El Plato" }
+          { "x": 1400, "y": 950, "label": "El Cuchillo" },
+          { "x": 1700, "y": 300, "label": "La Taza" },
+          { "x": 1350, "y": 550, "label": "El Tenedor" },
+          { "x": 900, "y": 850, "label": "El Tazón" },
+          { "x": 900, "y": 500, "label": "El Plato" },
+          { "x": 1400, "y": 300, "label": "La Cuchara" }
         ]
       },
       {
         "id": 2,
         "img": "https://img.freepik.com/free-vector/kitchen-appliances-concept-illustration_114360-7217.jpg?t=st=1723057404~exp=1723061004~hmac=b743df0765d40252512ad3300ce40ca053488934d8d548d116f75b2ab93af3a2&w=826",
-        "labels": ["Nevera", "Horno", "Licadora", "Estufa"],
+        "labels": ["Nevera", "Tostadora", "Licadora", "Estufa","Horno"],
         "answer": [
-          { "x": 300, "y": 300, "label": "Nevera" },
-          { "x": 700, "y": 550, "label": "Horno" },
-          { "x": 850, "y": 400, "label": "Licadora" },
-          { "x": 750, "y": 450, "label": "Estufa" }
+          { "x": 850, "y": 800, "label": "Nevera" },
+          { "x": 1300, "y": 950, "label": "Horno" },
+          { "x": 1500, "y": 600, "label": "Licadora" },
+          { "x": 1350, "y": 700, "label": "Estufa" },
+          { "x": 1750, "y": 600, "label": "Tostadora" }
         ]
       }
     ]
@@ -349,118 +359,118 @@
       {
         "id": 1,
         "labels": [
-          { "txt": "parrilla", "ignore": false },
           { "txt": "el", "ignore": false },
-          { "txt": "la", "ignore": false },
-          { "txt": "a", "ignore": false },
           { "txt": "quisiera", "ignore": false },
           { "txt": "pollo", "ignore": false },
+          { "txt": "a", "ignore": true },
+          { "txt": "la", "ignore": true },
+          { "txt": "parrilla", "ignore": true },
           { "txt": ",", "ignore": true },
-          { "txt": "favor", "ignore": false },
-          { "txt": "por", "ignore": false }
+          { "txt": "por", "ignore": true },
+          { "txt": "favor", "ignore": true }
         ],
         "answer": [
           { "txt": "quisiera", "ignore": false },
           { "txt": "el", "ignore": false },
           { "txt": "pollo", "ignore": false },
-          { "txt": "a", "ignore": false },
-          { "txt": "la", "ignore": false },
-          { "txt": "parrilla", "ignore": false },
+          { "txt": "a", "ignore": true },
+          { "txt": "la", "ignore": true },
+          { "txt": "parrilla", "ignore": true },
           { "txt": ",", "ignore": true },
-          { "txt": "por", "ignore": false },
-          { "txt": "favor", "ignore": false }
+          { "txt": "por", "ignore": true },
+          { "txt": "favor", "ignore": true }
         ]
       },
       {
         "id": 2,
         "labels": [
-          { "txt": "tomaré", "ignore": false },
-          { "txt": "lasaña", "ignore": false },
-          { "txt": "por", "ignore": false },
-          { "txt": "favor", "ignore": false },
-          { "txt": "la", "ignore": false },
-          { "txt": ",", "ignore": true }
+          { "txt": "ensalada", "ignore": false },
+          { "txt": "tener", "ignore": false },
+          { "txt": "puedo", "ignore": false },
+          { "txt": "una", "ignore": true },
+          { "txt": "de", "ignore": true },
+          { "txt": "la", "ignore": true },
+          { "txt": "casa", "ignore": true },
+          { "txt": "?", "ignore": true }
         ],
         "answer": [
-          { "txt": "tomaré", "ignore": false },
-          { "txt": "la", "ignore": false },
-          { "txt": "lasaña", "ignore": false },
-          { "txt": "por", "ignore": false },
-          { "txt": ",", "ignore": true },
-          { "txt": "favor", "ignore": false }
+          { "txt": "puedo", "ignore": false },
+          { "txt": "tener", "ignore": false },
+          { "txt": "ensalada", "ignore": false },
+          { "txt": "una", "ignore": true },
+          { "txt": "de", "ignore": true },
+          { "txt": "la", "ignore": true },
+          { "txt": "casa", "ignore": true },
+          { "txt": "?", "ignore": true }
         ]
       },
       {
         "id": 3,
         "labels": [
-          { "txt": "puedo", "ignore": true },
-          { "txt": "una", "ignore": false },
-          { "txt": "la", "ignore": false },
-          { "txt": "ensalada", "ignore": false },
-          { "txt": "tener", "ignore": false },
-          { "txt": "casa", "ignore": false },
-          { "txt": "de", "ignore": false },
+          { "txt": "ordenar", "ignore": false },
+          { "txt": "por", "ignore": false },
+          { "txt": "el", "ignore": true },
+          { "txt": "filete", "ignore": true },
+          { "txt": "de", "ignore": true },
+          { "txt": "salmón", "ignore": true },
+          { "txt": ",", "ignore": true },
+          { "txt": "favor", "ignore": false },
+          { "txt": "por", "ignore": false },
           { "txt": "?", "ignore": true }
         ],
         "answer": [
           { "txt": "puedo", "ignore": true },
-          { "txt": "tener", "ignore": false },
-          { "txt": "una", "ignore": false },
-          { "txt": "ensalada", "ignore": false },
-          { "txt": "de", "ignore": false },
-          { "txt": "la", "ignore": false },
-          { "txt": "casa", "ignore": false },
+          { "txt": "ordenar", "ignore": false },
+          { "txt": "el", "ignore": true },
+          { "txt": "filete", "ignore": true },
+          { "txt": "de", "ignore": true },
+          { "txt": "salmón", "ignore": true },
+          { "txt": ",", "ignore": true },
+          { "txt": "por", "ignore": false },
+          { "txt": "favor", "ignore": false },
           { "txt": "?", "ignore": true }
         ]
-      },
-      {
+      },{
         "id": 4,
         "labels": [
-          { "txt": "puedo", "ignore": true },
-          { "txt": "el", "ignore": false },
-          { "txt": "filete", "ignore": false },
-          { "txt": "ordenar", "ignore": false },
-          { "txt": "salmón", "ignore": false },
-          { "txt": ",", "ignore": true },
           { "txt": "por", "ignore": false },
-          { "txt": "favor", "ignore": false },
-          { "txt": "de", "ignore": false },
-          { "txt": "?", "ignore": true }
+          { "txt": "tomaré", "ignore": false },
+          { "txt": "la", "ignore": true },
+          { "txt": "lasaña", "ignore": true },
+          { "txt": ",", "ignore": true },
+          { "txt": "favor", "ignore": false }
         ],
         "answer": [
-          { "txt": "puedo", "ignore": true },
-          { "txt": "ordenar", "ignore": false },
-          { "txt": "el", "ignore": false },
-          { "txt": "filete", "ignore": false },
-          { "txt": "de", "ignore": false },
-          { "txt": "salmón", "ignore": false },
+          { "txt": "tomaré", "ignore": false },
+          { "txt": "la", "ignore": true },
+          { "txt": "lasaña", "ignore": true },
           { "txt": ",", "ignore": true },
           { "txt": "por", "ignore": false },
-          { "txt": "favor", "ignore": false },
-          { "txt": "?", "ignore": true }
+          { "txt": "favor", "ignore": false }
         ]
-      },
+      }
+      ,
       {
         "id": 5,
         "labels": [
-          { "txt": "por", "ignore": true },
-          { "txt": "favor", "ignore": true },
-          { "txt": ",", "ignore": true },
-          { "txt": "de", "ignore": false },
-          { "txt": "agua", "ignore": false },
           { "txt": "tráigame", "ignore": false },
-          { "txt": "botella", "ignore": false },
-          { "txt": "una", "ignore": false }
+          { "txt": "por", "ignore": false },
+          { "txt": ",", "ignore": true },
+          { "txt": "una", "ignore": true },
+          { "txt": "botella", "ignore": true },
+          { "txt": "de", "ignore": true },
+          { "txt": "agua", "ignore": true },
+          { "txt": "favor", "ignore": true }
         ],
         "answer": [
-          { "txt": "por", "ignore": true },
-          { "txt": "favor", "ignore": true },
+          { "txt": "por", "ignore": false },
+          { "txt": "favor", "ignore": false },
           { "txt": ",", "ignore": true },
           { "txt": "tráigame", "ignore": false },
-          { "txt": "una", "ignore": false },
-          { "txt": "botella", "ignore": false },
-          { "txt": "de", "ignore": false },
-          { "txt": "agua", "ignore": false }
+          { "txt": "una", "ignore": true },
+          { "txt": "botella", "ignore": true },
+          { "txt": "de", "ignore": true },
+          { "txt": "agua", "ignore": true }
         ]
       }
     ]

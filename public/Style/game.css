@@ -243,14 +243,6 @@ body {
 }
 
 /* For game */
-.draggable-label {
-  background-color: cyan;
-  font-weight: normal;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  padding: 10px;
-}
-
 .ans-label{
   background-color: #CCD5AE;
 }
@@ -268,20 +260,9 @@ body {
   margin-bottom: 2rem;
 }
 
-.label-dropzone {
-  background-color: darkblue;
-  min-width: 4rem;
-  padding: 1rem;
-}
-
 .img-drop {
   position: absolute;
   opacity: 50%;
-}
-
-.label-picture {
-  flex-direction: column;
-  justify-content: end;
 }
 
 .loader {
@@ -1645,7 +1626,6 @@ audio {
 
 #first-place{
   position: absolute;
-  top: 5.5rem;
   height: 30%;
 }
 
@@ -1857,7 +1837,7 @@ audio {
 }
 
 .spanish {
-  font-size: 50pt;
+  font-size: 25pt;
   font-weight: bold;
   margin: 0.3rem;
 }
@@ -1978,6 +1958,30 @@ td {
   box-shadow: none;
 }
 
+/* label picture styling */
+.label-picture{
+  flex-direction: column;
+  justify-content: start;
+}
+
+.labels-to-sort{
+  margin: 3rem;
+}
+
+.draggable-label {
+  background-color: cyan;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 3rem;
+}
+
+.label-dropzone {
+  background-color: darkblue;
+  min-width: 4rem;
+}
+
 @media screen and (min-width: 1920px){
   #Matador{
     transform: scale(3) rotateY(180deg);
@@ -2075,6 +2079,17 @@ td {
     font-size: 5rem;
   }
 
+  #data-title-2{
+    margin-top: 0.5rem;
+    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
+    font-size: 7rem;
+  }
+  
+  #data-subtitle-2{
+    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
+    font-size: 4rem;
+  }
+
   .card{
     width: 65%;
   }
@@ -2084,7 +2099,7 @@ td {
   }
 
   .spanish{
-    font-size: 200pt;
+    font-size: 100pt;
   }
 
   audio{
@@ -2150,5 +2165,34 @@ td {
   .animation{
     transform: scale(2);
     top: 60em;
+  }
+
+  /* sort sentence */
+  .draggable-label,.label-dropzone{
+    font-size: 5rem;
+  }
+
+  .label-dropzone{
+    padding: 1rem;
+  }
+  #sentence{
+    font-size: 4rem;
+    margin-top: 5rem;
+  }
+
+  /* end page */
+  .heading-tertiary{
+    font-size: 8rem;
+    margin-bottom: 5rem;
+  }
+
+  .result-box{
+    transform: scale(2);
+    margin: 5rem;
+  }
+
+  .result-text-box{
+    transform: scale(2);
+    margin: 7rem;
   }
 }

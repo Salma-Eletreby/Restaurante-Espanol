@@ -5,7 +5,7 @@ let state = {
   score: 0,
   name: "",
   age: 0,
-  rewardImgStatus: [],
+  rewardImgStatus: ["", "", ""],
   showReward: false,
   confirmation: false,
   questionScore: [0, 0, 0],
@@ -46,7 +46,7 @@ window.onDrop = function (event) {
 
   if (dropzone && dropzone.children.length === 0) {
     dropzone.appendChild(draggableElement);
-    draggableElement.style.backgroundColor = "rgb(253, 255, 210)";
+    draggableElement.style.backgroundColor = "rgba(0, 0, 139, 0.546)";
   } else {
     alert("This drop zone can only have one label.");
     draggableElement.style.backgroundColor = "cyan";
@@ -58,10 +58,13 @@ window.toggleCard = function (card) {
   card.classList.toggle("active");
 };
 
+var check = 0;
 async function render(data) {
   var cardHTML = ``;
 
   if (state.showReward == true) {
+    ++check;
+
     let user = {
       userName: state.name,
       age: state.age,
@@ -87,19 +90,76 @@ async function render(data) {
     cardHTML = rewardHtml;
     document.getElementById("game-area").innerHTML = cardHTML;
 
-    if (state.score >= 80) {
+    var endScreenHTML = `
+    <svg id="tooltip" fill="#000000" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" id="memory-tooltip-above"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 1H20V2H21V16H20V17H15V18H14V19H13V20H12V21H10V20H9V19H8V18H7V17H2V16H1V2H2V1M3 3V15H8V16H9V17H10V18H12V17H13V16H14V15H19V3H3Z"></path></g><div id="tip-1">Delicious</div></svg>
+          <svg id="Matador1" width="256px" height="256px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000" transform="matrix(-1, 0, 0, 1, 0, 0)">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>matador</title>
+              <g id="matador">
+                <path d="M17,34H29V62l-1.061-1.191A7.376,7.376,0,0,1,26.4,58.067L23.972,40.4,18,62h0a9.814,9.814,0,0,1-2.008-5.4Z" style="fill: #f53e28; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
+                <path d="M33,26.8a2.007,2.007,0,0,1-1.019-.554l-7.6-7.7a2,2,0,1,1,2.847-2.809l6.858,6.951,9.568-1.7a2,2,0,0,1,.7,3.938l-10.6,1.889A2,2,0,0,1,33,26.8Z" style="fill: #ffce56; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
+                <rect x="19" y="7" width="5" height="8" style="fill: #ffe8dc; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></rect>
+                <path d="M11.722,28.311a2,2,0,0,0,.957-.655l6.766-8.439a2,2,0,1,0-3.12-2.5l-6.109,7.618-6.692-.715a2,2,0,0,0-.294,3.99l7.741.791A1.994,1.994,0,0,0,11.722,28.311Z" style="fill: #ffce56; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
+                <path d="M22,1h1a4,4,0,0,1,4,4v7a0,0,0,0,1,0,0H22.317A4.317,4.317,0,0,1,18,7.683V5A4,4,0,0,1,22,1Z" style="fill: #ffe8dc; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
+                <path d="M19.258,15h5.8A3.941,3.941,0,0,1,29,18.941V34a0,0,0,0,1,0,0H17a0,0,0,0,1,0,0V17.258A2.258,2.258,0,0,1,19.258,15Z" style="fill: #ffce56; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
+                <line x1="23.972" y1="40.402" x2="28.681" y2="34.407" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
+                <path d="M48.117,18.459l6.6,3.865a4.4,4.4,0,0,1,2.936,3.385l5.161,28.385a2.7,2.7,0,0,1-3.565,3.027l-2.523-1.616c-1.564-.558-1.246-.708-2.885-.435l-1.174.2c-3.664.61-6.346-.985-8.407-4.076h0a12.119,12.119,0,0,0-8.58-5.3l-.959-.12-3.231-10.5L43.349,19.911A4.305,4.305,0,0,1,48.117,18.459Z" style="fill: #f53e28; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
+                <line x1="50.857" y1="54.95" x2="51" y2="44" style="fill: #f53e28; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
+                <polyline points="38 28 42 33 41 36" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></polyline>
+                <line x1="50" y1="20" x2="51" y2="31" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
+                <line x1="61" y1="45" x2="58" y2="48" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
+                <line x1="50" y1="13" x2="50" y2="10" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
+                <line x1="53" y1="13" x2="55" y2="11" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
+                <line x1="47" y1="13" x2="45" y2="11" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
+              </g>
+            </g>
+          </svg>
+        <h1 id="reward-title">Congratulations!</h1>
+        <h4 id="reward-sub">You have cleared the image</h4>
+        <div id="reward-img">
+          <div id="reward-score">
+            <img id="img-reward" src="../Style/images/reward.jpg" alt="reward">
+            <p id="reward-text">
+              Delicious tapas!
+              the word tapas, a plural is derived from <br>
+              the spanish verb tapar, "to cover", a cognate <br>
+              of the English top. <br>
+              Tapas is a famous appetizer that can be served <br>
+              hot or cold
+            </p>
+          </div>
+        </div>
+    `;
+    if (state.score >= 80 && check == 3) {
+      if (state.rewardImgStatus[2] == "") {
+        state.rewardImgStatus[2] = "80";
+
+        if (state.rewardImgStatus[1] == "50" && state.rewardImgStatus[0] == "30") {
+          document.getElementById("game-area").innerHTML = endScreenHTML;
+        } else if (state.rewardImgStatus[1] == "50" || state.rewardImgStatus[0] == "30") {
+          document.getElementById("reward-title").textContent = "Try harder next time!";
+          document.getElementById("reward-sub").textContent = "You were close but did not fully clear the image";
+        } else {
+          document.getElementById("reward-title").textContent = "Amazing!";
+          document.getElementById("reward-sub").textContent = "You have cleared part of the image";
+        }
+      } else {
+        state.rewardImgStatus.push("fail");
+        document.getElementById("reward-title").textContent = "Oops!";
+        document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
+      }
+
       var allScores = await fetch("/api/scores").then((res) => res.json());
       allScores.push(user);
 
       allScores.sort((a, b) => b - a);
       var position = allScores.findIndex((u) => u === user) + 1;
 
-      document.getElementById("reward-title").textContent = "Amazing!";
-      document.getElementById("reward-sub").textContent = "You have cleared part of the image";
-
       document.getElementById("reward-title").style.margin = "0.5rem";
       document.getElementById("reward-sub").style.margin = "0.5rem";
-      document.getElementById("img-reward-1").style.filter = "blur(0px)";
+      document.getElementById("img-reward").style.filter = "blur(0px)";
 
       var leaderboardHTML = `
       <div id="leaderboard">
@@ -129,7 +189,7 @@ async function render(data) {
       </div>
       `;
       document.getElementById("game-area").innerHTML += leaderboardHTML;
-
+      document.getElementById("game-area").innerHTML += trumpetHtml;
       var achievmentHtml = `
       <div class="animation">
           <div class="circle">
@@ -189,19 +249,33 @@ async function render(data) {
 
       function handleScreenSizeChange(event) {
         if (event.matches) {
+          document.getElementById("reward-img").style.marginTop = "5rem";
         }
       }
 
       handleScreenSizeChange(mediaQuery);
-    } else if (state.score >= 50) {
+    } else if (state.score >= 50 && check == 2) {
+      if (state.rewardImgStatus[1] == "") {
+        state.rewardImgStatus[1] = "50";
+
+        if (state.rewardImgStatus[0] == "30") {
+          document.getElementById("reward-title").textContent = "Impressive Progress!";
+          document.getElementById("reward-sub").textContent = "Another part has cleared up.";
+        } else {
+          document.getElementById("reward-title").textContent = "Amazing!";
+          document.getElementById("reward-sub").textContent = "You have cleared part of the image";
+        }
+      } else {
+        state.rewardImgStatus.push("fail");
+        document.getElementById("reward-title").textContent = "Oops!";
+        document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
+      }
+
       var allScores = await fetch("/api/scores").then((res) => res.json());
       allScores.push(user);
 
       allScores.sort((a, b) => b.score - a.score);
       var position = allScores.findIndex((u) => u === user) + 1;
-
-      document.getElementById("reward-title").textContent = "Amazing!";
-      document.getElementById("reward-sub").textContent = "You have cleared part of the image";
 
       document.getElementById("reward-title").style.margin = "0.5rem";
       document.getElementById("reward-sub").style.margin = "0.5rem";
@@ -235,6 +309,7 @@ async function render(data) {
       </div>
       `;
       document.getElementById("game-area").innerHTML += leaderboardHTML;
+      document.getElementById("game-area").innerHTML += trumpetHtml;
 
       var achievmentHtml = `
       <div class="animation">
@@ -301,14 +376,21 @@ async function render(data) {
 
       handleScreenSizeChange(mediaQuery);
     } else if (state.score >= 30) {
+      if (state.rewardImgStatus[0] == "") {
+        state.rewardImgStatus[0] = "30";
+
+        document.getElementById("reward-title").textContent = "Amazing!";
+        document.getElementById("reward-sub").textContent = "You have cleared part of the image";
+      } else {
+        document.getElementById("reward-title").textContent = "Oops!";
+        document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
+      }
+
       var allScores = await fetch("/api/scores").then((res) => res.json());
       allScores.push(user);
 
       allScores.sort((a, b) => b - a);
       var position = allScores.findIndex((u) => u === user) + 1;
-
-      document.getElementById("reward-title").textContent = "Amazing!";
-      document.getElementById("reward-sub").textContent = "You have cleared part of the image";
 
       document.getElementById("reward-title").style.margin = "0.5rem";
       document.getElementById("reward-sub").style.margin = "0.5rem";
@@ -373,6 +455,7 @@ async function render(data) {
       `;
 
       document.getElementById("game-area").innerHTML += achievmentHtml;
+      document.getElementById("game-area").innerHTML += trumpetHtml;
 
       const animatedElements = [
         {
@@ -408,6 +491,56 @@ async function render(data) {
 
       handleScreenSizeChange(mediaQuery);
     } else {
+      document.getElementById("reward-title").textContent = "Oops!";
+      document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
+
+      var allScores = await fetch("/api/scores").then((res) => res.json());
+      allScores.push(user);
+
+      allScores.sort((a, b) => b - a);
+      var position = allScores.findIndex((u) => u === user) + 1;
+
+      document.getElementById("reward-title").style.margin = "0.5rem";
+      document.getElementById("reward-sub").style.margin = "0.5rem";
+      document.getElementById("img-reward-1").style.filter = "blur(6px)";
+
+      var leaderboardHTML = `
+        <div id="leaderboard">
+          <div class="ribbon"></div>
+          <table>
+            <tr>
+              <td class="number">1</td>
+              <td class="name">${allScores[0].userName}</td>
+              <td class="points">${allScores[0].totalScore} <img class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" alt="gold medal" /></td>
+            </tr>
+            <tr>
+              <td class="number">2</td>
+              <td class="name">${allScores[1].userName}</td>
+              <td class="points">${allScores[1].totalScore}</td>
+            </tr>
+            <tr>
+              <td class="number">3</td>
+              <td class="name">${allScores[2].userName}</td>
+              <td class="points">${allScores[2].totalScore}</td>
+            </tr>
+            <tr>
+              <td class="number">${position}</td>
+              <td class="name">${state.name}</td>
+              <td class="points">${state.score}</td>
+            </tr>
+          </table>
+        </div>
+        `;
+      document.getElementById("game-area").innerHTML += leaderboardHTML;
+      const mediaQuery = window.matchMedia("(min-width: 1920px)");
+
+      function handleScreenSizeChange(event) {
+        if (event.matches) {
+          document.getElementById("img-reward-1").style.filter = "blur(12px)";
+        }
+      }
+
+      handleScreenSizeChange(mediaQuery);
     }
   } else if (state.lvlIndex === -2) {
     cardHTML = `
@@ -698,6 +831,10 @@ async function render(data) {
 
     document.getElementById("game-area").innerHTML = cardHTML;
   } else if (data[state.lvlIndex].type == "sort") {
+    document.getElementById("left-side").innerHTML = `
+    <p id="score">Score: ${state.score}</p>
+    `;
+
     document.getElementById("next").innerHTML = `
     <span class="text">Next</span>
 <span class="icon-Container">
@@ -720,7 +857,7 @@ async function render(data) {
       .map(
         (c, i) => `
           <div id="word-${i}" class="label-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);" ${c.ignore == false ? 'style="background-color:#B5CFB7"' : 'style="background-color:rgba(0, 0, 0, 0);"'} >
-                <div id="draggable-${i}" class="draggable-label" ${c.ignore == false ? 'draggable="true" style="font-size:2.5rem;position: relative;"' : 'draggable="false" style="font-size:2.5rem;position: relative; background-color: rgba(0, 0, 0, 0);"'} draggable="true" ondragstart="onDragStart(event);">
+                <div id="draggable-${i}" class="draggable-label" ${c.ignore == false ? 'draggable="true" style="position: relative;"' : 'draggable="false" style="position: relative; background-color: rgba(0, 0, 0, 0);"'} draggable="true" ondragstart="onDragStart(event);">
                     ${c.txt}
                 </div>
           </div>
@@ -731,7 +868,7 @@ async function render(data) {
     const sortedHTML = data[state.lvlIndex].elements[state.cardIndex].answer
       .map(
         (c, i) => `
-            <div id="zone-${i}" class="label-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);" ${c.ignore == false ? "" : ' style="background-color: rgba(0, 0, 0, 0);font-size:2.5rem;"'}">
+            <div id="zone-${i}" class="label-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);" ${c.ignore == false ? "" : ' style="background-color: rgba(0, 0, 0, 0);"'}">
             ${c.ignore == true ? `${c.txt}` : ""}
             </div>
             `
@@ -739,8 +876,8 @@ async function render(data) {
       .join("");
 
     cardHTML = `   
-            <h1>${data[state.lvlIndex].title}</h1>
-            <h4>${data[state.lvlIndex].desc}</h4>
+            <h1 id="data-title-2">${data[state.lvlIndex].title}</h1>
+            <h4 id="data-subtitle-2">${data[state.lvlIndex].desc}</h4>
             <div class="sort-area">
                     <div class="labels-to-sort">
                     ${choicesHTML}
@@ -767,22 +904,26 @@ async function render(data) {
 
     document.getElementById("game-area").innerHTML = cardHTML;
   } else if (data[state.lvlIndex].type == "labels") {
+    document.getElementById("left-side").innerHTML = `
+    <p id="score">Score: ${state.score}</p>
+    `;
+
     document.getElementById("next").innerHTML = `
     <span class="text">Next</span>
-<span class="icon-Container">
-  <svg width="16" height="19" viewBox="0 0 16 19" fill="nones" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="1.61321" cy="1.61321" r="1.5" fill="black"></circle>
-    <circle cx="5.73583" cy="1.61321" r="1.5" fill="black"></circle>
-    <circle cx="5.73583" cy="5.5566" r="1.5" fill="black"></circle>
-    <circle cx="9.85851" cy="5.5566" r="1.5" fill="black"></circle>
-    <circle cx="9.85851" cy="9.5" r="1.5" fill="black"></circle>
-    <circle cx="13.9811" cy="9.5" r="1.5" fill="black"></circle>
-    <circle cx="5.73583" cy="13.4434" r="1.5" fill="black"></circle>
-    <circle cx="9.85851" cy="13.4434" r="1.5" fill="black"></circle>
-    <circle cx="1.61321" cy="17.3868" r="1.5" fill="black"></circle>
-    <circle cx="5.73583" cy="17.3868" r="1.5" fill="black"></circle>
-  </svg>
-</span>
+      <span class="icon-Container">
+        <svg width="16" height="19" viewBox="0 0 16 19" fill="nones" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="1.61321" cy="1.61321" r="1.5" fill="black"></circle>
+          <circle cx="5.73583" cy="1.61321" r="1.5" fill="black"></circle>
+          <circle cx="5.73583" cy="5.5566" r="1.5" fill="black"></circle>
+          <circle cx="9.85851" cy="5.5566" r="1.5" fill="black"></circle>
+          <circle cx="9.85851" cy="9.5" r="1.5" fill="black"></circle>
+          <circle cx="13.9811" cy="9.5" r="1.5" fill="black"></circle>
+          <circle cx="5.73583" cy="13.4434" r="1.5" fill="black"></circle>
+          <circle cx="9.85851" cy="13.4434" r="1.5" fill="black"></circle>
+          <circle cx="1.61321" cy="17.3868" r="1.5" fill="black"></circle>
+          <circle cx="5.73583" cy="17.3868" r="1.5" fill="black"></circle>
+        </svg>
+    </span>
 `;
     const choicesHTML = data[state.lvlIndex].elements[state.cardIndex].labels
       .map(
@@ -807,8 +948,8 @@ async function render(data) {
       .join("");
 
     cardHTML = `
-            <h1>${data[state.lvlIndex].title}</h1>
-            <h4>${data[state.lvlIndex].desc}</h4>
+            <h1 id="data-title-2">${data[state.lvlIndex].title}</h1>
+            <h4 id="data-subtitle-2">${data[state.lvlIndex].desc}</h4>
             <div class="label-picture">
                 <div class="labels-to-sort">
                         ${choicesHTML}
@@ -820,7 +961,7 @@ async function render(data) {
                 background-size: contain;
                 background-position: center; 
                 background-repeat: no-repeat;
-                max-height:43em
+                max-height:65em
                 ">
                 ${areasHTML}
                 </div>
@@ -842,8 +983,6 @@ async function render(data) {
 
     document.getElementById("game-area").innerHTML = cardHTML;
   }
-
-  // document.getElementById('game-area').innerHTML = cardHTML
 }
 
 function checkAnswer(data) {
@@ -898,48 +1037,102 @@ function checkAnswer(data) {
       state.checkAnswer = false;
     }
   } else if (data[state.lvlIndex].type == "sort") {
-    data[state.lvlIndex].elements[state.cardIndex].answer.forEach((a, i) => {
-      if (a.ignore == false) {
-        var studentAns = document.getElementById(`zone-${i}`).textContent.replace(/\s+/g, "");
+    var unanswered = false;
+    var unansweredSort = [];
 
-        if (studentAns.toLowerCase() == a.txt.toLowerCase()) {
-          document.getElementById(`zone-${i}`).style.backgroundColor = "lightgreen";
-          state.score = state.score + 10;
-          state.questionScore = state.questionScore + 10;
+    var sortedLabelDivs = document.querySelectorAll(".sorted-labels");
+    var dropZones = Array.from(sortedLabelDivs).flatMap((d) => Array.from(d.querySelectorAll(".label-dropzone")));
+
+    Array.from(dropZones).forEach((d, i) => {
+      if (d && d.children.length === 0) {
+        if (window.getComputedStyle(d).backgroundColor === "rgba(0, 0, 0, 0)") {
         } else {
-          document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
+          unanswered = true;
+          unansweredSort.push(d);
         }
+      } else {
+        d.style.border = "none";
       }
-      state.checkAnswer = false;
     });
 
-    var sentence = data[state.lvlIndex].elements[state.cardIndex].answer.map((item) => item.txt).join(" ");
-    document.getElementById("sentence").innerHTML += `<h4>Answer: ${sentence}</h4>`;
-    document.getElementById("sentence").classList.add("bounceInFromLeft");
-    document.getElementById("sentence").style.backgroundColor = "lightgreen";
-    document.getElementById("sentence").style.borderRadius = "10px";
-    document.getElementById("sentence").style.textShadow = "0 0 15px white, 0 0 25px white, 0 0 50px white";
+    var questions = document.getElementsByClassName("sort-area");
+
+    if (unanswered == true) {
+      alert("Please make sure that all the questions have been answered.");
+      unansweredSort.forEach((q) => {
+        q.style.border = "1rem solid red";
+      });
+    } else {
+      data[state.lvlIndex].elements[state.cardIndex].answer.forEach((a, i) => {
+        if (a.ignore == false) {
+          var studentAns = document.getElementById(`zone-${i}`).textContent.replace(/\s+/g, "");
+
+          if (studentAns.toLowerCase() == a.txt.toLowerCase()) {
+            document.getElementById(`zone-${i}`).style.backgroundColor = "lightgreen";
+            state.score = state.score + 10;
+            state.questionScore = state.questionScore + 10;
+          } else {
+            document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
+          }
+        }
+        state.checkAnswer = false;
+      });
+
+      var sentence = data[state.lvlIndex].elements[state.cardIndex].answer.map((item) => item.txt).join(" ");
+      document.getElementById("sentence").innerHTML += `<h4>Answer: ${sentence}</h4>`;
+      document.getElementById("sentence").classList.add("bounceInFromLeft");
+      document.getElementById("sentence").style.backgroundColor = "lightgreen";
+      document.getElementById("sentence").style.borderRadius = "10px";
+      document.getElementById("sentence").style.textShadow = "0 0 15px white, 0 0 25px white, 0 0 50px white";
+    }
   } else if (data[state.lvlIndex].type == "labels") {
-    document.getElementsByClassName("labels-to-sort")[0].innerHTML = ``;
-    state.checkAnswer = false;
+    var unanswered = false;
+    var unansweredSort = [];
 
-    data[state.lvlIndex].elements[state.cardIndex].answer.forEach((a, i) => {
-      var studentAns = document.getElementById(`zone-${i}`).textContent.replace(/\d+/g, "").replace(/\s+/g, " ").trim();
+    var sortedLabelDivs = document.querySelectorAll("#labelled-picture");
+    var dropZones = Array.from(sortedLabelDivs).flatMap((d) => Array.from(d.querySelectorAll(".label-dropzone")));
 
-      document.getElementsByClassName("labels-to-sort")[0].innerHTML += `
+    Array.from(dropZones).forEach((d, i) => {
+      if (d && d.children.length === 0) {
+        if (window.getComputedStyle(d).backgroundColor === "rgba(0, 0, 0, 0)") {
+        } else {
+          unanswered = true;
+          unansweredSort.push(d);
+        }
+      } else {
+        d.style.border = "none";
+      }
+    });
+
+    var questions = document.getElementsByClassName("sort-area");
+
+    if (unanswered == true) {
+      alert("Please make sure that all the questions have been answered.");
+      unansweredSort.forEach((q) => {
+        q.style.border = "1rem solid red";
+      });
+    } else {
+      document.getElementsByClassName("labels-to-sort")[0].innerHTML = ``;
+      state.checkAnswer = false;
+
+      data[state.lvlIndex].elements[state.cardIndex].answer.forEach((a, i) => {
+        var studentAns = document.getElementById(`zone-${i}`).textContent.replace(/\d+/g, "").replace(/\s+/g, " ").trim();
+
+        document.getElementsByClassName("labels-to-sort")[0].innerHTML += `
       <div id="draggable-${i}" class="draggable-label ans-label">
             ${i} - ${a.label}
             </div>
       `;
 
-      if (studentAns.toLowerCase() == a.label.toLowerCase()) {
-        document.getElementById(`zone-${i}`).style.backgroundColor = "lightgreen";
-        state.questionScore = state.questionScore + 10;
-        state.score = state.score + 10;
-      } else {
-        document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
-      }
-    });
+        if (studentAns.toLowerCase() == a.label.toLowerCase()) {
+          document.getElementById(`zone-${i}`).style.backgroundColor = "lightgreen";
+          state.questionScore = state.questionScore + 10;
+          state.score = state.score + 10;
+        } else {
+          document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
+        }
+      });
+    }
   }
 
   document.getElementById("score").innerHTML = `Score: ${state.score}`;
@@ -1038,10 +1231,11 @@ fetch("/api/game")
         state.showReward = false;
       } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length && state.lvlIndex + 1 == data.length) {
         AddToLeaderboard();
+        document.getElementById("game-area").style.height = "100%";
         var cardHTML = `
    <div class="results-summary-container">
    <div>
-   <svg id="first-place" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#428bc1" d="M46.1 2L34.8 18.9h5.6L53 2z"> </path> <path fill="#e8e8e8" d="M40.4 2L29.2 18.9h5.6L46.1 2z"> </path> <path fill="#ed4c5c" d="M34.8 2L23.6 18.9h5.6L40.4 2z"> </path> <g fill="#ffce31"> <circle cx="32" cy="41.4" r="20.6"> </circle> <path d="M21.7 15.1c-.5 0-.9.4-.9.9v8.4c0 .5.4.9.9.9h20.6c.5 0 .9-.4.9-.9V16c0-.5-.4-.9-.9-.9H21.7m19.7 6.6c0 .5-.4.9-.9.9H23.6c-.5 0-.9-.4-.9-.9v-3.8c0-.5.4-.9.9-.9h16.9c.5 0 .9.4.9.9v3.8"> </path> </g> <path d="M14.3 43.8c0-11.2 8.6-20.3 19.6-21.1c-.5 0-1.1-.1-1.6-.1c-10.5 0-19 8.5-19 19.1c0 3.1.8 6.1 2.1 8.7c-.7-2.1-1.1-4.3-1.1-6.6" opacity=".5" fill="#89664c"> </path> <path d="M39.9 57.3C49.2 51.1 52 39 46.6 29.6l.9 1.2c5.8 8.6 3.4 20.3-5.3 26.2c-2.6 1.8-5.5 2.8-8.4 3.1c2.2-.6 4.2-1.5 6.1-2.8" opacity=".33" fill="#ffffff"> </path> <path fill="#ed4c5c" d="M23.6 18.9h5.6L17.9 2H11z"> </path> <path fill="#e8e8e8" d="M29.2 18.9h5.6L23.6 2h-5.7z"> </path> <path opacity=".5" fill="#3e4347" d="M32.9 4.8L30.1 9l6.6 9.9h3.7l1-1.4z"> </path> <path fill="#428bc1" d="M34.8 18.9h5.6L29.2 2h-5.6z"> </path> <g fill="#89664c"> <path d="M26.8 35.2v1c1 0 1.9-.2 2.8-.6v-1.4c-.8.6-1.7.9-2.8 1" opacity=".5"> </path> <path opacity=".5" d="M33.4 28.7h.9v21.6h-.9z"> </path> <path opacity=".5" d="M37.2 51.2V54H26.8v1h11.3v-3.8z"> </path> </g> <g fill="#ffffff"> <path opacity=".33" d="M34.3 50.3h2.8v.9h-2.8z"> </path> <path d="M30.6 28.7h2.8v-.9h-3.8c0 2.1-1.7 3.8-3.8 3.8v3.7c.3 0 .6 0 .9-.1v-2.8c2.2.1 3.9-1.6 3.9-3.7" opacity=".33"> </path> <path d="M30.6 51.2v-16c-.3.2-.6.3-.9.5v14.6h-3.8V54h.9v-2.8h3.8" opacity=".33"> </path> </g> </g></svg>
+   <svg id="first-place" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Flat"> <g id="Color"> <polygon fill="#111315" points="20 20 32 32 39 3 24 3 20 20"></polygon> <polygon fill="#a60416" points="34.89 3 28.68 28.68 23.33 23.33 28.11 3 34.89 3"></polygon> <polygon fill="#212529" points="44 20 32 32 25 3 40 3 44 20"></polygon> <polygon fill="#dd051d" points="40.67 23.33 35.32 28.68 29.11 3 35.89 3 40.67 23.33"></polygon> <path d="M34,39.6l2.22,3.87a2.33,2.33,0,0,0,1.56,1.11l4.45.87A2.25,2.25,0,0,1,43.5,49.2l-3.08,3.26a2.24,2.24,0,0,0-.6,1.8l.53,4.41A2.3,2.3,0,0,1,37.09,61L33,59.13a2.42,2.42,0,0,0-1.94,0L26.91,61a2.3,2.3,0,0,1-3.26-2.32l.53-4.41a2.24,2.24,0,0,0-.6-1.8L20.5,49.2a2.25,2.25,0,0,1,1.25-3.75l4.45-.87a2.33,2.33,0,0,0,1.56-1.11L30,39.6A2.34,2.34,0,0,1,34,39.6Z" fill="#fccd1d"></path> <path d="M32,31a4,4,0,1,0,4,4A4,4,0,0,0,32,31Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,32,37Z" fill="#f9a215"></path> </g> </g> </g></svg>
    </div>
       <div class="confetti">
         <div class="confetti-piece"></div>
