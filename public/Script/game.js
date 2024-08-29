@@ -245,7 +245,7 @@ async function render(data) {
         }
       });
 
-      const mediaQuery = window.matchMedia("(min-width: 1920px)");
+      const mediaQuery = window.matchMedia("(min-width: 1800px)");
 
       function handleScreenSizeChange(event) {
         if (event.matches) {
@@ -366,7 +366,7 @@ async function render(data) {
         }
       });
 
-      const mediaQuery = window.matchMedia("(min-width: 1920px)");
+      const mediaQuery = window.matchMedia("(min-width: 1800px)");
 
       function handleScreenSizeChange(event) {
         if (event.matches) {
@@ -481,7 +481,7 @@ async function render(data) {
         }
       });
 
-      const mediaQuery = window.matchMedia("(min-width: 1920px)");
+      const mediaQuery = window.matchMedia("(min-width: 1800px)");
 
       function handleScreenSizeChange(event) {
         if (event.matches) {
@@ -532,7 +532,7 @@ async function render(data) {
         </div>
         `;
       document.getElementById("game-area").innerHTML += leaderboardHTML;
-      const mediaQuery = window.matchMedia("(min-width: 1920px)");
+      const mediaQuery = window.matchMedia("(min-width: 1800px)");
 
       function handleScreenSizeChange(event) {
         if (event.matches) {
@@ -544,6 +544,7 @@ async function render(data) {
     }
   } else if (state.lvlIndex === -2) {
     cardHTML = `
+    <div id="user-info-guide">
     <svg id="tooltip" fill="#000000" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" id="memory-tooltip-above"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 1H20V2H21V16H20V17H15V18H14V19H13V20H12V21H10V20H9V19H8V18H7V17H2V16H1V2H2V1M3 3V15H8V16H9V17H10V18H12V17H13V16H14V15H19V3H3Z"></path></g><div id="tip-1">Please enter <br>your name<br> and age</div></svg>
           <svg id="Matador1" width="256px" height="256px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000" transform="matrix(-1, 0, 0, 1, 0, 0)">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -569,6 +570,7 @@ async function render(data) {
               </g>
             </g>
           </svg>
+          </div>
         <div id="user-details">
             <div id="age-name-input">
               <div class="coolinput">
@@ -587,6 +589,18 @@ async function render(data) {
     document.getElementById("game-area").innerHTML = cardHTML;
     document.getElementById("play-btn").style.position = "static";
     document.getElementById("play-btn").style.marginLeft = "0rem";
+
+    const mediaQuery = window.matchMedia("(min-width: 1800px)");
+
+    function handleScreenSizeChange(event) {
+      if (event.matches) {
+        document.getElementById("play-btn").style.transform = "scale(3)";
+        document.getElementById("play-btn").style.marginTop = "20%";
+
+      }
+    }
+
+    handleScreenSizeChange(mediaQuery);
 
     document.getElementById("play-btn").onclick = () => {
       var userName = document.getElementById("name").value;
@@ -662,6 +676,18 @@ async function render(data) {
 
     document.getElementById("play-btn").style.position = "static";
     document.getElementById("play-btn").style.marginLeft = "0rem";
+
+    const mediaQuery = window.matchMedia("(min-width: 1800px)");
+    
+    function handleScreenSizeChange(event) {
+      if (event.matches) {
+        document.getElementById("play-btn").style.transform = "scale(2)";
+        document.getElementById("play-btn").style.marginTop = "5%";
+
+      }
+    }
+
+    handleScreenSizeChange(mediaQuery);
 
     document.getElementById("play-btn").onclick = () => {
       setState(

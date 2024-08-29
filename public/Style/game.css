@@ -11,6 +11,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 #game-area,
@@ -968,168 +969,6 @@ audio {
   font-weight: bold;
 }
 
-/* Tablet Screen Query */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .title {
-    font-size: 30pt;
-  }
-  .content {
-    width: 70%;
-  }
-  .inputs {
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-align: center;
-    -ms-grid-row-align: center;
-    align-items: center;
-  }
-  .inputs .input {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .inputs .input::after {
-    width: 100%;
-  }
-  .inputs .input input {
-    padding-bottom: 2px;
-    width: 100%;
-  }
-  .input-complete::before {
-    width: 100% !important;
-  }
-  .input-focussed::before {
-    width: 100% !important;
-  }
-  .pop {
-    margin-top: 30px;
-  }
-  .animation {
-    width: 70%;
-  }
-  .unlocked {
-    margin-bottom: 20px;
-  }
-  .acheive_score {
-    width: 80px !important;
-  }
-}
-
-/* Mobile Screen Query */
-@media only screen and (max-width: 767px) {
-  .title {
-    font-size: 25pt;
-  }
-  .content {
-    width: 70%;
-  }
-  .inputs {
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-align: center;
-    -ms-grid-row-align: center;
-    align-items: center;
-  }
-  .inputs .input {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .inputs .input::after {
-    width: 100%;
-  }
-  .inputs .input input {
-    padding-bottom: 2px;
-    width: 100%;
-    font-size: 12pt;
-  }
-  .inputs .input input::-webkit-input-placeholder {
-    font-size: 12pt;
-  }
-  .inputs .input input::-moz-placeholder {
-    font-size: 12pt;
-  }
-  .inputs .input input:-ms-input-placeholder {
-    font-size: 12pt;
-  }
-  .inputs .input input::placeholder {
-    font-size: 12pt;
-  }
-  .input-complete::before {
-    width: 100% !important;
-  }
-  .input-focussed::before {
-    width: 100% !important;
-  }
-  .pop {
-    margin-top: 30px;
-  }
-  .animation {
-    width: 120%;
-  }
-  .unlocked {
-    margin-bottom: 20px;
-  }
-  .acheive_score {
-    width: 80px !important;
-  }
-}
-
-/* Laptop Screen Query */
-@media only screen and (min-width: 1030px) and (max-width: 1600px) {
-  .title {
-    font-size: 50pt;
-  }
-  .content {
-    width: 70%;
-  }
-  .inputs {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  .inputs .input {
-    width: 45%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: none;
-  }
-  .inputs .input::after {
-    width: 80%;
-  }
-  .inputs .input input {
-    padding-bottom: 2px;
-    width: 100%;
-    font-size: 20pt;
-  }
-  .inputs .input input::-webkit-input-placeholder {
-    font-size: 20pt;
-  }
-  .inputs .input input::-moz-placeholder {
-    font-size: 20pt;
-  }
-  .inputs .input input:-ms-input-placeholder {
-    font-size: 20pt;
-  }
-  .inputs .input input::placeholder {
-    font-size: 20pt;
-  }
-  .input-complete::before {
-    width: 80% !important;
-  }
-  .input-focussed::before {
-    width: 80% !important;
-  }
-  .pop {
-    margin-top: 30px;
-  }
-  .animation {
-    width: 40%;
-    top:5em;
-  }
-}
-
 /* Summary Screen */
 /* From Uiverse.io by sabbircoder07 */ 
 .results-summary-container {
@@ -1982,217 +1821,151 @@ td {
   min-width: 4rem;
 }
 
-@media screen and (min-width: 1920px){
-  #Matador{
-    transform: scale(3) rotateY(180deg);
-    margin-top: 80rem; 
-    margin-left: 170rem;
-  } 
-  
-  #speech-bubble-1{
-    transform: scale(6) rotateY(180deg);
-    top: 40rem;
-    left: 100rem;
+@media only screen and (min-width: 1800px) {
+  #title-screen{
+    transform: scale(1.7);
+    margin-left: 50%;
+    margin-top: 13%;
   }
-  
-  #speech-1{
-    transform: scale(3);
-    top: 35rem;
-    left: 98rem;
-  }
-
-  #play-btn{
-    transform: scale(3);
-    top: 95rem;
-    left: 100rem;
-  }
-
-  #Matador1{
-    transform: scale(3) rotateY(180deg);
-    top: 80rem;
-    left: 200rem;
-  } 
 
   #tooltip{
+    margin-left: 20%;
     transform: scale(0.8);
-    top: 20rem;
-    left: 190rem;
   }
 
   #tip-1{
-    font-size: 5rem;
-    top: 32rem;
-    left: 202rem;
+    margin-left: 26%;
+    margin-top: 5%;
+    transform: scale(3);
+    font-weight: bold;
   }
 
-  .coolinput{
-    transform: scale(4);
-    margin: 20rem;
+  #Matador1{
+    margin-left: 27%;
+    margin-top: 17%;
+    transform: scale(1.5) scaleX(-1);
   }
 
-  /* reward */
+  #age-name-input{
+    transform: scale(3);
+  }
+  
   #img-reward{
-    width: 100%;
-    filter: blur(12px);
+    width: 50%;
+    filter: blur(30px);
   }
 
   #reward-title{
     text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
-    font-size: 8rem;
+    font-size: 5em;
   }
 
   #reward-score p{
-    font-size: 5rem;
+    font-size: 2.5rem;
   }
 
-  #reward-img{
-    gap: 5rem;
+  #reward-score {
+    margin-top: 5%;
   }
 
   /* vocab */
-  #Matador2{
-    transform: scale(3) rotateY(180deg);
-    top: 80rem;
-    left: 200rem;
-  } 
-
   #tooltip2{
-    transform: scale(0.8);
-    top: 20rem;
-    left: 190rem;
+    margin-left: 25%;
+    margin-top: 5%;
   }
 
   #tip-2{
-    font-size: 4rem;
-    top: 32rem;
-    left: 202rem;
+    margin-left: 26%;
+    margin-top: 5.5%;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  #Matador2{
+    margin-left: 30%;
+    margin-top: 14%;
+    transform: scale(1) scaleX(-1);
   }
 
   #data-title{
-    margin-top: 0.5rem;
-    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
-    font-size: 8rem;
+    font-size: 5em;
   }
-  
+
   #data-subtitle{
-    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
-    font-size: 5rem;
-  }
-
-  #data-title-2{
-    margin-top: 0.5rem;
-    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
-    font-size: 7rem;
-  }
-  
-  #data-subtitle-2{
-    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
-    font-size: 4rem;
-  }
-
-  .card{
-    width: 65%;
+    font-size: 2.5em;
   }
 
   .vocab-img img {
-    height: 40em;
+    height: 20em;
   }
 
   .spanish{
-    font-size: 100pt;
+    font-size: 5em;
   }
 
-  audio{
-    transform: scale(1.5);
+  .card__title{
+    font-size: 10em;
   }
 
   #nav{
-    margin-left: 42rem;
-    margin-right: 42rem;
-    margin-top: 5rem;
-  }
-
-  #next{
-    transform: scale(2.5);
+    margin-left: 15%;
+    margin-right: 13%;
   }
 
   #left-side{
-    transform: scale(3);
+    color: white;
   }
 
-  .card__title {
-    font-size: 250pt;
-  }
-
-  /* MCQ */
-  .choices label {
-    font-size: 7rem;
-  }
-
-  .choices input[type="radio"] {
-    transform: scale(6);
-  }
-
-  #incorrect, #correct{
-    font-size: 8rem;
-    margin: 3rem
-  }
-
-  .card{
-    width: 65%;
-  }
-  /* reward + leaderboard */
-  #reward-sub{
-    font-size: 5rem;
-  }
-
-  #leaderboard{
-    transform: scale(1);
-    width: 28%;
-    left: 3rem;
-    top: 4rem;
-  }
-
-  .name, .points{
-    font-size: 3rem;
-  }
-
-  .ribbon{
+  .text{
     width: 100%;
-    height: 7rem;
+    font-size: 2em;
   }
 
-  .animation{
-    transform: scale(2);
-    top: 60em;
+  .Btn-Container{
+    width: 50%;
   }
-
-  /* sort sentence */
-  .draggable-label,.label-dropzone{
-    font-size: 5rem;
+  /* end here */
+  .title {
+    font-size: 30pt;
   }
-
-  .label-dropzone{
-    padding: 1rem;
+  .content {
+    width: 70%;
   }
-  #sentence{
-    font-size: 4rem;
-    margin-top: 5rem;
+  .inputs {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
   }
-
-  /* end page */
-  .heading-tertiary{
-    font-size: 8rem;
-    margin-bottom: 5rem;
+  .inputs .input {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
-
-  .result-box{
-    transform: scale(2);
-    margin: 5rem;
+  .inputs .input::after {
+    width: 100%;
   }
-
-  .result-text-box{
-    transform: scale(2);
-    margin: 7rem;
+  .inputs .input input {
+    padding-bottom: 2px;
+    width: 100%;
+  }
+  .input-complete::before {
+    width: 100% !important;
+  }
+  .input-focussed::before {
+    width: 100% !important;
+  }
+  .pop {
+    margin-top: 30px;
+  }
+  .animation {
+    width: 70%;
+  }
+  .unlocked {
+    margin-bottom: 20px;
+  }
+  .acheive_score {
+    width: 80px !important;
   }
 }
