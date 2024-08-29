@@ -46,7 +46,9 @@ window.onDrop = function (event) {
 
   if (dropzone && dropzone.children.length === 0) {
     dropzone.appendChild(draggableElement);
-    draggableElement.style.backgroundColor = "rgba(0, 0, 139, 0.546)";
+    draggableElement.style.backgroundColor = 'rgb(253, 255, 210)';
+    draggableElement.style.fontSize = '1.5rem';
+    draggableElement.style.color = 'black';
   } else {
     alert("This drop zone can only have one label.");
     draggableElement.style.backgroundColor = "cyan";
@@ -63,6 +65,7 @@ async function render(data) {
   var cardHTML = ``;
 
   if (state.showReward == true) {
+    var mediaQuery = window.matchMedia("(min-width: 1800px)");
     ++check;
 
     let user = {
@@ -150,6 +153,14 @@ async function render(data) {
         document.getElementById("reward-title").textContent = "Oops!";
         document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
       }
+
+      function handleScreenSizeChange(event) {
+        if (event.matches) {
+          document.getElementById("reward-img").style.marginTop = "5rem";
+        }
+      }
+
+      handleScreenSizeChange(mediaQuery);
 
       var allScores = await fetch("/api/scores").then((res) => res.json());
       allScores.push(user);
@@ -245,15 +256,14 @@ async function render(data) {
         }
       });
 
-      const mediaQuery = window.matchMedia("(min-width: 1800px)");
-
-      function handleScreenSizeChange(event) {
+      function handleScreenSizeChange1(event) {
         if (event.matches) {
           document.getElementById("reward-img").style.marginTop = "5rem";
         }
       }
 
-      handleScreenSizeChange(mediaQuery);
+      handleScreenSizeChange1(mediaQuery);
+
     } else if (state.score >= 50 && check == 2) {
       if (state.rewardImgStatus[1] == "") {
         state.rewardImgStatus[1] = "50";
@@ -270,6 +280,14 @@ async function render(data) {
         document.getElementById("reward-title").textContent = "Oops!";
         document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
       }
+
+      function handleScreenSizeChange(event) {
+        if (event.matches) {
+          document.getElementById("img-reward-1").style.filter = "blur(15px)";
+        }
+      }
+
+      handleScreenSizeChange(mediaQuery);
 
       var allScores = await fetch("/api/scores").then((res) => res.json());
       allScores.push(user);
@@ -366,15 +384,14 @@ async function render(data) {
         }
       });
 
-      const mediaQuery = window.matchMedia("(min-width: 1800px)");
-
-      function handleScreenSizeChange(event) {
+      function handleScreenSizeChange1(event) {
         if (event.matches) {
-          document.getElementById("img-reward-1").style.filter = "blur(3px)";
+          document.getElementById("img-reward-1").style.filter = "blur(15px)";
         }
       }
 
-      handleScreenSizeChange(mediaQuery);
+      handleScreenSizeChange1(mediaQuery);
+
     } else if (state.score >= 30) {
       if (state.rewardImgStatus[0] == "") {
         state.rewardImgStatus[0] = "30";
@@ -385,6 +402,14 @@ async function render(data) {
         document.getElementById("reward-title").textContent = "Oops!";
         document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
       }
+
+      function handleScreenSizeChange(event) {
+        if (event.matches) {
+          document.getElementById("img-reward-1").style.filter = "blur(36px)";
+        }
+      }
+
+      handleScreenSizeChange(mediaQuery);
 
       var allScores = await fetch("/api/scores").then((res) => res.json());
       allScores.push(user);
@@ -481,18 +506,26 @@ async function render(data) {
         }
       });
 
-      const mediaQuery = window.matchMedia("(min-width: 1800px)");
 
+      function handleScreenSizeChange1(event) {
+        if (event.matches) {
+          document.getElementById("img-reward-1").style.filter = "blur(36px)";
+        }
+      }
+
+      handleScreenSizeChange1(mediaQuery);
+
+    } else {
+      document.getElementById("reward-title").textContent = "Oops!";
+      document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
+      
       function handleScreenSizeChange(event) {
         if (event.matches) {
-          document.getElementById("img-reward-1").style.filter = "blur(6px)";
+          document.getElementById("img-reward-1").style.filter = "blur(50px)";
         }
       }
 
       handleScreenSizeChange(mediaQuery);
-    } else {
-      document.getElementById("reward-title").textContent = "Oops!";
-      document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
 
       var allScores = await fetch("/api/scores").then((res) => res.json());
       allScores.push(user);
@@ -532,15 +565,14 @@ async function render(data) {
         </div>
         `;
       document.getElementById("game-area").innerHTML += leaderboardHTML;
-      const mediaQuery = window.matchMedia("(min-width: 1800px)");
 
-      function handleScreenSizeChange(event) {
+      function handleScreenSizeChange1(event) {
         if (event.matches) {
-          document.getElementById("img-reward-1").style.filter = "blur(12px)";
+          document.getElementById("img-reward-1").style.filter = "blur(50px)";
         }
       }
 
-      handleScreenSizeChange(mediaQuery);
+      handleScreenSizeChange1(mediaQuery);
     }
   } else if (state.lvlIndex === -2) {
     cardHTML = `
@@ -678,7 +710,7 @@ async function render(data) {
     document.getElementById("play-btn").style.marginLeft = "0rem";
 
     const mediaQuery = window.matchMedia("(min-width: 1800px)");
-    
+
     function handleScreenSizeChange(event) {
       if (event.matches) {
         document.getElementById("play-btn").style.transform = "scale(2)";
@@ -747,7 +779,7 @@ async function render(data) {
         <h4 id="data-subtitle">${data[state.lvlIndex].desc}</h4>
         <div class="card" onclick="toggleCard(this)">
                 <div class="vocab-img">
-                    <img src="${data[state.lvlIndex].elements[state.cardIndex].img}" alt="${data[state.lvlIndex].elements[state.cardIndex].english}">
+                    <img src="${data[state.lvlIndex].elements[state.cardIndex].img}" alt="img">
                 </div>
                 <audio controls>
                     <source src="${data[state.lvlIndex].elements[state.cardIndex].audio}" type="audio/mpeg">
@@ -981,13 +1013,15 @@ async function render(data) {
                         ${choicesHTML}
                 </div>
                 <div id="labelled-picture" style="
-                width: 100%;
-                height: 100%;
-                background-image: url('${data[state.lvlIndex].elements[state.cardIndex].img}');
-                background-size: contain;
-                background-position: center; 
-                background-repeat: no-repeat;
-                max-height:65em
+                  width: 200%;
+                  height: 100%;
+                  background-image: url(${data[state.lvlIndex].elements[state.cardIndex].img});
+                  background-size: contain;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: 100% 100%;
+                  min-height: 5em;
+                  max-width: 47em;
                 ">
                 ${areasHTML}
                 </div>
@@ -1035,7 +1069,7 @@ function checkAnswer(data) {
       state.checkAnswer = true;
     } else if (selectedChoice != null && answer.id != selectedChoice.id) {
       var incorrectHTML = `
-      <p id="incorrect">The answer is incorrect.The correct answer is ${data[state.lvlIndex].elements[state.cardIndex].answer}</p>
+      <p id="incorrect">The answer is incorrect.<br>The correct answer is ${data[state.lvlIndex].elements[state.cardIndex].answer}</p>
       `;
       Array.from(document.getElementsByClassName("choices"))[0].innerHTML = incorrectHTML;
       document.getElementById("incorrect").classList.add("bounceInFromLeft");
@@ -1050,7 +1084,7 @@ function checkAnswer(data) {
       document.getElementById("game-area").innerHTML += sucessSoundHtml;
 
       var correctHTML = `
-      <p id="correct">The answer is correct.You earned 10 points!</p>
+      <p id="correct">The answer is correct.<br>You earned 10 points!</p>
       `;
       Array.from(document.getElementsByClassName("choices"))[0].innerHTML = correctHTML;
       document.getElementById("correct").classList.add("bounceInFromLeft");
@@ -1135,7 +1169,7 @@ function checkAnswer(data) {
     if (unanswered == true) {
       alert("Please make sure that all the questions have been answered.");
       unansweredSort.forEach((q) => {
-        q.style.border = "1rem solid red";
+        q.style.border = "0.2rem solid red";
       });
     } else {
       document.getElementsByClassName("labels-to-sort")[0].innerHTML = ``;

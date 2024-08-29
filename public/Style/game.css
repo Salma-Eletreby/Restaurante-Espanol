@@ -29,7 +29,7 @@ body {
 #title-screen,
 #user-details,
 #questions-prev,
-#reward-img-1{
+#reward-img-1 {
   position: relative;
   width: 70%;
   height: 80%;
@@ -44,14 +44,14 @@ body {
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#title-chef{
+#title-chef {
   height: 50%;
   position: inherit;
   left: 30rem;
   top: 10rem;
 }
 
-#questions-prev{
+#questions-prev {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,31 +59,31 @@ body {
 }
 
 #title-speech {
-	position: absolute;
+  position: absolute;
   margin: 1.5rem;
   top: 1rem;
   padding: 1rem;
-	background: #d9abab;
-	border-radius: .4em;
+  background: #d9abab;
+  border-radius: 0.4em;
   font-size: 3em;
 }
 
 #title-speech:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 36px solid transparent;
-	border-top-color: #d9abab;
-	border-bottom: 0;
-	border-right: 0;
-	margin-left: -18px;
-	margin-bottom: -36px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 36px solid transparent;
+  border-top-color: #d9abab;
+  border-bottom: 0;
+  border-right: 0;
+  margin-left: -18px;
+  margin-bottom: -36px;
 }
 
-#Layer_1{
+#Layer_1 {
   position: absolute;
   left: 105rem;
   top: 47rem;
@@ -95,16 +95,8 @@ body {
   left: 107rem;
   top: 35rem;
   /* opacity: 0; */
-  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 1px, white 1px),
-    linear-gradient(rgba(0, 0, 0, 0.05) 1px, white 1px),
-    linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, white 1px),
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, white 1px),
-    linear-gradient(white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px),
-    linear-gradient(-90deg, #aaa 1px, white 1px),
-    linear-gradient(-90deg, white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px),
-    linear-gradient(#aaa 1px, white 1px), #f2f2f2;
-  background-size: 4px 4px, 4px 4px, 80px 80px, 80px 80px, 80px 80px, 80px 80px,
-    80px 80px, 80px 80px;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 1px, white 1px), linear-gradient(rgba(0, 0, 0, 0.05) 1px, white 1px), linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, white 1px), linear-gradient(rgba(0, 0, 0, 0.04) 1px, white 1px), linear-gradient(white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px), linear-gradient(-90deg, #aaa 1px, white 1px), linear-gradient(-90deg, white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px), linear-gradient(#aaa 1px, white 1px), #f2f2f2;
+  background-size: 4px 4px, 4px 4px, 80px 80px, 80px 80px, 80px 80px, 80px 80px, 80px 80px, 80px 80px;
   padding: 5px 10px;
   border: 1px solid rgb(206, 204, 204);
 
@@ -124,7 +116,6 @@ body {
   transition: opacity 1s ease-out;
 }
 
-
 #Layer_1:hover .tooltipChef {
   /* top: -90px; */
   opacity: 1;
@@ -137,7 +128,7 @@ body {
   box-shadow: 0 0 0 0px #ffffff80;
 }
 
-.reward-sub{
+.reward-sub {
   position: absolute;
   top: 1em;
 }
@@ -244,8 +235,8 @@ body {
 }
 
 /* For game */
-.ans-label{
-  background-color: #CCD5AE;
+.ans-label {
+  background-color: #ccd5ae;
 }
 
 .labels-to-sort,
@@ -413,25 +404,25 @@ audio {
   font-size: 30pt;
 }
 
-.info:hover{
+.info:hover {
   opacity: 100%;
 }
 
-#info1{
+#info1 {
   top: 0em;
   left: 5.5em;
   height: 9em;
   width: 24em;
 }
 
-#info2{
+#info2 {
   top: 10.5em;
   left: 5.5em;
   height: 10.5em;
   width: 13em;
 }
 
-#info3{
+#info3 {
   top: 12.5em;
   left: 23em;
   height: 10.5em;
@@ -970,7 +961,7 @@ audio {
 }
 
 /* Summary Screen */
-/* From Uiverse.io by sabbircoder07 */ 
+/* From Uiverse.io by sabbircoder07 */
 .results-summary-container {
   font-family: "Hanken Grotesk", sans-serif;
   display: flex;
@@ -1043,25 +1034,25 @@ audio {
   background-image: linear-gradient(to bottom, #734b6d, #42275a);
   animation: gradient 9s infinite alternate linear;
   .result-box {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background-image: linear-gradient(-45deg, #ef629f, #42275a);
-  background-color: #56ab2f;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  animation: gradient 9s linear infinite;
-}
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-image: linear-gradient(-45deg, #ef629f, #42275a);
+    background-color: #56ab2f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: gradient 9s linear infinite;
+  }
 
-.result {
-  margin-top: -8px;
-  font-size: 16px;
-  font-weight: 400;
-  color: hsl(241, 100%, 89%);
-}
+  .result {
+    margin-top: -8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: hsl(241, 100%, 89%);
+  }
 }
 
 .btn {
@@ -1083,7 +1074,6 @@ audio {
   left: 30rem;
   top: 30rem;
   font-size: 3rem;
-
 }
 
 .btn:hover {
@@ -1303,7 +1293,7 @@ audio {
   }
 }
 
-/* From Uiverse.io by 0xnihilism */ 
+/* From Uiverse.io by 0xnihilism */
 .input__container {
   position: relative;
   background: #f0f0f0;
@@ -1335,11 +1325,7 @@ audio {
   bottom: 0;
   z-index: -1;
   transform: translateZ(-50px);
-  background: linear-gradient(
-    45deg,
-    rgba(255, 107, 107, 0.4) 0%,
-    rgba(255, 107, 107, 0.1) 100%
-  );
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.4) 0%, rgba(255, 107, 107, 0.1) 100%);
   filter: blur(20px);
 }
 
@@ -1430,7 +1416,7 @@ audio {
   border: 2px solid #000;
 }
 
-.skill-level{
+.skill-level {
   display: flex;
   font-size: 3rem;
 }
@@ -1441,48 +1427,48 @@ audio {
   margin-right: 1.5em;
 }
 
-#questions-prev img{
+#questions-prev img {
   height: 40%;
 }
 
-.q-prev{
+.q-prev {
   height: 30%;
 }
 
-#badge{
+#badge {
   position: absolute;
   top: -2rem;
   left: -5rem;
   height: 50%;
 }
 
-#position{
+#position {
   position: absolute;
   top: 15rem;
   left: 6.5rem;
   font-size: 3rem;
 }
 
-#first-place{
+#first-place {
   position: absolute;
   height: 30%;
 }
 
 /* new styling */
-#Matador{
+#Matador {
   margin-top: 18rem;
   margin-left: 50rem;
-} 
+}
 
-#speech-bubble-1{
+#speech-bubble-1 {
   position: absolute;
   top: 8rem;
   left: 30rem;
-  transform: scale(2) rotateY(180deg);;
+  transform: scale(2) rotateY(180deg);
 }
 
-#speech-1{
-  position: absolute  ;
+#speech-1 {
+  position: absolute;
   top: 6rem;
   left: 28rem;
   font-size: 2.5rem;
@@ -1491,9 +1477,9 @@ audio {
   text-align: center;
 }
 
-#title-screen{
+#title-screen {
   height: 100%;
-  width:100%;
+  width: 100%;
   display: block;
 }
 
@@ -1507,13 +1493,10 @@ audio {
   border-radius: 15px;
   color: #fff6fb;
   letter-spacing: 0.3em;
-  text-shadow: -2px 2px 5px #FD3084;
+  text-shadow: -2px 2px 5px #fd3084;
   background-color: transparent;
-  border: 2px solid #FEB1DE;
-  box-shadow: 0 0 0px 1px #F11271,
-    0 0 10px 2px #FD3084,
-    inset 0 0 0px 1px #F11271,
-    inset 0 0 10px 2px #FD3084;
+  border: 2px solid #feb1de;
+  box-shadow: 0 0 0px 1px #f11271, 0 0 10px 2px #fd3084, inset 0 0 0px 1px #f11271, inset 0 0 10px 2px #fd3084;
   transition: 100ms;
 }
 
@@ -1559,7 +1542,7 @@ audio {
   outline: none;
 }
 
-#user-details{
+#user-details {
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -1567,20 +1550,20 @@ audio {
   height: 80%;
 }
 
-#Matador1{
+#Matador1 {
   position: absolute;
   top: 18rem;
   left: 62rem;
 }
 
-#tooltip{
+#tooltip {
   position: absolute;
   top: 6rem;
   left: 64rem;
   transform: scale(0.5);
 }
 
-#tip-1{
+#tip-1 {
   position: absolute;
   top: 12rem;
   left: 66rem;
@@ -1592,53 +1575,53 @@ audio {
 }
 
 /* reward screen */
-#reward-img{
+#reward-img {
   width: 50%;
   height: 70%;
   flex-direction: column;
   gap: 3rem;
 }
 
-#reward-title{
-  font-family:"Playfair Display", serif; 
+#reward-title {
+  font-family: "Playfair Display", serif;
   font-weight: bold;
-  text-shadow:  0 0 35px white, 0 0 45px white, 0 0 70px white;
+  text-shadow: 0 0 35px white, 0 0 45px white, 0 0 70px white;
   font-size: 3rem;
   margin-top: -1rem;
 }
 
-#reward-score{
+#reward-score {
   display: flex;
 }
 
-#reward-score p{
+#reward-score p {
   font-size: 1.5rem;
   text-align: center;
   margin: 2rem;
 }
 
-#img-reward{
+#img-reward {
   width: 50%;
   height: auto;
-  filter: blur(6px);
+  filter: blur(50px);
 }
 
 /* vocab styling */
-#data-title{
+#data-title {
   margin-top: 1rem;
-  text-shadow:  0 0 35px white, 0 0 45px white, 0 0 70px white;
+  text-shadow: 0 0 35px white, 0 0 45px white, 0 0 70px white;
 }
 
-#data-subtitle{
+#data-subtitle {
   margin-top: -1rem;
-  text-shadow:  0 0 35px white, 0 0 45px white, 0 0 70px white;
+  text-shadow: 0 0 35px white, 0 0 45px white, 0 0 70px white;
 }
 
 #progress-bar-outside {
   width: 2000%;
-  height: 30px; 
+  height: 30px;
   background-color: lightgray;
-  border-radius: 15px; 
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -1646,25 +1629,25 @@ audio {
 #progress-bar-inside {
   height: 100%;
   background-color: green;
-  border-radius: 15px 0 0 15px; 
-  transition: width 0.4s ease; 
-  white-space: pre
+  border-radius: 15px 0 0 15px;
+  transition: width 0.4s ease;
+  white-space: pre;
 }
 
-#Matador2{
+#Matador2 {
   position: absolute;
   top: 20rem;
   left: 65rem;
   transform: scale(0.8) rotateY(180deg);
 }
 
-#tooltip2{
+#tooltip2 {
   position: fixed;
   top: 12rem;
   left: 70rem;
 }
 
-#tip-2{
+#tip-2 {
   position: absolute;
   top: 14rem;
   left: 71.5rem;
@@ -1785,25 +1768,24 @@ td {
   z-index: -1;
 }
 
-#img-reward-1{
+#img-reward-1 {
   height: 100%;
   width: auto;
   filter: blur(6px);
 }
 
-#reward-img-1{
+#reward-img-1 {
   background-color: rgba(255, 255, 255, 0);
   background-blend-mode: lighten;
   box-shadow: none;
 }
 
 /* label picture styling */
-.label-picture{
-  flex-direction: column;
+.label-picture {
   justify-content: start;
 }
 
-.labels-to-sort{
+.labels-to-sort {
   margin: 3rem;
 }
 
@@ -1813,7 +1795,7 @@ td {
   margin-bottom: 10px;
   margin-top: 10px;
   padding: 10px;
-  font-size: 3rem;
+  font-size: 2.3rem;
 }
 
 .label-dropzone {
@@ -1822,45 +1804,45 @@ td {
 }
 
 @media only screen and (min-width: 1800px) {
-  #title-screen{
+  #title-screen {
     transform: scale(1.7);
     margin-left: 50%;
     margin-top: 13%;
   }
 
-  #tooltip{
+  #tooltip {
     margin-left: 20%;
     transform: scale(0.8);
   }
 
-  #tip-1{
+  #tip-1 {
     margin-left: 26%;
     margin-top: 5%;
     transform: scale(3);
     font-weight: bold;
   }
 
-  #Matador1{
+  #Matador1 {
     margin-left: 27%;
     margin-top: 17%;
     transform: scale(1.5) scaleX(-1);
   }
 
-  #age-name-input{
+  #age-name-input {
     transform: scale(3);
   }
-  
-  #img-reward{
+
+  #img-reward {
     width: 50%;
     filter: blur(30px);
   }
 
-  #reward-title{
-    text-shadow:  0 0 65px white, 0 0 75px white, 0 0 100px white;
+  #reward-title {
+    text-shadow: 0 0 65px white, 0 0 75px white, 0 0 100px white;
     font-size: 5em;
   }
 
-  #reward-score p{
+  #reward-score p {
     font-size: 2.5rem;
   }
 
@@ -1869,29 +1851,29 @@ td {
   }
 
   /* vocab */
-  #tooltip2{
+  #tooltip2 {
     margin-left: 25%;
     margin-top: 5%;
   }
 
-  #tip-2{
+  #tip-2 {
     margin-left: 26%;
     margin-top: 5.5%;
-    font-size: 2em;
+    font-size: 1.7em;
     font-weight: bold;
   }
 
-  #Matador2{
+  #Matador2 {
     margin-left: 30%;
     margin-top: 14%;
     transform: scale(1) scaleX(-1);
   }
 
-  #data-title{
+  #data-title {
     font-size: 5em;
   }
 
-  #data-subtitle{
+  #data-subtitle {
     font-size: 2.5em;
   }
 
@@ -1899,31 +1881,64 @@ td {
     height: 20em;
   }
 
-  .spanish{
+  .spanish {
+    font-size: 4em;
+    text-align: center;
+  }
+
+  .card__title {
     font-size: 5em;
+    text-align: center;
   }
 
-  .card__title{
-    font-size: 10em;
-  }
-
-  #nav{
+  #nav {
     margin-left: 15%;
     margin-right: 13%;
   }
 
-  #left-side{
+  #left-side {
     color: white;
   }
 
-  .text{
+  .text {
     width: 100%;
     font-size: 2em;
   }
 
-  .Btn-Container{
+  .Btn-Container {
     width: 50%;
   }
+
+  #score {
+    color: black;
+  }
+
+  /* reward screen */
+  #reward-sub {
+    font-size: 2.5em;
+  }
+
+  .number,
+  .name,
+  .points {
+    font-size: 2.5em;
+  }
+
+  #leaderboard {
+    margin-left: -5%;
+  }
+
+  /* label picture */
+  #data-title-2 {
+    font-size: 3em;
+    margin: 1rem;
+  }
+
+  #data-subtitle-2 {
+    font-size: 2.5em;
+    margin: 1rem;
+  }
+
   /* end here */
   .title {
     font-size: 30pt;

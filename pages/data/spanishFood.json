@@ -144,7 +144,7 @@
         "spanish": "El Plato",
         "english": "Plate",
         "arabic": "طبق",
-        "img": "https://img.freepik.com/premium-photo/white-porcelain-plate-wooden-table_1102019-5.jpg?w=996",
+        "img": "https://img.freepik.com/free-photo/top-view-empty-round-plate-white-surface_140725-115139.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
         "audio": "https://www.dropbox.com/scl/fi/xjh5jzzjgf9yr9izx9r7l/Plate.mp3?rlkey=nx7d22lwem723o4fa567rqk0v&st=ni33xje1&dl=1"
       },
       {
@@ -176,7 +176,7 @@
         "spanish": "La Taza",
         "english": "Cup",
         "arabic": "كوب",
-        "img": "https://img.freepik.com/free-vector/realistic-white-cup_1284-45598.jpg?t=st=1720957277~exp=1720960877~hmac=c0c305eec831b9362220c6ec16fe86442cbcf4358ca21c604301bde6ad1d441a&w=740",
+        "img": "https://img.freepik.com/free-photo/still-life-glass-cups_23-2149646448.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
         "audio": "https://www.dropbox.com/scl/fi/w1qzwoy58rhuvwsvhwt9t/cup.mp3?rlkey=rjiokrx7ygbwbd41wj3y8705q&st=vbpzwfpe&dl=1"
       }
     ]
@@ -248,12 +248,12 @@
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Food-plate-toast-restaurant_%2824031208550%29.jpg/2560px-Food-plate-toast-restaurant_%2824031208550%29.jpg",
         "labels": ["El Cuchillo", "El Tenedor", "El Plato", "El Tazón", "La Taza","La Cuchara"],
         "answer": [
-          { "x": 1400, "y": 950, "label": "El Cuchillo" },
-          { "x": 1700, "y": 300, "label": "La Taza" },
-          { "x": 1350, "y": 550, "label": "El Tenedor" },
-          { "x": 900, "y": 850, "label": "El Tazón" },
-          { "x": 900, "y": 500, "label": "El Plato" },
-          { "x": 1400, "y": 300, "label": "La Cuchara" }
+          { "x": 1000, "y": 480, "label": "El Cuchillo" },
+          { "x": 1110, "y": 50, "label": "La Taza" },
+          { "x": 930, "y": 230, "label": "El Tenedor" },
+          { "x": 620, "y": 300, "label": "El Tazón" },
+          { "x": 1150, "y": 260, "label": "El Plato" },
+          { "x": 970, "y": 50, "label": "La Cuchara" }
         ]
       },
       {
@@ -261,11 +261,11 @@
         "img": "https://img.freepik.com/free-vector/kitchen-appliances-concept-illustration_114360-7217.jpg?t=st=1723057404~exp=1723061004~hmac=b743df0765d40252512ad3300ce40ca053488934d8d548d116f75b2ab93af3a2&w=826",
         "labels": ["Nevera", "Tostadora", "Licadora", "Estufa","Horno"],
         "answer": [
-          { "x": 850, "y": 800, "label": "Nevera" },
-          { "x": 1300, "y": 950, "label": "Horno" },
-          { "x": 1500, "y": 600, "label": "Licadora" },
-          { "x": 1350, "y": 700, "label": "Estufa" },
-          { "x": 1750, "y": 600, "label": "Tostadora" }
+          { "x": 600, "y": 400, "label": "Nevera" },
+          { "x": 880, "y": 510, "label": "Horno" },
+          { "x": 1000, "y": 300, "label": "Licadora" },
+          { "x": 920, "y": 360, "label": "Estufa" },
+          { "x": 1180, "y": 300, "label": "Tostadora" }
         ]
       }
     ]
@@ -310,40 +310,40 @@
     "elements": [
       {
         "id": 1,
-        "spanish": "Quisiera el pollo a la parrilla, por favor.",
-        "english": "I would like the grilled chicken, please.",
+        "spanish": "<span style=\"color: red; font-weight:bold;\">Quisiera</span> el pollo a la parrilla, <span style=\"color: red; font-weight:bold;\">por favor</span>.",
+        "english": "<span style=\"color: red; font-weight:bold;\">I would like</span> the grilled chicken, <span style=\"color: red; font-weight:bold;\">please</span>.",
         "arabic": "أريد الدجاج المشوي من فضلك",
         "img": "https://img.freepik.com/free-photo/couple-sitting-cafe-choosing-order-form-meu-while-communicating-with-waiter_637285-602.jpg?t=st=1721162646~exp=1721166246~hmac=0e0e76da7b2ee0fc51a99ed33b20e0edbf897639d30d168108d395d3d991cc1a&w=826",
         "audio": "https://www.dropbox.com/scl/fi/yg28nrtm7829hl6uy0qfj/temp1.mp3?rlkey=xr24b57fgb454mpy48ygz99oz&st=xdb308ua&dl=1"
       },
       {
         "id": 2,
-        "spanish": "Puedo tener una ensalada de la casa?",
-        "english": "Can I have a house salad?",
+        "spanish": "<span style=\"color: red; font-weight:bold;\">Puedo tener</span> una ensalada de la casa?",
+        "english": "<span style=\"color: red; font-weight:bold;\">Can I have</span> a house salad?",
         "arabic": "هل يمكنني الحصول على سلطة المنزل؟",
         "img": "https://img.freepik.com/premium-photo/young-waiter-protective-face-mask-gloves-with-ordered-meals-ready-serving-covid2019_217236-3826.jpg?w=826",
         "audio": "https://www.dropbox.com/scl/fi/r6wktygc8lf02leneku49/temp2.mp3?rlkey=7r95veopctcu3tij3oo6bxa6c&st=ktx5yx92&dl=1"
       },
       {
         "id": 3,
-        "spanish": "Puedo ordenar el filete de salmón, por favor?",
-        "english": "May I order the salmon fillet, please?",
+        "spanish": "<span style=\"color: red; font-weight:bold;\">Puedo ordenar</span> el filete de salmón, <span style=\"color: red; font-weight:bold;\">por favor</span>?",
+        "english": "<span style=\"color: red; font-weight:bold;\">May I order</span> the salmon fillet, <span style=\"color: red; font-weight:bold;\">please</span>?",
         "arabic": "هل لي أن أطلب شرائح سمك السلمون، من فضلك؟",
         "img": "https://img.freepik.com/free-photo/happy-waiter-serving-meal-couple-lunch-time-restaurant_637285-1922.jpg?t=st=1721162865~exp=1721166465~hmac=e442d2da3388ff7b69e7514cd545b52557853e273b79ae2dbe425823ec41f897&w=826",
         "audio": "https://www.dropbox.com/scl/fi/rzj4t5uagg39zfto5yies/temp3.mp3?rlkey=je872nvtt2txh2ijxq4ij2cbz&st=xsedf9uz&dl=1"
       },
       {
         "id": 4,
-        "spanish": "Tomaré la lasaña, por favor.",
-        "english": "I'll have the lasagna, please.",
+        "spanish": "<span style=\"color: red; font-weight:bold;\">Tomaré</span> la lasaña, <span style=\"color: red; font-weight:bold;\">por favor</span>.",
+        "english": "<span style=\"color: red; font-weight:bold;\">I'll have</span> the lasagna, <span style=\"color: red; font-weight:bold;\">please</span>.",
         "arabic": "سآخذ اللازانيا، من فضلك",
         "img": "https://img.freepik.com/free-photo/couple-ordering-food-restaurant_23-2149269232.jpg?t=st=1721162841~exp=1721166441~hmac=65da070bb2c0945666ceb4b88d8bf05876d11f01fa6373ce6790d3e016dc6439&w=826",
         "audio": "https://www.dropbox.com/scl/fi/wdqvrz4qjpv9gqt0zyfvz/temp4.mp3?rlkey=ofej8nlrucnkcvdwn7moqftsw&st=9yefwkfj&dl=1"
       },
       {
         "id": 5,
-        "spanish": "Por favor, tráigame una botella de agua.",
-        "english": "Please bring me a bottle of water.",
+        "spanish": "<span style=\"color: red; font-weight:bold;\">Por favor, tráigame</span> una botella de agua.",
+        "english": "<span style=\"color: red; font-weight:bold;\">Please bring me</span> a bottle of water.",
         "arabic": "من فضلك أحضر لي زجاجة ماء",
         "img": "https://img.freepik.com/free-photo/young-trans-man-with-apron-working-as-waiter_23-2149409809.jpg?t=st=1721162715~exp=1721166315~hmac=f3c8f8b85ca7cccbe4bd3810b00926dc667d2968a4d58f1a01aa2e667829fc41&w=826",
         "audio": "https://www.dropbox.com/scl/fi/beuvjp4d6obwyt8fgn4q6/temp5.mp3?rlkey=73vh6e7v68zwwwt7h625k6hvt&st=dupk9kcv&dl=1"
