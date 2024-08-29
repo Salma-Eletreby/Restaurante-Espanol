@@ -966,7 +966,8 @@ audio {
   font-family: "Hanken Grotesk", sans-serif;
   display: flex;
   width: 75%;
-  height: 80%;
+  margin: 5rem;
+  height: 100%;
   border-radius: 30px;
   box-shadow: 10px 20px 20px rgba(120, 87, 255, 0.3);
   backface-visibility: hidden;
@@ -1939,6 +1940,23 @@ td {
     margin: 1rem;
   }
 
+  /* end screen */
+  .heading-tertiary{
+    font-size: 3rem;
+  }
+
+  .result-box{
+    transform: scale(1.5);
+    margin: 5rem;
+  }
+
+  .heading-secondary{
+    font-size: 5rem;
+  }
+
+  .paragraph{
+    font-size: 2.5rem;
+  }
   /* end here */
   .title {
     font-size: 30pt;

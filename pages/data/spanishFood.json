@@ -415,11 +415,11 @@
           { "txt": "salmón", "ignore": true },
           { "txt": ",", "ignore": true },
           { "txt": "favor", "ignore": false },
-          { "txt": "por", "ignore": false },
+          { "txt": "puedo", "ignore": false },
           { "txt": "?", "ignore": true }
         ],
         "answer": [
-          { "txt": "puedo", "ignore": true },
+          { "txt": "puedo", "ignore": false },
           { "txt": "ordenar", "ignore": false },
           { "txt": "el", "ignore": true },
           { "txt": "filete", "ignore": true },
@@ -460,7 +460,7 @@
           { "txt": "botella", "ignore": true },
           { "txt": "de", "ignore": true },
           { "txt": "agua", "ignore": true },
-          { "txt": "favor", "ignore": true }
+          { "txt": "favor", "ignore": false }
         ],
         "answer": [
           { "txt": "por", "ignore": false },

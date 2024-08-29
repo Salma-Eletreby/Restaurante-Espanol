@@ -46,9 +46,9 @@ window.onDrop = function (event) {
 
   if (dropzone && dropzone.children.length === 0) {
     dropzone.appendChild(draggableElement);
-    draggableElement.style.backgroundColor = 'rgb(253, 255, 210)';
-    draggableElement.style.fontSize = '1.5rem';
-    draggableElement.style.color = 'black';
+    draggableElement.style.backgroundColor = "rgb(253, 255, 210)";
+    draggableElement.style.fontSize = "1.5rem";
+    draggableElement.style.color = "black";
   } else {
     alert("This drop zone can only have one label.");
     draggableElement.style.backgroundColor = "cyan";
@@ -94,31 +94,6 @@ async function render(data) {
     document.getElementById("game-area").innerHTML = cardHTML;
 
     var endScreenHTML = `
-    <svg id="tooltip" fill="#000000" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" id="memory-tooltip-above"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 1H20V2H21V16H20V17H15V18H14V19H13V20H12V21H10V20H9V19H8V18H7V17H2V16H1V2H2V1M3 3V15H8V16H9V17H10V18H12V17H13V16H14V15H19V3H3Z"></path></g><div id="tip-1">Delicious</div></svg>
-          <svg id="Matador1" width="256px" height="256px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000" transform="matrix(-1, 0, 0, 1, 0, 0)">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <title>matador</title>
-              <g id="matador">
-                <path d="M17,34H29V62l-1.061-1.191A7.376,7.376,0,0,1,26.4,58.067L23.972,40.4,18,62h0a9.814,9.814,0,0,1-2.008-5.4Z" style="fill: #f53e28; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
-                <path d="M33,26.8a2.007,2.007,0,0,1-1.019-.554l-7.6-7.7a2,2,0,1,1,2.847-2.809l6.858,6.951,9.568-1.7a2,2,0,0,1,.7,3.938l-10.6,1.889A2,2,0,0,1,33,26.8Z" style="fill: #ffce56; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
-                <rect x="19" y="7" width="5" height="8" style="fill: #ffe8dc; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></rect>
-                <path d="M11.722,28.311a2,2,0,0,0,.957-.655l6.766-8.439a2,2,0,1,0-3.12-2.5l-6.109,7.618-6.692-.715a2,2,0,0,0-.294,3.99l7.741.791A1.994,1.994,0,0,0,11.722,28.311Z" style="fill: #ffce56; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
-                <path d="M22,1h1a4,4,0,0,1,4,4v7a0,0,0,0,1,0,0H22.317A4.317,4.317,0,0,1,18,7.683V5A4,4,0,0,1,22,1Z" style="fill: #ffe8dc; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
-                <path d="M19.258,15h5.8A3.941,3.941,0,0,1,29,18.941V34a0,0,0,0,1,0,0H17a0,0,0,0,1,0,0V17.258A2.258,2.258,0,0,1,19.258,15Z" style="fill: #ffce56; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
-                <line x1="23.972" y1="40.402" x2="28.681" y2="34.407" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
-                <path d="M48.117,18.459l6.6,3.865a4.4,4.4,0,0,1,2.936,3.385l5.161,28.385a2.7,2.7,0,0,1-3.565,3.027l-2.523-1.616c-1.564-.558-1.246-.708-2.885-.435l-1.174.2c-3.664.61-6.346-.985-8.407-4.076h0a12.119,12.119,0,0,0-8.58-5.3l-.959-.12-3.231-10.5L43.349,19.911A4.305,4.305,0,0,1,48.117,18.459Z" style="fill: #f53e28; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></path>
-                <line x1="50.857" y1="54.95" x2="51" y2="44" style="fill: #f53e28; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
-                <polyline points="38 28 42 33 41 36" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></polyline>
-                <line x1="50" y1="20" x2="51" y2="31" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
-                <line x1="61" y1="45" x2="58" y2="48" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
-                <line x1="50" y1="13" x2="50" y2="10" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
-                <line x1="53" y1="13" x2="55" y2="11" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
-                <line x1="47" y1="13" x2="45" y2="11" style="fill: none; stroke: #4c241d; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"></line>
-              </g>
-            </g>
-          </svg>
         <h1 id="reward-title">Congratulations!</h1>
         <h4 id="reward-sub">You have cleared the image</h4>
         <div id="reward-img">
@@ -263,7 +238,6 @@ async function render(data) {
       }
 
       handleScreenSizeChange1(mediaQuery);
-
     } else if (state.score >= 50 && check == 2) {
       if (state.rewardImgStatus[1] == "") {
         state.rewardImgStatus[1] = "50";
@@ -391,7 +365,6 @@ async function render(data) {
       }
 
       handleScreenSizeChange1(mediaQuery);
-
     } else if (state.score >= 30) {
       if (state.rewardImgStatus[0] == "") {
         state.rewardImgStatus[0] = "30";
@@ -506,7 +479,6 @@ async function render(data) {
         }
       });
 
-
       function handleScreenSizeChange1(event) {
         if (event.matches) {
           document.getElementById("img-reward-1").style.filter = "blur(36px)";
@@ -514,11 +486,10 @@ async function render(data) {
       }
 
       handleScreenSizeChange1(mediaQuery);
-
     } else {
       document.getElementById("reward-title").textContent = "Oops!";
       document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
-      
+
       function handleScreenSizeChange(event) {
         if (event.matches) {
           document.getElementById("img-reward-1").style.filter = "blur(50px)";
@@ -628,7 +599,6 @@ async function render(data) {
       if (event.matches) {
         document.getElementById("play-btn").style.transform = "scale(3)";
         document.getElementById("play-btn").style.marginTop = "20%";
-
       }
     }
 
@@ -715,7 +685,6 @@ async function render(data) {
       if (event.matches) {
         document.getElementById("play-btn").style.transform = "scale(2)";
         document.getElementById("play-btn").style.marginTop = "5%";
-
       }
     }
 
@@ -788,7 +757,7 @@ async function render(data) {
                 <p class="spanish">${data[state.lvlIndex].elements[state.cardIndex].spanish}</p>
                 <div class="card__content">
                     <div class="vocab-img">
-                        <img src="${data[state.lvlIndex].elements[state.cardIndex].img}" alt="${data[state.lvlIndex].elements[state.cardIndex].english}">
+                        <img src="${data[state.lvlIndex].elements[state.cardIndex].img}" alt="img">
                     </div>
                     <p class="card__title">${data[state.lvlIndex].elements[state.cardIndex].english}</p>
                 </div>
@@ -961,6 +930,11 @@ async function render(data) {
     };
 
     document.getElementById("game-area").innerHTML = cardHTML;
+
+    const elements = document.getElementsByClassName("label-dropzone");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.fontSize = "2.5rem";
+    }
   } else if (data[state.lvlIndex].type == "labels") {
     document.getElementById("left-side").innerHTML = `
     <p id="score">Score: ${state.score}</p>
@@ -986,7 +960,7 @@ async function render(data) {
     const choicesHTML = data[state.lvlIndex].elements[state.cardIndex].labels
       .map(
         (c, i) => `
-          <div id="word-${i}" class="label-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);"  style="background-color:#B5CFB7">
+          <div id="word-${i}" class="label-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);"  style="background-color:#B5CFB7"><span style="  color: rgba(255, 255, 255, 0);">${i}</span>
             <div id="draggable-${i}" class="draggable-label" draggable="true" ondragstart="onDragStart(event);">
                 ${c}
             </div>
@@ -1120,7 +1094,7 @@ function checkAnswer(data) {
     if (unanswered == true) {
       alert("Please make sure that all the questions have been answered.");
       unansweredSort.forEach((q) => {
-        q.style.border = "1rem solid red";
+        q.style.border = "0.2rem solid red";
       });
     } else {
       data[state.lvlIndex].elements[state.cardIndex].answer.forEach((a, i) => {
@@ -1144,6 +1118,7 @@ function checkAnswer(data) {
       document.getElementById("sentence").style.backgroundColor = "lightgreen";
       document.getElementById("sentence").style.borderRadius = "10px";
       document.getElementById("sentence").style.textShadow = "0 0 15px white, 0 0 25px white, 0 0 50px white";
+      document.getElementById("sentence").style.fontSize = "2em";
     }
   } else if (data[state.lvlIndex].type == "labels") {
     var unanswered = false;
