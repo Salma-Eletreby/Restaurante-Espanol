@@ -2,7 +2,8 @@
   {
     "id": 1,
     "title": "Food - Cognates",
-    "desc": "Many roots for words are shared between English and Spanish",
+    "desc": "Many Spanish words share roots with English",
+    "bkg": "https://img.freepik.com/free-vector/modern-restaurant-interior-with-flat-design_23-2147920468.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "vocab",
     "elements": [
       {
@@ -43,6 +44,7 @@
     "id": 2,
     "title": "Food",
     "desc": "Not all words are the same in English and Spanish",
+    "bkg": "https://img.freepik.com/free-photo/black-wooden-table_417767-153.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "vocab",
     "elements": [
       {
@@ -91,6 +93,7 @@
     "id": 3,
     "title": "Level 1 - End of Level",
     "desc": "Choose the correct word that describes the image",
+    "bkg": "https://img.freepik.com/premium-photo/interior-restaurant-with-firewood-fireplace_146105-16584.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "MCQ",
     "elements": [
       {
@@ -129,6 +132,7 @@
     "id": 4,
     "title": "Kitchen Utensils",
     "desc": "In a restaurant, you might need to ask for more utensils",
+    "bkg": "https://img.freepik.com/premium-photo/kitchen-with-large-island-kitchen-island-with-large-island-large-island-with-lar_1012937-5163.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "vocab",
     "elements": [
       {
@@ -169,7 +173,7 @@
         "english": "Spoon",
         "arabic": "ملعقة",
         "img": "https://img.freepik.com/premium-photo/spoon_488220-3574.jpg?w=900",
-        "audio": "https://www.dropbox.com/scl/fi/yvmndlarobv0z5aympm0c/spoon.mp3?rlkey=qm8iba8z3049i67egxdjem14f&st=brtuor0k&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/a5g149vlz3fiffk9yspbb/spoon.mp3?rlkey=usm6x94u88m1rdurcpfz9rz6r&st=6lxwxmxv&dl=1"
       },
       {
         "id": 6,
@@ -177,7 +181,7 @@
         "english": "Cup",
         "arabic": "كوب",
         "img": "https://img.freepik.com/free-photo/still-life-glass-cups_23-2149646448.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/w1qzwoy58rhuvwsvhwt9t/cup.mp3?rlkey=rjiokrx7ygbwbd41wj3y8705q&st=vbpzwfpe&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/1c7u6o7qlkq4if1104rf5/cup.mp3?rlkey=zlpfdyawz6q3ei0eqws0npqlk&st=uk5ekbri&dl=1"
       }
     ]
   },
@@ -185,6 +189,7 @@
     "id": 5,
     "title": "Kitchen Appliances",
     "desc": "In a restaurant, you might need to ask for more utensils",
+    "bkg": "https://img.freepik.com/free-vector/modern-restaurant-interior-with-flat-design_23-2147902413.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "vocab",
     "elements": [
       {
@@ -201,7 +206,7 @@
         "english": "Oven",
         "arabic": "فرن",
         "img": "https://img.freepik.com/free-vector/realistic-compact-oven-with-digital-display-timer-pre-set-cooking-programs_1441-1680.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/ok3w9tmm8iuy2lh9bech9/Horno.mp3?rlkey=d7in8iqp1t5uwlz0cxqyssaub&st=hlfsdhsy&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/q1p8nxyldqb8m8c8l81b9/oven.mp3?rlkey=k5ktxx1fruw6w3nfx3bw4l04z&st=venzd3vs&dl=1"
       },
       {
         "id": 3,
@@ -221,14 +226,6 @@
       },
       {
         "id": 5,
-        "spanish": "Lavavajillas",
-        "english": "Dishwasher",
-        "arabic": "غسالة الأواني",
-        "img": "https://img.freepik.com/free-vector/3d-realistic-white-dishwasher-machine-with-three-metal-racks-filled-with-clean-plates-glass_1441-1862.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/52zhyc6mi4mrcgxv8o428/Lavavajillas.mp3?rlkey=l1n4stfsi4nx2e7zq0y9o75ma&st=fr4c57v3&dl=1"
-      },
-      {
-        "id": 6,
         "spanish": "Tostadora",
         "english": "Toaster",
         "arabic": "محمصة",
@@ -241,6 +238,7 @@
     "id": 6,
     "title": "Level 2 - End of Level",
     "desc": "Drag the labels to the correct position on to the image ",
+    "bkg": "https://img.freepik.com/free-vector/isometric-italian-restaurant-cooking-room-template-with-professional-cooks-preparing-pizza-isolated_1284-38963.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "labels",
     "elements": [
       {
@@ -274,6 +272,7 @@
     "id": 7,
     "title": "How to order in a restaurant",
     "desc": "Learn how to start a sentence to talk with your server",
+    "bkg":"https://img.freepik.com/premium-photo/footpath-dining-with-umbrellas-potted-plants_997534-48202.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "vocab",
     "elements": [
       {
@@ -306,6 +305,7 @@
     "id": 8,
     "title": "Order in a restaurant",
     "desc": "Learn how to form sentences with all you have learnt",
+    "bkg": "https://img.freepik.com/free-photo/terrace-hotel-stuffed-with-soft-furnitures-green-space_114579-2724.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "vocab",
     "elements": [
       {
@@ -354,6 +354,7 @@
     "id": 9,
     "title": "Level 3 - End of Level",
     "desc": "sort the colored words in each of the following sentences to form a correct sentence.",
+    "bkg":"https://img.freepik.com/free-photo/fresh-baked-gourmet-desserts-sweet-indulgence-generated-by-ai_188544-40886.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "sort",
     "elements": [
       {
@@ -396,8 +397,8 @@
         "answer": [
           { "txt": "puedo", "ignore": false },
           { "txt": "tener", "ignore": false },
-          { "txt": "ensalada", "ignore": false },
           { "txt": "una", "ignore": true },
+          { "txt": "ensalada", "ignore": false },
           { "txt": "de", "ignore": true },
           { "txt": "la", "ignore": true },
           { "txt": "casa", "ignore": true },

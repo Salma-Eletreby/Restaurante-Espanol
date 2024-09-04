@@ -362,8 +362,7 @@ audio {
 
 .choices input[type="radio"] {
   border: 0px;
-  height: 4em;
-  transform: scale(3);
+  zoom: 3;
 }
 
 .element {
