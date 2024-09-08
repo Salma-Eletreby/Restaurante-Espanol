@@ -12,7 +12,7 @@
         "english": "Pizza",
         "arabic": "بيتزا",
         "img": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?t=st=1720624798~exp=1720628398~hmac=8064bc70b623d5c0a304f6fa96b6550c009864057bc8494edba9bffcf06fd4e9&w=740",
-        "audio": "https://www.dropbox.com/scl/fi/imjef3bkiw2fgsysqqyhy/pizza.mp3?rlkey=90393qjob29r7we8b51s6ck7h&st=h071de64&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/imjef3bkiw2fgsysqqyhy/pizza.mp3?rlkey=90393qjob29r7we8b51s6ck7h&st=whjxbhxy&raw=1"
       },
       {
         "id": 2,
@@ -20,7 +20,7 @@
         "english": "Spaghetti",
         "arabic": "معكرونة",
         "img": "https://img.freepik.com/free-photo/tasty-appetizing-classic-italian-spaghetti-pasta-with-tomato-sauce-cheese-parmesan-basil-plate-ingredients-cooking-pasta-dark-table-flat-lay-top-view-copy-spce_1150-45812.jpg?t=st=1720625717~exp=1720629317~hmac=27eb47ea75ca454a97ca717395ebcc937a438b8bcc21235cf7b0c159c5a38626&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/icx4n4kpvaslrfnc2lyvq/spaghetti.mp3?rlkey=s938xs93k7rwjn58jrnbylrcv&st=jsfzy05o&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/icx4n4kpvaslrfnc2lyvq/spaghetti.mp3?rlkey=s938xs93k7rwjn58jrnbylrcv&st=jsfzy05o&raw=1"
       },
       {
         "id": 3,
@@ -28,7 +28,7 @@
         "english": "Hamburger",
         "arabic": "همبرغر",
         "img": "https://img.freepik.com/free-photo/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon_2829-5398.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/zfr1n4q90yplig2jmxerk/hamburger.mp3?rlkey=mb6w3g6i6w0tvvcdgmv8ua6dc&st=wz0jaryt&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/zfr1n4q90yplig2jmxerk/hamburger.mp3?rlkey=mb6w3g6i6w0tvvcdgmv8ua6dc&st=wz0jaryt&raw=1"
       },
       {
         "id": 4,
@@ -36,7 +36,7 @@
         "english": "Salad",
         "arabic": "سلطة",
         "img": "https://img.freepik.com/free-photo/flat-lay-salad-with-chicken-sesame-seeds_23-2148700369.jpg?t=st=1720626039~exp=1720629639~hmac=02cdb592d0ed957d000ba483fa154d72b214fc050ab952ca29075ff765ebee67&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/t4di6yxk3iurkdpq3esli/salad.mp3?rlkey=lxzqao0k0fg8n0wdl4g5zcved&st=iuuy86fr&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/t4di6yxk3iurkdpq3esli/salad.mp3?rlkey=lxzqao0k0fg8n0wdl4g5zcved&st=iuuy86fr&raw=1"
       }
     ]
   },
@@ -53,7 +53,7 @@
         "english": "French Fries",
         "arabic": "بطاطس مقلية",
         "img": "https://img.freepik.com/free-photo/crispy-french-fries-with-ketchup-mayonnaise_1150-26588.jpg?t=st=1720626956~exp=1720630556~hmac=385fe326d3f22a12371c8ac3fe38038a229efdc3b096f3d30e8459e87fed3ce6&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/9055clc3t95xysj9uv1t8/fried.mp3?rlkey=c6z5wmi7yh0e6qvnv70zcnkrf&st=tgq3brf0&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/9055clc3t95xysj9uv1t8/fried.mp3?rlkey=c6z5wmi7yh0e6qvnv70zcnkrf&st=tgq3brf0&raw=1"
       },
       {
         "id": 2,
@@ -61,7 +61,7 @@
         "english": "Sandwich",
         "arabic": "ساندويتش",
         "img": "https://img.freepik.com/free-photo/front-view-tasty-ham-sandwiches-with-french-fries-dark-surface_179666-34644.jpg?t=st=1720627067~exp=1720630667~hmac=e195b3a88ceffaf7a526e52328d2957fcf3fb45737ecec0a0e153292ce4f21a9&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/rwh1ktc6oeppurqcsu1kt/sandwich.mp3?rlkey=x1itfuhcaiq2cfyi8pe8zcwpj&st=1bili3jy&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/rwh1ktc6oeppurqcsu1kt/sandwich.mp3?rlkey=x1itfuhcaiq2cfyi8pe8zcwpj&st=1bili3jy&raw=1"
       },
       {
         "id": 3,
@@ -69,7 +69,7 @@
         "english": "Hot Dog",
         "arabic": "نقانق",
         "img": "https://img.freepik.com/free-photo/high-angle-delicious-hot-dog-fries_23-2149235977.jpg?t=st=1720627367~exp=1720630967~hmac=c52f8352aeb12db03ce4c09db0f4b273b19ebfdeaf07f85dbd2929d40df9a98c&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/fb4718lheg4sk412rp49e/hot-dog.mp3?rlkey=sud64qkco7ew7qlg26ogec7ud&st=2jt3e73u&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/fb4718lheg4sk412rp49e/hot-dog.mp3?rlkey=sud64qkco7ew7qlg26ogec7ud&st=2jt3e73u&raw=1"
       },
       {
         "id": 4,
@@ -77,7 +77,7 @@
         "english": "Ice Cream",
         "arabic": "بوظة",
         "img": "https://img.freepik.com/free-photo/delicious-ice-cream-studio_23-2150696576.jpg?t=st=1720627516~exp=1720631116~hmac=b63ec34d6642c4d7a3aecb0c882acbaaab392fe51e08c3ff66c40c8c72f2312d&w=360",
-        "audio": "https://www.dropbox.com/scl/fi/7mpepr6nhfzjx4vd84ps6/ice-scream.mp3?rlkey=utonyod1wr9myohiqavv5dvy6&st=1scpehnw&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/7mpepr6nhfzjx4vd84ps6/ice-scream.mp3?rlkey=utonyod1wr9myohiqavv5dvy6&st=1scpehnw&raw=1"
       },
       {
         "id": 5,
@@ -85,7 +85,7 @@
         "english": "Vegetables",
         "arabic": "خضروات",
         "img": "https://img.freepik.com/free-photo/bottom-view-vegetables-green-red-tomatoes-bell-peppers-cutting-board-greens-bowl-knife-cucumbers-red-tablecloth-black-table_140725-146228.jpg?t=st=1720627235~exp=1720630835~hmac=5c929c4f9710e1779ab54060183070bd78b270386b4818811c5d38894cb726ca&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/gbm5wl43ktb0usx66q8bn/vegetables.mp3?rlkey=hveqt4xu1hnmewx14pxg9kz6z&st=zg8562pe&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/gbm5wl43ktb0usx66q8bn/vegetables.mp3?rlkey=hveqt4xu1hnmewx14pxg9kz6z&st=zg8562pe&raw=1"
       }
     ]
   },
@@ -141,7 +141,7 @@
         "english": "Knife",
         "arabic": "سكين",
         "img": "https://img.freepik.com/premium-photo/set-kitchen-knifes_105428-383.jpg?w=740",
-        "audio": "https://www.dropbox.com/scl/fi/kqo4w11lvpiwudnifo73u/knife.mp3?rlkey=rfrbu87j1unpcr2a87ir46b02&st=ohpjcw1n&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/kqo4w11lvpiwudnifo73u/knife.mp3?rlkey=rfrbu87j1unpcr2a87ir46b02&st=ohpjcw1n&raw=1"
       },
       {
         "id": 2,
@@ -149,7 +149,7 @@
         "english": "Plate",
         "arabic": "طبق",
         "img": "https://img.freepik.com/free-photo/top-view-empty-round-plate-white-surface_140725-115139.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/xjh5jzzjgf9yr9izx9r7l/Plate.mp3?rlkey=nx7d22lwem723o4fa567rqk0v&st=ni33xje1&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/xjh5jzzjgf9yr9izx9r7l/Plate.mp3?rlkey=nx7d22lwem723o4fa567rqk0v&st=ni33xje1&raw=1"
       },
       {
         "id": 3,
@@ -157,7 +157,7 @@
         "english": "Fork",
         "arabic": "شوكة",
         "img": "https://img.freepik.com/premium-photo/fork-isolated-white_103864-343.jpg?w=826",
-        "audio": "https://www.dropbox.com/scl/fi/qz64ikl9u6bkchy7k5uje/fork.mp3?rlkey=gd7o04uudmqwyjb5qm20rzt7r&st=dea8wlpp&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/qz64ikl9u6bkchy7k5uje/fork.mp3?rlkey=gd7o04uudmqwyjb5qm20rzt7r&st=dea8wlpp&raw=1"
       },
       {
         "id": 4,
@@ -165,7 +165,7 @@
         "english": "Bowl",
         "arabic": "صَحن",
         "img": "https://img.freepik.com/premium-psd/ceramic-bowl-isolated-alpha-layer_253984-7535.jpg?w=826",
-        "audio": "https://www.dropbox.com/scl/fi/4rfmu35ha2ysqi83dnkc9/bowl.mp3?rlkey=fxwimim1xl8k2c0h62gao81qr&st=iubv1a57&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/4rfmu35ha2ysqi83dnkc9/bowl.mp3?rlkey=fxwimim1xl8k2c0h62gao81qr&st=iubv1a57&raw=1"
       },
       {
         "id": 5,
@@ -173,7 +173,7 @@
         "english": "Spoon",
         "arabic": "ملعقة",
         "img": "https://img.freepik.com/premium-photo/spoon_488220-3574.jpg?w=900",
-        "audio": "https://www.dropbox.com/scl/fi/a5g149vlz3fiffk9yspbb/spoon.mp3?rlkey=usm6x94u88m1rdurcpfz9rz6r&st=6lxwxmxv&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/a5g149vlz3fiffk9yspbb/spoon.mp3?rlkey=usm6x94u88m1rdurcpfz9rz6r&st=6lxwxmxv&raw=1"
       },
       {
         "id": 6,
@@ -181,7 +181,7 @@
         "english": "Cup",
         "arabic": "كوب",
         "img": "https://img.freepik.com/free-photo/still-life-glass-cups_23-2149646448.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/1c7u6o7qlkq4if1104rf5/cup.mp3?rlkey=zlpfdyawz6q3ei0eqws0npqlk&st=uk5ekbri&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/1c7u6o7qlkq4if1104rf5/cup.mp3?rlkey=zlpfdyawz6q3ei0eqws0npqlk&st=uk5ekbri&raw=1"
       }
     ]
   },
@@ -198,7 +198,7 @@
         "english": "Refrigerator",
         "arabic": "ثلاجة",
         "img": "https://img.freepik.com/free-vector/set-two-isolated-refrigerator-fridge-realistic-images-with-two-views-opened-closed-cabinet_1284-27089.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/p8jvap6u84bj3kgmeqmyn/Nevera.mp3?rlkey=eylws9tpv1diubg0myse31g8p&st=yni82h1l&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/p8jvap6u84bj3kgmeqmyn/Nevera.mp3?rlkey=eylws9tpv1diubg0myse31g8p&st=yni82h1l&raw=1"
       },
       {
         "id": 2,
@@ -206,7 +206,7 @@
         "english": "Oven",
         "arabic": "فرن",
         "img": "https://img.freepik.com/free-vector/realistic-compact-oven-with-digital-display-timer-pre-set-cooking-programs_1441-1680.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/q1p8nxyldqb8m8c8l81b9/oven.mp3?rlkey=k5ktxx1fruw6w3nfx3bw4l04z&st=venzd3vs&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/q1p8nxyldqb8m8c8l81b9/oven.mp3?rlkey=k5ktxx1fruw6w3nfx3bw4l04z&st=venzd3vs&raw=1"
       },
       {
         "id": 3,
@@ -214,7 +214,7 @@
         "english": "Stove",
         "arabic": "موقد",
         "img": "https://img.freepik.com/free-vector/kitchen-appliance-gas-cooking-surface-cooktop_134830-659.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/70taq4td8hhqgwk8ny2zq/Estufa.mp3?rlkey=6s8lcetlnc0ad02q0fdjbppk5&st=gy9vt0q3&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/70taq4td8hhqgwk8ny2zq/Estufa.mp3?rlkey=6s8lcetlnc0ad02q0fdjbppk5&st=gy9vt0q3&raw=1"
       },
       {
         "id": 4,
@@ -222,7 +222,7 @@
         "english": "Blender",
         "arabic": "الخلاط",
         "img": "https://img.freepik.com/free-vector/flat-smoothies-blender-glass-illustration_23-2148956218.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/vm7hcsuwyximzgrfn0r3l/Licadora.mp3?rlkey=70dibjgmai9acnwo71qaohchu&st=xzv6c7zx&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/vm7hcsuwyximzgrfn0r3l/Licadora.mp3?rlkey=70dibjgmai9acnwo71qaohchu&st=xzv6c7zx&raw=1"
       },
       {
         "id": 5,
@@ -230,7 +230,7 @@
         "english": "Toaster",
         "arabic": "محمصة",
         "img": "https://img.freepik.com/free-vector/toaster-bread-food-technology_138676-2033.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
-        "audio": "https://www.dropbox.com/scl/fi/nsoglp71t5c3u3x0qfz1w/toaster.mp3?rlkey=rvqc3w9s1wwc3ik36ibe43gzg&st=izbcn1m9&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/nsoglp71t5c3u3x0qfz1w/toaster.mp3?rlkey=rvqc3w9s1wwc3ik36ibe43gzg&st=izbcn1m9&raw=1"
       }
     ]
   },
@@ -243,27 +243,27 @@
     "elements": [
       {
         "id": 1,
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Food-plate-toast-restaurant_%2824031208550%29.jpg/2560px-Food-plate-toast-restaurant_%2824031208550%29.jpg",
+        "img": "https://www.dropbox.com/scl/fi/ids6f6ypyo4svvv8zpgll/kitchen-utensils.PNG?rlkey=iyf53pedw82cq8yh0m9jo65vp&st=ni0kz15x&dl=1",
         "labels": ["El Cuchillo", "El Tenedor", "El Plato", "El Tazón", "La Taza","La Cuchara"],
         "answer": [
-          { "x": 1000, "y": 480, "label": "El Cuchillo" },
-          { "x": 1110, "y": 50, "label": "La Taza" },
-          { "x": 930, "y": 230, "label": "El Tenedor" },
-          { "x": 620, "y": 300, "label": "El Tazón" },
-          { "x": 1150, "y": 260, "label": "El Plato" },
-          { "x": 970, "y": 50, "label": "La Cuchara" }
+          { "x": 770, "y": 100, "label": "El Cuchillo" },
+          { "x": 600, "y": 500, "label": "La Taza" },
+          { "x": 560, "y": 100, "label": "El Tenedor" },
+          { "x": 1000, "y": 500, "label": "El Tazón" },
+          { "x": 1000, "y": 200, "label": "El Plato" },
+          { "x": 670, "y": 70, "label": "La Cuchara" }
         ]
       },
       {
         "id": 2,
-        "img": "https://img.freepik.com/free-vector/kitchen-appliances-concept-illustration_114360-7217.jpg?t=st=1723057404~exp=1723061004~hmac=b743df0765d40252512ad3300ce40ca053488934d8d548d116f75b2ab93af3a2&w=826",
+        "img": "https://www.dropbox.com/scl/fi/elb5a2anwvkfl8ggln0wt/Kitchen-appliances.PNG?rlkey=681nxiudgc5e881sodgq4iajk&st=60fcd28l&dl=1",
         "labels": ["Nevera", "Tostadora", "Licadora", "Estufa","Horno"],
         "answer": [
-          { "x": 600, "y": 400, "label": "Nevera" },
+          { "x": 1250, "y": 400, "label": "Nevera" },
           { "x": 880, "y": 510, "label": "Horno" },
           { "x": 1000, "y": 300, "label": "Licadora" },
-          { "x": 920, "y": 360, "label": "Estufa" },
-          { "x": 1180, "y": 300, "label": "Tostadora" }
+          { "x": 920, "y": 375, "label": "Estufa" },
+          { "x": 770, "y": 150, "label": "Tostadora" }
         ]
       }
     ]
@@ -281,7 +281,7 @@
         "english": "I would like",
         "arabic": "أود",
         "img": "https://img.freepik.com/free-photo/young-happy-waiter-using-digital-tablet-while-talking-couple-taking-their-order-cafe_637285-540.jpg?t=st=1721161722~exp=1721165322~hmac=1e7f41cf1df87cd918d405e7e7c81e15c6a641f708e44174029e7732945b149e&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/f3mqrzvo4r9fij3zd6rz7/Quisiera.mp3?rlkey=s3wgwr50laa4qp7dsv3cngawn&st=9rw2cyrj&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/f3mqrzvo4r9fij3zd6rz7/Quisiera.mp3?rlkey=s3wgwr50laa4qp7dsv3cngawn&st=9rw2cyrj&raw=1"
       },
       {
         "id": 2,
@@ -289,7 +289,7 @@
         "english": "For me,...",
         "arabic": "لي",
         "img": "https://img.freepik.com/premium-photo/happy-waiter-using-touchpad-showing-menu-couple-cafe_637285-512.jpg?w=826",
-        "audio": "https://www.dropbox.com/scl/fi/libzmziu6vqpxuyntr26k/Para-m.mp3?rlkey=1urlp5aotulibwvhk2lylmi80&st=s60ljla3&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/libzmziu6vqpxuyntr26k/Para-m.mp3?rlkey=1urlp5aotulibwvhk2lylmi80&st=s60ljla3&raw=1"
       },
       {
         "id": 3,
@@ -297,7 +297,7 @@
         "english": "I would like...",
         "arabic": "أود",
         "img": "https://img.freepik.com/free-photo/young-happy-waiter-using-digital-tablet-while-talking-couple-taking-their-order-cafe_637285-540.jpg?t=st=1721161722~exp=1721165322~hmac=1e7f41cf1df87cd918d405e7e7c81e15c6a641f708e44174029e7732945b149e&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/ylgk8d239qc5sez62vm33/Me-gustar-a.mp3?rlkey=dhvj8wbb5abpeu825p9odfgbn&st=w3gezoq0&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/ylgk8d239qc5sez62vm33/Me-gustar-a.mp3?rlkey=dhvj8wbb5abpeu825p9odfgbn&st=w3gezoq0&raw=1"
       }
     ]
   },
@@ -314,7 +314,7 @@
         "english": "<span style=\"color: red; font-weight:bold;\">I would like</span> the grilled chicken, <span style=\"color: red; font-weight:bold;\">please</span>.",
         "arabic": "أريد الدجاج المشوي من فضلك",
         "img": "https://img.freepik.com/free-photo/couple-sitting-cafe-choosing-order-form-meu-while-communicating-with-waiter_637285-602.jpg?t=st=1721162646~exp=1721166246~hmac=0e0e76da7b2ee0fc51a99ed33b20e0edbf897639d30d168108d395d3d991cc1a&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/yg28nrtm7829hl6uy0qfj/temp1.mp3?rlkey=xr24b57fgb454mpy48ygz99oz&st=xdb308ua&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/yg28nrtm7829hl6uy0qfj/temp1.mp3?rlkey=xr24b57fgb454mpy48ygz99oz&st=xdb308ua&raw=1"
       },
       {
         "id": 2,
@@ -322,7 +322,7 @@
         "english": "<span style=\"color: red; font-weight:bold;\">Can I have</span> a house salad?",
         "arabic": "هل يمكنني الحصول على سلطة المنزل؟",
         "img": "https://img.freepik.com/premium-photo/young-waiter-protective-face-mask-gloves-with-ordered-meals-ready-serving-covid2019_217236-3826.jpg?w=826",
-        "audio": "https://www.dropbox.com/scl/fi/r6wktygc8lf02leneku49/temp2.mp3?rlkey=7r95veopctcu3tij3oo6bxa6c&st=ktx5yx92&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/r6wktygc8lf02leneku49/temp2.mp3?rlkey=7r95veopctcu3tij3oo6bxa6c&st=ktx5yx92&raw=1"
       },
       {
         "id": 3,
@@ -330,7 +330,7 @@
         "english": "<span style=\"color: red; font-weight:bold;\">May I order</span> the salmon fillet, <span style=\"color: red; font-weight:bold;\">please</span>?",
         "arabic": "هل لي أن أطلب شرائح سمك السلمون، من فضلك؟",
         "img": "https://img.freepik.com/free-photo/happy-waiter-serving-meal-couple-lunch-time-restaurant_637285-1922.jpg?t=st=1721162865~exp=1721166465~hmac=e442d2da3388ff7b69e7514cd545b52557853e273b79ae2dbe425823ec41f897&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/rzj4t5uagg39zfto5yies/temp3.mp3?rlkey=je872nvtt2txh2ijxq4ij2cbz&st=xsedf9uz&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/rzj4t5uagg39zfto5yies/temp3.mp3?rlkey=je872nvtt2txh2ijxq4ij2cbz&st=xsedf9uz&raw=1"
       },
       {
         "id": 4,
@@ -338,7 +338,7 @@
         "english": "<span style=\"color: red; font-weight:bold;\">I'll have</span> the lasagna, <span style=\"color: red; font-weight:bold;\">please</span>.",
         "arabic": "سآخذ اللازانيا، من فضلك",
         "img": "https://img.freepik.com/free-photo/couple-ordering-food-restaurant_23-2149269232.jpg?t=st=1721162841~exp=1721166441~hmac=65da070bb2c0945666ceb4b88d8bf05876d11f01fa6373ce6790d3e016dc6439&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/wdqvrz4qjpv9gqt0zyfvz/temp4.mp3?rlkey=ofej8nlrucnkcvdwn7moqftsw&st=9yefwkfj&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/wdqvrz4qjpv9gqt0zyfvz/temp4.mp3?rlkey=ofej8nlrucnkcvdwn7moqftsw&st=9yefwkfj&raw=1"
       },
       {
         "id": 5,
@@ -346,7 +346,7 @@
         "english": "<span style=\"color: red; font-weight:bold;\">Please bring me</span> a bottle of water.",
         "arabic": "من فضلك أحضر لي زجاجة ماء",
         "img": "https://img.freepik.com/free-photo/young-trans-man-with-apron-working-as-waiter_23-2149409809.jpg?t=st=1721162715~exp=1721166315~hmac=f3c8f8b85ca7cccbe4bd3810b00926dc667d2968a4d58f1a01aa2e667829fc41&w=826",
-        "audio": "https://www.dropbox.com/scl/fi/beuvjp4d6obwyt8fgn4q6/temp5.mp3?rlkey=73vh6e7v68zwwwt7h625k6hvt&st=dupk9kcv&dl=1"
+        "audio": "https://www.dropbox.com/scl/fi/beuvjp4d6obwyt8fgn4q6/temp5.mp3?rlkey=73vh6e7v68zwwwt7h625k6hvt&st=dupk9kcv&raw=1"
       }
     ]
   },

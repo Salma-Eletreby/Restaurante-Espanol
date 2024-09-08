@@ -11,6 +11,38 @@ let state = {
   questionScore: [0, 0, 0],
 };
 
+var tempScores = [
+  {
+    userName: "Lara-T72",
+    age: 18,
+    questionScore: {
+      MCQ: 10,
+      label: 20,
+      sort: 40,
+    },
+    totalScore: 70,
+  },
+  {
+    userName: "Abdallah-Q18",
+    age: 18,
+    questionScore: {
+      MCQ: 50,
+      label: 60,
+      sort: 100,
+    },
+    totalScore: 210,
+  },
+  {
+    userName: "Rayan-P63",
+    age: 18,
+    questionScore: {
+      MCQ: 30,
+      label: 40,
+      sort: 60,
+    },
+    totalScore: 130,
+  },
+];
 var rewardHtml = `
     <h1 id="reward-title"> </h1>
     <h4 id="reward-sub"> </h4>
@@ -100,12 +132,12 @@ async function render(data) {
           <div id="reward-score">
             <img id="img-reward" src="../Style/images/reward.jpg" alt="reward">
             <p id="reward-text">
-              Delicious tapas!
-              the word tapas, a plural is derived from <br>
+              <span class="tapas-text" id="tapas-text-1">Delicious tapas!</span>
+              <span class="tapas-text" id="tapas-text-2">the word tapas, a plural is derived from <br>
               the spanish verb tapar, "to cover", a cognate <br>
-              of the English top. <br>
-              Tapas is a famous appetizer that can be served <br>
-              hot or cold
+              of the English top.</span> <br>
+              <span class="tapas-text" id="tapas-text-3">Tapas is a famous appetizer that can be served <br>
+              hot or cold</span>
             </p>
           </div>
         </div>
@@ -116,6 +148,7 @@ async function render(data) {
 
         if (state.rewardImgStatus[1] == "50" && state.rewardImgStatus[0] == "30") {
           document.getElementById("game-area").innerHTML = endScreenHTML;
+
         } else if (state.rewardImgStatus[1] == "50" || state.rewardImgStatus[0] == "30") {
           document.getElementById("reward-title").textContent = "Try harder next time!";
           document.getElementById("reward-sub").textContent = "You were close but did not fully clear the image";
@@ -137,44 +170,51 @@ async function render(data) {
 
       handleScreenSizeChange(mediaQuery);
 
-      var allScores = await fetch("/api/scores").then((res) => res.json());
-      allScores.push(user);
-
-      allScores.sort((a, b) => b - a);
-      var position = allScores.findIndex((u) => u === user) + 1;
-
       document.getElementById("reward-title").style.margin = "0.5rem";
       document.getElementById("reward-sub").style.margin = "0.5rem";
       document.getElementById("img-reward").style.filter = "blur(0px)";
 
+      var allScores = tempScores;
+      allScores.push(user);
+
+      allScores.sort((a, b) => b.totalScore - a.totalScore);
+
+      var position = allScores.findIndex((u) => u.userName === user.userName) + 1;
+
+      // Generate leaderboard HTML
       var leaderboardHTML = `
-      <div id="leaderboard">
-        <div class="ribbon"></div>
-        <table>
-          <tr>
-            <td class="number">1</td>
-            <td class="name">${allScores[0].userName}</td>
-            <td class="points">${allScores[0].totalScore} <img class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" alt="gold medal" /></td>
-          </tr>
-          <tr>
-            <td class="number">2</td>
-            <td class="name">${allScores[1].userName}</td>
-            <td class="points">${allScores[1].totalScore}</td>
-          </tr>
-          <tr>
-            <td class="number">3</td>
-            <td class="name">${allScores[2].userName}</td>
-            <td class="points">${allScores[2].totalScore}</td>
-          </tr>
-          <tr>
-            <td class="number">${position}</td>
-            <td class="name">${state.name}</td>
-            <td class="points">${state.score}</td>
-          </tr>
-        </table>
-      </div>
-      `;
+  <div id="leaderboard">
+  <div class="ribbon"></div>
+    <table>
+`;
+
+      for (var i = 0; i < 3 && i < allScores.length; i++) {
+        leaderboardHTML += `
+      <tr>
+        <td class="number">${i + 1}</td>
+        <td class="name">${allScores[i].userName}</td>
+        <td class="points">${allScores[i].totalScore}</td>
+      </tr>
+    `;
+      }
+
+      if (position > 3) {
+        leaderboardHTML += `
+    <tr>
+      <td class="number">${position}</td>
+      <td class="name">${user.userName}</td>
+      <td class="points">${user.totalScore}</td>
+    </tr>
+  `;
+      }
+
+      leaderboardHTML += `
+    </table>
+  </div>
+`;
+
       document.getElementById("game-area").innerHTML += leaderboardHTML;
+
       document.getElementById("game-area").innerHTML += trumpetHtml;
       var achievmentHtml = `
       <div class="animation">
@@ -263,43 +303,49 @@ async function render(data) {
 
       handleScreenSizeChange(mediaQuery);
 
-      var allScores = await fetch("/api/scores").then((res) => res.json());
-      allScores.push(user);
-
-      allScores.sort((a, b) => b.score - a.score);
-      var position = allScores.findIndex((u) => u === user) + 1;
-
       document.getElementById("reward-title").style.margin = "0.5rem";
       document.getElementById("reward-sub").style.margin = "0.5rem";
       document.getElementById("img-reward-1").style.filter = "blur(2px)";
 
+      var allScores = tempScores;
+      allScores.push(user);
+
+      allScores.sort((a, b) => b.questionScore.label - a.questionScore.label);
+
+      var position = allScores.findIndex((u) => u.userName === user.userName) + 1;
+
+      // Generate leaderboard HTML
       var leaderboardHTML = `
-      <div id="leaderboard">
-        <div class="ribbon"></div>
-        <table>
-          <tr>
-            <td class="number">1</td>
-            <td class="name">${allScores[0].userName}</td>
-            <td class="points">${allScores[0].totalScore} <img class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" alt="gold medal" /></td>
-          </tr>
-          <tr>
-            <td class="number">2</td>
-            <td class="name">${allScores[1].userName}</td>
-            <td class="points">${allScores[1].totalScore}</td>
-          </tr>
-          <tr>
-            <td class="number">3</td>
-            <td class="name">${allScores[2].userName}</td>
-            <td class="points">${allScores[2].totalScore}</td>
-          </tr>
-          <tr>
-            <td class="number">${position}</td>
-            <td class="name">${state.name}</td>
-            <td class="points">${state.score}</td>
-          </tr>
-        </table>
-      </div>
-      `;
+  <div id="leaderboard">
+  <div class="ribbon"></div>
+    <table>
+`;
+
+      for (var i = 0; i < 3 && i < allScores.length; i++) {
+        leaderboardHTML += `
+      <tr>
+        <td class="number">${i + 1}</td>
+        <td class="name">${allScores[i].userName}</td>
+        <td class="points">${allScores[i].questionScore.label}</td>
+      </tr>
+    `;
+      }
+
+      if (position > 3) {
+        leaderboardHTML += `
+    <tr>
+      <td class="number">${position}</td>
+      <td class="name">${user.userName}</td>
+      <td class="points">${user.questionScore.label}</td>
+    </tr>
+  `;
+      }
+
+      leaderboardHTML += `
+    </table>
+  </div>
+`;
+
       document.getElementById("game-area").innerHTML += leaderboardHTML;
       document.getElementById("game-area").innerHTML += trumpetHtml;
 
@@ -384,43 +430,49 @@ async function render(data) {
 
       handleScreenSizeChange(mediaQuery);
 
-      var allScores = await fetch("/api/scores").then((res) => res.json());
-      allScores.push(user);
-
-      allScores.sort((a, b) => b - a);
-      var position = allScores.findIndex((u) => u === user) + 1;
-
       document.getElementById("reward-title").style.margin = "0.5rem";
       document.getElementById("reward-sub").style.margin = "0.5rem";
       document.getElementById("img-reward-1").style.filter = "blur(4px)";
 
+      var allScores = tempScores;
+      allScores.push(user);
+
+      allScores.sort((a, b) => b.questionScore.MCQ - a.questionScore.MCQ);
+
+      var position = allScores.findIndex((u) => u.userName === user.userName) + 1;
+      
+      // Generate leaderboard HTML
       var leaderboardHTML = `
-      <div id="leaderboard">
-        <div class="ribbon"></div>
-        <table>
-          <tr>
-            <td class="number">1</td>
-            <td class="name">${allScores[0].userName}</td>
-            <td class="points">${allScores[0].totalScore} <img class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" alt="gold medal" /></td>
-          </tr>
-          <tr>
-            <td class="number">2</td>
-            <td class="name">${allScores[1].userName}</td>
-            <td class="points">${allScores[1].totalScore}</td>
-          </tr>
-          <tr>
-            <td class="number">3</td>
-            <td class="name">${allScores[2].userName}</td>
-            <td class="points">${allScores[2].totalScore}</td>
-          </tr>
-          <tr>
-            <td class="number">${position}</td>
-            <td class="name">${state.name}</td>
-            <td class="points">${state.score}</td>
-          </tr>
-        </table>
-      </div>
-      `;
+  <div id="leaderboard">
+  <div class="ribbon"></div>
+    <table>
+`;
+
+      for (var i = 0; i < 3 && i < allScores.length; i++) {
+        leaderboardHTML += `
+      <tr>
+        <td class="number">${i + 1}</td>
+        <td class="name">${allScores[i].userName}</td>
+        <td class="points">${allScores[i].questionScore.MCQ}</td>
+      </tr>
+    `;
+      }
+
+      if (position > 3) {
+        leaderboardHTML += `
+    <tr>
+      <td class="number">${position}</td>
+      <td class="name">${user.userName}</td>
+      <td class="points">${user.questionScore.MCQ}</td>
+    </tr>
+  `;
+      }
+
+      leaderboardHTML += `
+    </table>
+  </div>
+`;
+
       document.getElementById("game-area").innerHTML += leaderboardHTML;
 
       var achievmentHtml = `
@@ -498,43 +550,49 @@ async function render(data) {
 
       handleScreenSizeChange(mediaQuery);
 
-      var allScores = await fetch("/api/scores").then((res) => res.json());
-      allScores.push(user);
-
-      allScores.sort((a, b) => b - a);
-      var position = allScores.findIndex((u) => u === user) + 1;
-
       document.getElementById("reward-title").style.margin = "0.5rem";
       document.getElementById("reward-sub").style.margin = "0.5rem";
       document.getElementById("img-reward-1").style.filter = "blur(6px)";
 
+      var allScores = tempScores;
+      allScores.push(user);
+
+      allScores.sort((a, b) => b.totalScore - a.totalScore);
+
+      var position = allScores.findIndex((u) => u.userName === user.userName) + 1;
+
+      // Generate leaderboard HTML
       var leaderboardHTML = `
-        <div id="leaderboard">
-          <div class="ribbon"></div>
-          <table>
-            <tr>
-              <td class="number">1</td>
-              <td class="name">${allScores[0].userName}</td>
-              <td class="points">${allScores[0].totalScore} <img class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" alt="gold medal" /></td>
-            </tr>
-            <tr>
-              <td class="number">2</td>
-              <td class="name">${allScores[1].userName}</td>
-              <td class="points">${allScores[1].totalScore}</td>
-            </tr>
-            <tr>
-              <td class="number">3</td>
-              <td class="name">${allScores[2].userName}</td>
-              <td class="points">${allScores[2].totalScore}</td>
-            </tr>
-            <tr>
-              <td class="number">${position}</td>
-              <td class="name">${state.name}</td>
-              <td class="points">${state.score}</td>
-            </tr>
-          </table>
-        </div>
-        `;
+  <div id="leaderboard">
+  <div class="ribbon"></div>
+    <table>
+`;
+
+      for (var i = 0; i < 3 && i < allScores.length; i++) {
+        leaderboardHTML += `
+      <tr>
+        <td class="number">${i + 1}</td>
+        <td class="name">${allScores[i].userName}</td>
+        <td class="points">${allScores[i].totalScore}</td>
+      </tr>
+    `;
+      }
+
+      if (position > 3) {
+        leaderboardHTML += `
+    <tr>
+      <td class="number">${position}</td>
+      <td class="name">${user.userName}</td>
+      <td class="points">${user.totalScore}</td>
+    </tr>
+  `;
+      }
+
+      leaderboardHTML += `
+    </table>
+  </div>
+`;
+
       document.getElementById("game-area").innerHTML += leaderboardHTML;
 
       function handleScreenSizeChange1(event) {
@@ -744,7 +802,7 @@ async function render(data) {
         </div>
         `;
       document.getElementById("game-area").innerHTML = initialHtML;
-      document.getElementById("nav").style.display = "none"
+      document.getElementById("nav").style.display = "none";
 
       setTimeout(function () {
         document.getElementById("nav").style.display = "flex";
@@ -1140,6 +1198,175 @@ async function render(data) {
 
     document.getElementById("game-area").innerHTML = cardHTML;
   }
+
+  document.getElementById("next").onclick = async () => {
+    if (state.checkAnswer == true) {
+      checkAnswer(data);
+    } else if (state.lvlIndex == -2 || state.lvlIndex == -1) {
+      if (state.lvlIndex == -2) {
+        var userName = document.getElementById("name").value;
+        var userAge = document.getElementById("age").value;
+
+        if (userName == "") {
+          document.getElementById("name").style.border = "0.2rem solid red";
+        }
+        if (userAge == "") {
+          document.getElementById("age").style.border = "0.2rem solid red";
+        }
+        if (userName != "" && userAge != "") {
+          setState(
+            {
+              cardIndex: 0,
+              lvlIndex: 1 + state.lvlIndex,
+              checkAnswer: false,
+              score: state.score,
+              name: userName,
+              age: userAge,
+              rewardImgStatus: state.rewardImgStatus,
+              showReward: state.showReward,
+              confirmation: state.confirmation,
+              questionScore: state.questionScore,
+            },
+            data
+          );
+        }
+      } else {
+        setState(
+          {
+            cardIndex: 0,
+            lvlIndex: 1 + state.lvlIndex,
+            checkAnswer: false,
+            score: state.score,
+            name: state.name,
+            age: state.age,
+            rewardImgStatus: state.rewardImgStatus,
+            showReward: state.showReward,
+            confirmation: state.confirmation,
+            questionScore: state.questionScore,
+          },
+          data
+        );
+      }
+    } else if (state.showReward == true) {
+      await showLevelProgress(data);
+      setState(
+        {
+          cardIndex: state.cardIndex,
+          lvlIndex: state.lvlIndex,
+          checkAnswer: state.checkAnswer,
+          score: state.score,
+          name: state.name,
+          age: state.age,
+          questionScore: state.questionScore,
+          rewardImgStatus: state.rewardImgStatus,
+          showReward: true,
+          confirmation: state.confirmation,
+          questionScore: state.questionScore,
+        },
+        data
+      );
+      state.showReward = false;
+    } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length && state.lvlIndex + 1 == data.length) {
+      AddToLeaderboard();
+      document.getElementById("game-area").style.height = "100%";
+      var cardHTML = `
+ <div class="results-summary-container">
+ <div>
+ <svg id="first-place" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Flat"> <g id="Color"> <polygon fill="#111315" points="20 20 32 32 39 3 24 3 20 20"></polygon> <polygon fill="#a60416" points="34.89 3 28.68 28.68 23.33 23.33 28.11 3 34.89 3"></polygon> <polygon fill="#212529" points="44 20 32 32 25 3 40 3 44 20"></polygon> <polygon fill="#dd051d" points="40.67 23.33 35.32 28.68 29.11 3 35.89 3 40.67 23.33"></polygon> <path d="M34,39.6l2.22,3.87a2.33,2.33,0,0,0,1.56,1.11l4.45.87A2.25,2.25,0,0,1,43.5,49.2l-3.08,3.26a2.24,2.24,0,0,0-.6,1.8l.53,4.41A2.3,2.3,0,0,1,37.09,61L33,59.13a2.42,2.42,0,0,0-1.94,0L26.91,61a2.3,2.3,0,0,1-3.26-2.32l.53-4.41a2.24,2.24,0,0,0-.6-1.8L20.5,49.2a2.25,2.25,0,0,1,1.25-3.75l4.45-.87a2.33,2.33,0,0,0,1.56-1.11L30,39.6A2.34,2.34,0,0,1,34,39.6Z" fill="#fccd1d"></path> <path d="M32,31a4,4,0,1,0,4,4A4,4,0,0,0,32,31Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,32,37Z" fill="#f9a215"></path> </g> </g> </g></svg>
+ </div>
+    <div class="confetti">
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+    </div>
+    <div class="results-summary-container__result">
+      <div class="heading-tertiary">Your Result</div>
+      <div class="result-box">
+        <div class="heading-primary">${state.score}</div>
+        <!-- <p class="result">of 100</p> -->
+      </div>
+      <div class="result-text-box">
+        <div class="heading-secondary">excellent</div>
+        <p class="paragraph">
+          We will send a certificate to your email to share your success with family and friends!
+        </p>
+      </div>    
+      <div class="summary__cta">
+      </div>
+    </div>
+  </div>
+      `;
+      document.getElementById("game-area").innerHTML = cardHTML;
+      document.getElementById("nav").style.opacity = "0%";
+    } else if (state.confirmation == true) {
+      document.getElementById("next").innerHTML = `
+                  <span class="text">If you go to next word, You cannot go back. Click again to confirm.</span>
+        <span class="icon-Container">
+          <svg width="16" height="19" viewBox="0 0 16 19" fill="nones" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="1.61321" cy="1.61321" r="1.5" fill="black"></circle>
+            <circle cx="5.73583" cy="1.61321" r="1.5" fill="black"></circle>
+            <circle cx="5.73583" cy="5.5566" r="1.5" fill="black"></circle>
+            <circle cx="9.85851" cy="5.5566" r="1.5" fill="black"></circle>
+            <circle cx="9.85851" cy="9.5" r="1.5" fill="black"></circle>
+            <circle cx="13.9811" cy="9.5" r="1.5" fill="black"></circle>
+            <circle cx="5.73583" cy="13.4434" r="1.5" fill="black"></circle>
+            <circle cx="9.85851" cy="13.4434" r="1.5" fill="black"></circle>
+            <circle cx="1.61321" cy="17.3868" r="1.5" fill="black"></circle>
+            <circle cx="5.73583" cy="17.3868" r="1.5" fill="black"></circle>
+          </svg>
+        </span>
+        `;
+      state.confirmation = !state.confirmation;
+    } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length) {
+      await showLevelProgress(data);
+      setState(
+        {
+          cardIndex: 0,
+          lvlIndex: ++state.lvlIndex,
+          checkAnswer: false,
+          score: state.score,
+          name: state.name,
+          age: state.age,
+          rewardImgStatus: state.rewardImgStatus,
+          showReward: state.showReward,
+          confirmation: state.confirmation,
+          questionScore: state.questionScore,
+        },
+        data
+      );
+    } else {
+      setState(
+        {
+          cardIndex: ++state.cardIndex,
+          lvlIndex: state.lvlIndex,
+          checkAnswer: false,
+          score: state.score,
+          name: state.name,
+          age: state.age,
+          rewardImgStatus: state.rewardImgStatus,
+          showReward: state.showReward,
+          confirmation: state.confirmation,
+          questionScore: state.questionScore,
+        },
+        data
+      );
+    }
+  };
 }
 
 function checkAnswer(data) {
@@ -1300,6 +1527,33 @@ function checkAnswer(data) {
   }
 }
 
+function waitForTimeout(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function showLevelProgress(data) {
+  var levelHtml = `
+  <div id="level-progress">
+    <div id="level-container">
+      <h1>Level Complete</h1>
+      <div id="levels">
+                ${data.map((item, i) => `
+        <div style="background-color: ${i <= state.lvlIndex ? 'lightgreen' : 'transparent'};">
+          ${i + 1}
+        </div>`).join('')}
+      </div>
+    </div>
+  </div>
+`;
+
+  document.getElementById('game').innerHTML += levelHtml;
+
+  await waitForTimeout(1000);
+
+  document.getElementById('level-progress').remove();
+}
+
+
 fetch("/api/game")
   .then((response) => response.json())
   .then((data) => {
@@ -1319,173 +1573,6 @@ fetch("/api/game")
         },
         data
       );
-    };
-
-    document.getElementById("next").onclick = () => {
-      if (state.checkAnswer == true) {
-        checkAnswer(data);
-      } else if (state.lvlIndex == -2 || state.lvlIndex == -1) {
-        if (state.lvlIndex == -2) {
-          var userName = document.getElementById("name").value;
-          var userAge = document.getElementById("age").value;
-
-          if (userName == "") {
-            document.getElementById("name").style.border = "0.2rem solid red";
-          }
-          if (userAge == "") {
-            document.getElementById("age").style.border = "0.2rem solid red";
-          }
-          if (userName != "" && userAge != "") {
-            setState(
-              {
-                cardIndex: 0,
-                lvlIndex: 1 + state.lvlIndex,
-                checkAnswer: false,
-                score: state.score,
-                name: userName,
-                age: userAge,
-                rewardImgStatus: state.rewardImgStatus,
-                showReward: state.showReward,
-                confirmation: state.confirmation,
-                questionScore: state.questionScore,
-              },
-              data
-            );
-          }
-        } else {
-          setState(
-            {
-              cardIndex: 0,
-              lvlIndex: 1 + state.lvlIndex,
-              checkAnswer: false,
-              score: state.score,
-              name: state.name,
-              age: state.age,
-              rewardImgStatus: state.rewardImgStatus,
-              showReward: state.showReward,
-              confirmation: state.confirmation,
-              questionScore: state.questionScore,
-            },
-            data
-          );
-        }
-      } else if (state.showReward == true) {
-        setState(
-          {
-            cardIndex: state.cardIndex,
-            lvlIndex: state.lvlIndex,
-            checkAnswer: state.checkAnswer,
-            score: state.score,
-            name: state.name,
-            age: state.age,
-            questionScore: state.questionScore,
-            rewardImgStatus: state.rewardImgStatus,
-            showReward: true,
-            confirmation: state.confirmation,
-            questionScore: state.questionScore,
-          },
-          data
-        );
-        state.showReward = false;
-      } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length && state.lvlIndex + 1 == data.length) {
-        AddToLeaderboard();
-        document.getElementById("game-area").style.height = "100%";
-        var cardHTML = `
-   <div class="results-summary-container">
-   <div>
-   <svg id="first-place" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Flat"> <g id="Color"> <polygon fill="#111315" points="20 20 32 32 39 3 24 3 20 20"></polygon> <polygon fill="#a60416" points="34.89 3 28.68 28.68 23.33 23.33 28.11 3 34.89 3"></polygon> <polygon fill="#212529" points="44 20 32 32 25 3 40 3 44 20"></polygon> <polygon fill="#dd051d" points="40.67 23.33 35.32 28.68 29.11 3 35.89 3 40.67 23.33"></polygon> <path d="M34,39.6l2.22,3.87a2.33,2.33,0,0,0,1.56,1.11l4.45.87A2.25,2.25,0,0,1,43.5,49.2l-3.08,3.26a2.24,2.24,0,0,0-.6,1.8l.53,4.41A2.3,2.3,0,0,1,37.09,61L33,59.13a2.42,2.42,0,0,0-1.94,0L26.91,61a2.3,2.3,0,0,1-3.26-2.32l.53-4.41a2.24,2.24,0,0,0-.6-1.8L20.5,49.2a2.25,2.25,0,0,1,1.25-3.75l4.45-.87a2.33,2.33,0,0,0,1.56-1.11L30,39.6A2.34,2.34,0,0,1,34,39.6Z" fill="#fccd1d"></path> <path d="M32,31a4,4,0,1,0,4,4A4,4,0,0,0,32,31Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,32,37Z" fill="#f9a215"></path> </g> </g> </g></svg>
-   </div>
-      <div class="confetti">
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-        <div class="confetti-piece"></div>
-      </div>
-      <div class="results-summary-container__result">
-        <div class="heading-tertiary">Your Result</div>
-        <div class="result-box">
-          <div class="heading-primary">${state.score}</div>
-          <!-- <p class="result">of 100</p> -->
-        </div>
-        <div class="result-text-box">
-          <div class="heading-secondary">excellent</div>
-          <p class="paragraph">
-            We will send a certificate to your email to share your success with family and friends!
-          </p>
-        </div>    
-        <div class="summary__cta">
-        </div>
-      </div>
-    </div>
-        `;
-        document.getElementById("game-area").innerHTML = cardHTML;
-        document.getElementById("nav").style.opacity = "0%";
-      } else if (state.confirmation == true) {
-        document.getElementById("next").innerHTML = `
-                    <span class="text">If you go to next word, You cannot go back. Click again to confirm.</span>
-          <span class="icon-Container">
-            <svg width="16" height="19" viewBox="0 0 16 19" fill="nones" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="1.61321" cy="1.61321" r="1.5" fill="black"></circle>
-              <circle cx="5.73583" cy="1.61321" r="1.5" fill="black"></circle>
-              <circle cx="5.73583" cy="5.5566" r="1.5" fill="black"></circle>
-              <circle cx="9.85851" cy="5.5566" r="1.5" fill="black"></circle>
-              <circle cx="9.85851" cy="9.5" r="1.5" fill="black"></circle>
-              <circle cx="13.9811" cy="9.5" r="1.5" fill="black"></circle>
-              <circle cx="5.73583" cy="13.4434" r="1.5" fill="black"></circle>
-              <circle cx="9.85851" cy="13.4434" r="1.5" fill="black"></circle>
-              <circle cx="1.61321" cy="17.3868" r="1.5" fill="black"></circle>
-              <circle cx="5.73583" cy="17.3868" r="1.5" fill="black"></circle>
-            </svg>
-          </span>
-          `;
-        state.confirmation = !state.confirmation;
-      } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length) {
-        setState(
-          {
-            cardIndex: 0,
-            lvlIndex: ++state.lvlIndex,
-            checkAnswer: false,
-            score: state.score,
-            name: state.name,
-            age: state.age,
-            rewardImgStatus: state.rewardImgStatus,
-            showReward: state.showReward,
-            confirmation: state.confirmation,
-            questionScore: state.questionScore,
-          },
-          data
-        );
-      } else {
-        setState(
-          {
-            cardIndex: ++state.cardIndex,
-            lvlIndex: state.lvlIndex,
-            checkAnswer: false,
-            score: state.score,
-            name: state.name,
-            age: state.age,
-            rewardImgStatus: state.rewardImgStatus,
-            showReward: state.showReward,
-            confirmation: state.confirmation,
-            questionScore: state.questionScore,
-          },
-          data
-        );
-      }
     };
   })
   .catch((error) => {
