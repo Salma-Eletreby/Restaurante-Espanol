@@ -130,9 +130,12 @@ async function render(data) {
         <h4 id="reward-sub">You have cleared the image</h4>
         <div id="reward-img">
           <div id="reward-score">
-            <img id="img-reward" src="../Style/images/reward.jpg" alt="reward">
+            <div id="labelled-reward">
+              <img id="img-reward" src="../Style/images/reward.jpg" alt="reward">
+              <h3>This is a picture of tapas</h3>
+            </div>
             <p id="reward-text">
-              <span class="tapas-text" id="tapas-text-1">Delicious tapas!</span>
+              <span class="tapas-text" id="tapas-text-1">These are Delicious tapas!</span><br>
               <span class="tapas-text" id="tapas-text-2">the word tapas, a plural is derived from <br>
               the spanish verb tapar, "to cover", a cognate <br>
               of the English top.</span> <br>
@@ -142,6 +145,7 @@ async function render(data) {
           </div>
         </div>
     `;
+
     if (state.score >= 80 && check == 3) {
       if (state.rewardImgStatus[2] == "") {
         state.rewardImgStatus[2] = "80";
@@ -1248,7 +1252,6 @@ async function render(data) {
         );
       }
     } else if (state.showReward == true) {
-      await showLevelProgress(data);
       setState(
         {
           cardIndex: state.cardIndex,
