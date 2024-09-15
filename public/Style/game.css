@@ -228,7 +228,8 @@ body {
 
 #score {
   font-size: 25pt;
-  margin-top: 0.5em;
+  font-weight: bold;
+  margin-top: -25em;
   background-color: white;
   padding: 1rem;
   border-radius: 50%;
@@ -254,7 +255,8 @@ body {
 
 .img-drop {
   position: absolute;
-  opacity: 50%;
+  opacity: 80%;
+  background-color: yellow;
 }
 
 .loader {
@@ -540,7 +542,7 @@ audio {
   }
 }
 
-@keyframes scale_circle_1 {
+/* @keyframes scale_circle_1 {
   0% {
     transform: scale(0.1);
   }
@@ -581,11 +583,11 @@ audio {
     transform: scale(1);
     opacity: 0;
   }
-}
+} */
 
-@keyframes circle_grow_move {
+/* @keyframes circle_grow_move {
   1% {
-    opacity: 0;
+    opacity: 1;
     transform: scale(0.1);
   }
   4% {
@@ -603,33 +605,9 @@ audio {
     transform: translateX(-130%);
     background-color: #42ae0e;
   }
-  85% {
-    transform: translateX(-130%);
-    background-color: #42ae0e;
-  }
-  89% {
-    transform: translateX(0);
-    background-color: #39960c;
-  }
-  94% {
-    transform: scale(1);
-  }
-  96% {
-    transform: scale(1.1);
-  }
-  98% {
-    transform: scale(0.1);
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    transform: scale(0.1);
-  }
-}
+} */
 
-@keyframes trophy_animate_opacity {
+/* @keyframes trophy_animate_opacity {
   0% {
     opacity: 0;
   }
@@ -648,9 +626,9 @@ audio {
   100% {
     opacity: 0;
   }
-}
+} */
 
-@keyframes xbox_animate_opacity {
+/* @keyframes xbox_animate_opacity {
   0% {
     opacity: 1;
   }
@@ -669,7 +647,7 @@ audio {
   100% {
     opacity: 1;
   }
-}
+} */
 
 @keyframes banner-animate {
   0% {
@@ -691,16 +669,9 @@ audio {
   85% {
     width: 355px;
   }
-  89% {
-    width: 100px;
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-  }
 }
 
-@keyframes textSlide {
+/* @keyframes textSlide {
   0% {
     transform: translateY(0px);
     opacity: 0;
@@ -724,13 +695,13 @@ audio {
   100% {
     opacity: 0;
   }
-}
+} */
 
 .animation {
   width: 30%;
   height: 110px;
   padding: 5px 0px 5px 0px;
-  margin-top: 80px;
+  margin-top: 700px;
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -745,8 +716,7 @@ audio {
 }
 
 .circle.circle_animate {
-  animation: circle_grow_move;
-  animation-duration: 10s;
+  animation: circle_grow_move 10s forwards; 
   transform-origin: center;
 }
 .circle.circle_animate::before {
@@ -774,7 +744,7 @@ audio {
   width: 100px;
   height: 100px;
   top: 0;
-  opacity: 0;
+  opacity: 1;
   margin: 0 auto;
   border-radius: 100%;
   background: #39960c;
@@ -783,6 +753,7 @@ audio {
   display: flex;
   overflow: hidden;
   z-index: 4;
+  left: -120px;
 }
 .circle::before {
   content: "";
@@ -839,7 +810,7 @@ audio {
   height: 100px;
   position: relative;
   left: 0;
-  opacity: 0;
+  opacity: 1;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -869,8 +840,7 @@ audio {
 }
 
 .banner.banner-animate {
-  animation: banner-animate;
-  animation-duration: 10s;
+  /* animation: banner-animate 5s forwards; */
 }
 
 .achieve_name::before,
@@ -896,7 +866,7 @@ audio {
   justify-content: center;
   margin-left: 25%;
   height: 100%;
-  margin-top: 150px;
+  /* margin-top: 150px; */
 }
 .achieve_disp * {
   margin-bottom: 5px;

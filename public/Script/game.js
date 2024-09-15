@@ -93,6 +93,7 @@ window.toggleCard = function (card) {
 };
 
 var check = 0;
+var lvlCounter = 1;
 async function render(data) {
   var cardHTML = ``;
 
@@ -486,9 +487,6 @@ async function render(data) {
               <img class="trophy_1" src="https://dl.dropboxusercontent.com/s/m9xt201vymisc91/trophy_full.svg" alt="Xbox Logo" />
               <img class="trophy_2" src="https://dl.dropboxusercontent.com/s/e7lqmrylmva92oi/trophy_no_handles.svg" alt="Xbox Logo" />
               </div>
-              <div class="img xbox_img">
-              <img src="https://www.svgrepo.com/show/526499/chef-hat-minimalistic.svg" alt="" />
-              </div>
           </div>
           <div class="banner-outer">
               <div class="banner">
@@ -529,6 +527,7 @@ async function render(data) {
       animatedElements.forEach((element) => {
         if (element.el) {
           element.el.classList.add(element.class); // Add the class
+          
           setTimeout(() => {
             element.el.classList.remove(element.class); // Remove the class after a delay
           }, 10000); // Adjust duration if needed
@@ -770,7 +769,7 @@ async function render(data) {
     };
   } else if (data[state.lvlIndex].type == "vocab") {
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
-    if (state.cardIndex == 0) {
+    if ((data[state.lvlIndex].id == 1 || data[state.lvlIndex].id == 4 || data[state.lvlIndex].id == 7) && state.cardIndex == 0) {
       var initialHtML = `
         <audio autoplay>
             <source src="Style/start.mp3" type="audio/mpeg">
@@ -802,7 +801,7 @@ async function render(data) {
         <h1 id="data-title">${data[state.lvlIndex].title}</h1>
         <h4 id="data-subtitle">${data[state.lvlIndex].desc}</h4>
         <div class="card" style="height: 60%;" onclick="toggleCard(this)">
-            <h1 style="font-size:5em">Level ${data[state.lvlIndex].id} - Start !</h1>
+            <h1 style="font-size:5em; text-align:center;">Level ${lvlCounter} - Start !</h1>
         </div>
         `;
       document.getElementById("game-area").innerHTML = initialHtML;
@@ -963,6 +962,7 @@ async function render(data) {
       state.confirmation = true;
     }
   } else if (data[state.lvlIndex].type == "MCQ") {
+    lvlCounter = 2
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
     document.getElementById("left-side").innerHTML = `
@@ -1039,6 +1039,7 @@ async function render(data) {
 
     document.getElementById("game-area").innerHTML = cardHTML;
   } else if (data[state.lvlIndex].type == "sort") {
+    lvlCounter=4
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
     document.getElementById("left-side").innerHTML = `
@@ -1119,6 +1120,7 @@ async function render(data) {
       elements[i].style.fontSize = "2.5rem";
     }
   } else if (data[state.lvlIndex].type == "labels") {
+    lvlCounter = 3
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
     document.getElementById("left-side").innerHTML = `
@@ -1457,7 +1459,7 @@ function checkAnswer(data) {
           if (studentAns.toLowerCase() == a.txt.toLowerCase()) {
             document.getElementById(`zone-${i}`).style.backgroundColor = "lightgreen";
             state.score = state.score + 10;
-            state.questionScore = state.questionScore + 10;
+            state.questionScore[2] = state.questionScore[2] + 10;
           } else {
             document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
           }
@@ -1514,7 +1516,7 @@ function checkAnswer(data) {
 
         if (studentAns.toLowerCase() == a.label.toLowerCase()) {
           document.getElementById(`zone-${i}`).style.backgroundColor = "lightgreen";
-          state.questionScore = state.questionScore + 10;
+          state.questionScore[1] = state.questionScore[1] + 10;
           state.score = state.score + 10;
         } else {
           document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
@@ -1538,7 +1540,7 @@ async function showLevelProgress(data) {
   var levelHtml = `
   <div id="level-progress">
     <div id="level-container">
-      <h1>Level Complete</h1>
+      <h1>Section Complete</h1>
       <div id="levels">
                 ${data.map((item, i) => `
         <div style="background-color: ${i <= state.lvlIndex ? 'lightgreen' : 'transparent'};">
@@ -1551,7 +1553,7 @@ async function showLevelProgress(data) {
 
   document.getElementById('game').innerHTML += levelHtml;
 
-  await waitForTimeout(1000);
+  await waitForTimeout(6000);
 
   document.getElementById('level-progress').remove();
 }
@@ -1606,9 +1608,17 @@ window.AddToLeaderboard = async function (event) {
 document.addEventListener("DOMContentLoaded", function () {
   const texts = [
     `
-Welcome to 
-the Spanish 
-Restaurant!`,
+¡Bienvenido al 
+'Restaurante 
+Español'!
+`,
+`¡Hola!
+We use “¡” at the 
+beginning of 
+Spanish sentence to 
+show excitement 
+from the start
+`,
     `My name is 
 José and I’ll 
 be your mentor 
@@ -1630,6 +1640,7 @@ and have fun!
 `,
   ];
 
+  document.getElementById("play-btn").style.opacity = "0%";
   const textContainer = document.getElementById("speech-1");
   let index = 0;
   let textIndex = 0;
@@ -1643,9 +1654,11 @@ and have fun!
       setTimeout(() => {
         index = 0;
         textIndex++;
-        textContainer.innerHTML = ""; // Clear the container for new text
+        textContainer.innerHTML = ""; 
         typeLetter();
-      }, 1000); // 5-second delay before changing the text
+      }, 1000); 
+    } else {
+      document.getElementById("play-btn").style.opacity = "100%";
     }
   }
 

@@ -92,7 +92,7 @@
   {
     "id": 3,
     "title": "Level 1 - End of Level",
-    "desc": "Choose the correct word that describes the image",
+    "desc": "Ready to check what you’ve learned? Choose the correct word that describes the image",
     "bkg": "https://img.freepik.com/premium-photo/interior-restaurant-with-firewood-fireplace_146105-16584.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "MCQ",
     "elements": [
@@ -237,7 +237,7 @@
   {
     "id": 6,
     "title": "Level 2 - End of Level",
-    "desc": "Drag the labels to the correct position on to the image ",
+    "desc": "Great progress! Now, let’s test your knowledge again.Drag the labels to the correct position on to the image ",
     "bkg": "https://img.freepik.com/free-vector/isometric-italian-restaurant-cooking-room-template-with-professional-cooks-preparing-pizza-isolated_1284-38963.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "labels",
     "elements": [
@@ -259,8 +259,8 @@
         "img": "https://www.dropbox.com/scl/fi/elb5a2anwvkfl8ggln0wt/Kitchen-appliances.PNG?rlkey=681nxiudgc5e881sodgq4iajk&st=60fcd28l&dl=1",
         "labels": ["Nevera", "Tostadora", "Licadora", "Estufa","Horno"],
         "answer": [
-          { "x": 1250, "y": 400, "label": "Nevera" },
-          { "x": 880, "y": 510, "label": "Horno" },
+          { "x": 1250, "y": 450, "label": "Nevera" },
+          { "x": 880, "y": 580, "label": "Horno" },
           { "x": 1000, "y": 300, "label": "Licadora" },
           { "x": 920, "y": 375, "label": "Estufa" },
           { "x": 770, "y": 150, "label": "Tostadora" }
@@ -353,7 +353,7 @@
   {
     "id": 9,
     "title": "Level 3 - End of Level",
-    "desc": "sort the colored words in each of the following sentences to form a correct sentence.",
+    "desc": "You're almost there! Sort the colored words in each of the following sentences to form a correct sentence.",
     "bkg":"https://img.freepik.com/free-photo/fresh-baked-gourmet-desserts-sweet-indulgence-generated-by-ai_188544-40886.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "sort",
     "elements": [
