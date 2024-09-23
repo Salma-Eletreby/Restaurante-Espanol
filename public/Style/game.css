@@ -212,7 +212,6 @@ body {
 
 #next {
   margin-right: 20rem;
-  margin: 1rem;
 }
 
 #nav {
@@ -229,10 +228,11 @@ body {
 #score {
   font-size: 25pt;
   font-weight: bold;
-  margin-top: -25em;
-  background-color: white;
   padding: 1rem;
   border-radius: 50%;
+  position: absolute;
+  color: white;
+  background-color: #00000080;
 }
 
 /* For game */
@@ -256,7 +256,7 @@ body {
 .img-drop {
   position: absolute;
   opacity: 80%;
-  background-color: yellow;
+  background-color: orange !important;
 }
 
 .loader {
@@ -701,7 +701,7 @@ audio {
   width: 30%;
   height: 110px;
   padding: 5px 0px 5px 0px;
-  margin-top: 700px;
+  margin-top: 200px;
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -757,7 +757,7 @@ audio {
 }
 .circle::before {
   content: "";
-  opacity: 0;
+  /* opacity: 0; */
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -1587,7 +1587,7 @@ audio {
 }
 
 #progress-bar-outside {
-  width: 2000%;
+  width: 1500%;
   height: 30px;
   background-color: lightgray;
   border-radius: 15px;
@@ -1848,6 +1848,37 @@ border-radius: 20px;
   align-items: center;
 }
 
+/* score bar */
+.vertical-bar {
+  width: 50px; /* Adjust width as needed */
+  height: 70%; /* Adjust height as needed */
+  border-radius: 25px; /* This makes it rounded */
+  overflow: hidden; /* Ensures child elements fit inside rounded corners */
+  position: absolute;
+}
+
+.section {
+  height: 25%; /* Each section will take 1/4th of the parent div */
+  width: 100%; /* Full width */
+}
+
+.red {
+  background-color: green;
+}
+
+.orange {
+  background-color: yellow;
+}
+
+.yellow {
+  background-color: orange;
+}
+
+.green {
+  background-color: red;
+}
+
+
 @media only screen and (min-width: 1800px) {
   #title-screen {
     transform: scale(1.7);
@@ -1956,7 +1987,8 @@ border-radius: 20px;
   }
 
   #score {
-    color: black;
+    left: 80px;
+    color: white;
   }
 
   /* reward screen */
@@ -2046,5 +2078,10 @@ border-radius: 20px;
   }
   .acheive_score {
     width: 80px !important;
+  }
+
+  .vertical-bar{
+    top: 240px;
+    left: 30px;
   }
 }

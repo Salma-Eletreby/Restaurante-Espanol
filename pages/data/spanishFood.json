@@ -48,7 +48,7 @@
     "type": "vocab",
     "elements": [
       {
-        "id": 1,
+        "id": 5,
         "spanish": "Las Papas Fritas",
         "english": "French Fries",
         "arabic": "بطاطس مقلية",
@@ -56,7 +56,7 @@
         "audio": "https://www.dropbox.com/scl/fi/9055clc3t95xysj9uv1t8/fried.mp3?rlkey=c6z5wmi7yh0e6qvnv70zcnkrf&st=tgq3brf0&raw=1"
       },
       {
-        "id": 2,
+        "id": 6,
         "spanish": "El Bocadillo",
         "english": "Sandwich",
         "arabic": "ساندويتش",
@@ -64,7 +64,7 @@
         "audio": "https://www.dropbox.com/scl/fi/rwh1ktc6oeppurqcsu1kt/sandwich.mp3?rlkey=x1itfuhcaiq2cfyi8pe8zcwpj&st=1bili3jy&raw=1"
       },
       {
-        "id": 3,
+        "id": 7,
         "spanish": "El Perro Caliente",
         "english": "Hot Dog",
         "arabic": "نقانق",
@@ -72,7 +72,7 @@
         "audio": "https://www.dropbox.com/scl/fi/fb4718lheg4sk412rp49e/hot-dog.mp3?rlkey=sud64qkco7ew7qlg26ogec7ud&st=2jt3e73u&raw=1"
       },
       {
-        "id": 4,
+        "id": 8,
         "spanish": "El Helado",
         "english": "Ice Cream",
         "arabic": "بوظة",
@@ -80,7 +80,7 @@
         "audio": "https://www.dropbox.com/scl/fi/7mpepr6nhfzjx4vd84ps6/ice-scream.mp3?rlkey=utonyod1wr9myohiqavv5dvy6&st=1scpehnw&raw=1"
       },
       {
-        "id": 5,
+        "id": 9,
         "spanish": "Las Verduras",
         "english": "Vegetables",
         "arabic": "خضروات",
@@ -188,12 +188,12 @@
   {
     "id": 5,
     "title": "Kitchen Appliances",
-    "desc": "In a restaurant, you might need to ask for more utensils",
+    "desc": "In a restaurant, these appliances are used for preparing and serving meals",
     "bkg": "https://img.freepik.com/free-vector/modern-restaurant-interior-with-flat-design_23-2147902413.jpg?ga=GA1.1.1425892491.1713816127&semt=ais_hybrid",
     "type": "vocab",
     "elements": [
       {
-        "id": 1,
+        "id": 7,
         "spanish": "Nevera",
         "english": "Refrigerator",
         "arabic": "ثلاجة",
@@ -201,7 +201,7 @@
         "audio": "https://www.dropbox.com/scl/fi/p8jvap6u84bj3kgmeqmyn/Nevera.mp3?rlkey=eylws9tpv1diubg0myse31g8p&st=yni82h1l&raw=1"
       },
       {
-        "id": 2,
+        "id": 8,
         "spanish": "Horno",
         "english": "Oven",
         "arabic": "فرن",
@@ -209,7 +209,7 @@
         "audio": "https://www.dropbox.com/scl/fi/q1p8nxyldqb8m8c8l81b9/oven.mp3?rlkey=k5ktxx1fruw6w3nfx3bw4l04z&st=venzd3vs&raw=1"
       },
       {
-        "id": 3,
+        "id": 9,
         "spanish": "Estufa",
         "english": "Stove",
         "arabic": "موقد",
@@ -217,7 +217,7 @@
         "audio": "https://www.dropbox.com/scl/fi/70taq4td8hhqgwk8ny2zq/Estufa.mp3?rlkey=6s8lcetlnc0ad02q0fdjbppk5&st=gy9vt0q3&raw=1"
       },
       {
-        "id": 4,
+        "id": 10,
         "spanish": "Licadora",
         "english": "Blender",
         "arabic": "الخلاط",
@@ -225,7 +225,7 @@
         "audio": "https://www.dropbox.com/scl/fi/vm7hcsuwyximzgrfn0r3l/Licadora.mp3?rlkey=70dibjgmai9acnwo71qaohchu&st=xzv6c7zx&raw=1"
       },
       {
-        "id": 5,
+        "id": 11,
         "spanish": "Tostadora",
         "english": "Toaster",
         "arabic": "محمصة",
@@ -260,7 +260,7 @@
         "labels": ["Nevera", "Tostadora", "Licadora", "Estufa","Horno"],
         "answer": [
           { "x": 1250, "y": 450, "label": "Nevera" },
-          { "x": 880, "y": 580, "label": "Horno" },
+          { "x": 880, "y": 500, "label": "Horno" },
           { "x": 1000, "y": 300, "label": "Licadora" },
           { "x": 920, "y": 375, "label": "Estufa" },
           { "x": 770, "y": 150, "label": "Tostadora" }

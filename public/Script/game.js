@@ -133,19 +133,24 @@ async function render(data) {
           <div id="reward-score">
             <div id="labelled-reward">
               <img id="img-reward" src="../Style/images/reward.jpg" alt="reward">
-              <h3>This is a picture of tapas</h3>
+              <h1>This is a picture of tapas</h1>
             </div>
             <p id="reward-text">
-              <span class="tapas-text" id="tapas-text-1">These are Delicious tapas!</span><br>
-              <span class="tapas-text" id="tapas-text-2">the word tapas, a plural is derived from <br>
-              the spanish verb tapar, "to cover", a cognate <br>
-              of the English top.</span> <br>
-              <span class="tapas-text" id="tapas-text-3">Tapas is a famous appetizer that can be served <br>
-              hot or cold</span>
+              <span class="tapas-text" id="tapas-text-1">These are Delicious tapas!</span><br><br>
+              <span class="tapas-text" id="tapas-text-2">Tapas is a famous traditional Spanish appetizer or snack that can be served hot or cold. <br>
+              </span> <br><br>
+              <span class="tapas-text" id="tapas-text-3">The term comes from the Spanish verb tapar, meaning 'to cover,' akin to the English 'top'  <br>
+              </span>
             </p>
           </div>
         </div>
     `;
+
+    //to check the reward screen - comment out when unused
+    // state.score = 100
+    // check =3
+    // state.rewardImgStatus[1] = "50"
+    // state.rewardImgStatus[0] = "30"
 
     if (state.score >= 80 && check == 3) {
       if (state.rewardImgStatus[2] == "") {
@@ -153,6 +158,9 @@ async function render(data) {
 
         if (state.rewardImgStatus[1] == "50" && state.rewardImgStatus[0] == "30") {
           document.getElementById("game-area").innerHTML = endScreenHTML;
+
+          document.getElementById("reward-score").style.marginTop ="0%"
+          document.getElementById("reward-img").style.width = "70%"
 
         } else if (state.rewardImgStatus[1] == "50" || state.rewardImgStatus[0] == "30") {
           document.getElementById("reward-title").textContent = "Try harder next time!";
@@ -222,14 +230,11 @@ async function render(data) {
 
       document.getElementById("game-area").innerHTML += trumpetHtml;
       var achievmentHtml = `
-      <div class="animation">
+      <div class="animation" id="animation">
           <div class="circle">
               <div class="img trophy_animate trophy_img">
               <img class="trophy_1" src="https://dl.dropboxusercontent.com/s/m9xt201vymisc91/trophy_full.svg" alt="Xbox Logo" />
               <img class="trophy_2" src="https://dl.dropboxusercontent.com/s/e7lqmrylmva92oi/trophy_no_handles.svg" alt="Xbox Logo" />
-              </div>
-              <div class="img xbox_img">
-              <img src="https://www.svgrepo.com/show/526499/chef-hat-minimalistic.svg" alt="" />
               </div>
           </div>
           <div class="banner-outer">
@@ -251,6 +256,7 @@ async function render(data) {
       `;
 
       document.getElementById("game-area").innerHTML += achievmentHtml;
+      document.getElementById("animation").style.marginTop ="700px"
 
       const animatedElements = [
         {
@@ -360,9 +366,6 @@ async function render(data) {
               <div class="img trophy_animate trophy_img">
               <img class="trophy_1" src="https://dl.dropboxusercontent.com/s/m9xt201vymisc91/trophy_full.svg" alt="Xbox Logo" />
               <img class="trophy_2" src="https://dl.dropboxusercontent.com/s/e7lqmrylmva92oi/trophy_no_handles.svg" alt="Xbox Logo" />
-              </div>
-              <div class="img xbox_img">
-              <img src="https://www.svgrepo.com/show/526499/chef-hat-minimalistic.svg" alt="" />
               </div>
           </div>
           <div class="banner-outer">
@@ -768,7 +771,9 @@ async function render(data) {
       );
     };
   } else if (data[state.lvlIndex].type == "vocab") {
+    document.getElementById("next").style.margin = "1rem"
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
+    
     if ((data[state.lvlIndex].id == 1 || data[state.lvlIndex].id == 4 || data[state.lvlIndex].id == 7) && state.cardIndex == 0) {
       var initialHtML = `
         <audio autoplay>
@@ -811,13 +816,28 @@ async function render(data) {
         document.getElementById("nav").style.display = "flex";
         document.getElementById("game-area").style.height = "85%";
 
-        var progressPrecentage = ((state.cardIndex + 1) / data[state.lvlIndex].elements.length) * 100;
+        var currentIndexBar = data[state.lvlIndex].elements[state.cardIndex].id;
+        var totalWordsBar = 0;
 
-        document.getElementById("left-side").innerHTML = `
-            <div id="progress-bar-outside">
-              <div id="progress-bar-inside" style="width:${progressPrecentage}%">  ${state.cardIndex + 1}/${data[state.lvlIndex].elements.length} </div>
-            </div>
-          `;
+        if(state.lvlIndex == 0 || state.lvlIndex == 1){
+          totalWordsBar = data[0].elements.length + data[1].elements.length
+        } else if(state.lvlIndex == 3 || state.lvlIndex == 4){
+          totalWordsBar = data[3].elements.length + data[4].elements.length
+        } else if(state.lvlIndex == 7){
+          totalWordsBar = data[7].elements.length
+        }
+
+        var progressPrecentage = ((currentIndexBar) / totalWordsBar) * 100;
+        
+        if(data[state.lvlIndex].id != 7){
+          document.getElementById("left-side").innerHTML = `
+          <div id="progress-bar-outside">
+            <div id="progress-bar-inside" style="width:${progressPrecentage}%">  ${currentIndexBar}/${totalWordsBar} </div>
+          </div>
+        `;
+        } else{
+
+        }
         cardHTML = `
           <svg id="tooltip2" fill="#000000" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" id="memory-tooltip-above"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 1H20V2H21V16H20V17H15V18H14V19H13V20H12V21H10V20H9V19H8V18H7V17H2V16H1V2H2V1M3 3V15H8V16H9V17H10V18H12V17H13V16H14V15H19V3H3Z"></path></g><div id="tip-2">Click on <br>the card<br> to view the <br>English word</div></svg>
                 <svg id="Matador2" width="256px" height="256px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000" transform="matrix(-1, 0, 0, 1, 0, 0)">
@@ -888,13 +908,29 @@ async function render(data) {
       document.getElementById("nav").style.display = "flex";
       document.getElementById("game-area").style.height = "85%";
 
-      var progressPrecentage = ((state.cardIndex + 1) / data[state.lvlIndex].elements.length) * 100;
+      var currentIndexBar = data[state.lvlIndex].elements[state.cardIndex].id;
+      var totalWordsBar = 0;
 
-      document.getElementById("left-side").innerHTML = `
-          <div id="progress-bar-outside">
-            <div id="progress-bar-inside" style="width:${progressPrecentage}%">  ${state.cardIndex + 1}/${data[state.lvlIndex].elements.length} </div>
-          </div>
-        `;
+      if(state.lvlIndex == 0 || state.lvlIndex == 1){
+        totalWordsBar = data[0].elements.length + data[1].elements.length
+      } else if(state.lvlIndex == 3 || state.lvlIndex == 4){
+        totalWordsBar = data[3].elements.length + data[4].elements.length
+      } else if(state.lvlIndex == 7){
+        totalWordsBar = data[7].elements.length
+      }
+
+      var progressPrecentage = ((currentIndexBar) / totalWordsBar) * 100;
+      
+      if(data[state.lvlIndex].id != 7){
+        document.getElementById("left-side").innerHTML = `
+        <div id="progress-bar-outside">
+          <div id="progress-bar-inside" style="width:${progressPrecentage}%">  ${currentIndexBar}/${totalWordsBar} </div>
+        </div>
+      `;
+      } else{
+        document.getElementById("left-side").innerHTML =``
+        document.getElementById("next").style.removeProperty('margin');
+      }
       cardHTML = `
         <svg id="tooltip2" fill="#000000" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" id="memory-tooltip-above"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 1H20V2H21V16H20V17H15V18H14V19H13V20H12V21H10V20H9V19H8V18H7V17H2V16H1V2H2V1M3 3V15H8V16H9V17H10V18H12V17H13V16H14V15H19V3H3Z"></path></g><div id="tip-2">Click on <br>the card<br> to view the <br>English word</div></svg>
               <svg id="Matador2" width="256px" height="256px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000" transform="matrix(-1, 0, 0, 1, 0, 0)">
@@ -962,12 +998,24 @@ async function render(data) {
       state.confirmation = true;
     }
   } else if (data[state.lvlIndex].type == "MCQ") {
+    document.getElementById("next").style.removeProperty('margin');
     lvlCounter = 2
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
+    //     <p id="score">Score: ${state.score}</p>
     document.getElementById("left-side").innerHTML = `
-    <p id="score">Score: ${state.score}</p>
+    <div class="vertical-bar">
+  <div class="section red"></div>
+  <div class="section orange"></div>
+  <div class="section yellow"></div>
+  <div class="section green"></div>
+</div>
+<div id="score">🢘 Score: ${state.score}</div>
     `;
+
+    var scorePosition= state.score*2.125
+    document.getElementById("score").style.bottom = `${scorePosition}px`
+
     document.getElementById("next").innerHTML = `
     <span class="text">Next</span>
 <span class="icon-Container">
@@ -1039,12 +1087,22 @@ async function render(data) {
 
     document.getElementById("game-area").innerHTML = cardHTML;
   } else if (data[state.lvlIndex].type == "sort") {
+    document.getElementById("next").style.removeProperty('margin');
     lvlCounter=4
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
     document.getElementById("left-side").innerHTML = `
-    <p id="score">Score: ${state.score}</p>
+    <div class="vertical-bar">
+  <div class="section red"></div>
+  <div class="section orange"></div>
+  <div class="section yellow"></div>
+  <div class="section green"></div>
+</div>
+<div id="score">🢘 Score: ${state.score}</div>
     `;
+
+        var scorePosition= state.score*2.125
+    document.getElementById("score").style.bottom = `${scorePosition}px`
 
     document.getElementById("next").innerHTML = `
     <span class="text">Next</span>
@@ -1120,12 +1178,22 @@ async function render(data) {
       elements[i].style.fontSize = "2.5rem";
     }
   } else if (data[state.lvlIndex].type == "labels") {
+    document.getElementById("next").style.removeProperty('margin');
     lvlCounter = 3
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
     document.getElementById("left-side").innerHTML = `
-    <p id="score">Score: ${state.score}</p>
+    <div class="vertical-bar">
+  <div class="section red"></div>
+  <div class="section orange"></div>
+  <div class="section yellow"></div>
+  <div class="section green"></div>
+</div>
+<div id="score">🢘 Score: ${state.score}</div>
     `;
+
+        var scorePosition= state.score*2.125
+    document.getElementById("score").style.bottom = `${scorePosition}px`
 
     document.getElementById("next").innerHTML = `
     <span class="text">Next</span>
@@ -1147,7 +1215,7 @@ async function render(data) {
     const choicesHTML = data[state.lvlIndex].elements[state.cardIndex].labels
       .map(
         (c, i) => `
-          <div id="word-${i}" class="label-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);"  style="background-color:#B5CFB7"><span style="  color: rgba(255, 255, 255, 0);">${i}</span>
+          <div id="word-${i}" class="label-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);"  style="background-color:#B5CFB7">
             <div id="draggable-${i}" class="draggable-label" draggable="true" ondragstart="onDragStart(event);">
                 ${c}
             </div>
@@ -1338,7 +1406,6 @@ async function render(data) {
         `;
       state.confirmation = !state.confirmation;
     } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length) {
-      await showLevelProgress(data);
       setState(
         {
           cardIndex: 0,
@@ -1432,6 +1499,7 @@ function checkAnswer(data) {
     var sortedLabelDivs = document.querySelectorAll(".sorted-labels");
     var dropZones = Array.from(sortedLabelDivs).flatMap((d) => Array.from(d.querySelectorAll(".label-dropzone")));
 
+    var isIncorrect = false;
     Array.from(dropZones).forEach((d, i) => {
       if (d && d.children.length === 0) {
         if (window.getComputedStyle(d).backgroundColor === "rgba(0, 0, 0, 0)") {
@@ -1462,18 +1530,27 @@ function checkAnswer(data) {
             state.questionScore[2] = state.questionScore[2] + 10;
           } else {
             document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
+            isIncorrect = true;
           }
         }
         state.checkAnswer = false;
       });
 
       var sentence = data[state.lvlIndex].elements[state.cardIndex].answer.map((item) => item.txt).join(" ");
-      document.getElementById("sentence").innerHTML += `<h4>Answer: ${sentence}</h4>`;
+
+      if(isIncorrect == true){
+        sentence = `the answer is incorrect.<br>The correct answer is: ${sentence}`
+      }else{
+        var points = (data[state.lvlIndex].elements[state.cardIndex].answer.filter(a => a.ignore === false).length)*10;
+        sentence = `The answer is correct! You have earned ${points} points!`
+      }
+      document.getElementById("sentence").innerHTML += `<h4 id="ans-sentence">${sentence}</h4>`;
       document.getElementById("sentence").classList.add("bounceInFromLeft");
       document.getElementById("sentence").style.backgroundColor = "lightgreen";
       document.getElementById("sentence").style.borderRadius = "10px";
       document.getElementById("sentence").style.textShadow = "0 0 15px white, 0 0 25px white, 0 0 50px white";
       document.getElementById("sentence").style.fontSize = "2em";
+      document.getElementById("ans-sentence").style.margin="1rem"
     }
   } else if (data[state.lvlIndex].type == "labels") {
     var unanswered = false;
@@ -1525,39 +1602,14 @@ function checkAnswer(data) {
     }
   }
 
-  document.getElementById("score").innerHTML = `Score: ${state.score}`;
+  document.getElementById("score").innerHTML = `🢘 Score: ${state.score}`;
+  var scorePosition= state.score*2.125
+  document.getElementById("score").style.bottom = `${scorePosition}px`
 
   if (data[state.lvlIndex].type != "vocab" && data[state.lvlIndex].elements.length == state.cardIndex + 1) {
     state.showReward = true;
   }
 }
-
-function waitForTimeout(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function showLevelProgress(data) {
-  var levelHtml = `
-  <div id="level-progress">
-    <div id="level-container">
-      <h1>Section Complete</h1>
-      <div id="levels">
-                ${data.map((item, i) => `
-        <div style="background-color: ${i <= state.lvlIndex ? 'lightgreen' : 'transparent'};">
-          ${i + 1}
-        </div>`).join('')}
-      </div>
-    </div>
-  </div>
-`;
-
-  document.getElementById('game').innerHTML += levelHtml;
-
-  await waitForTimeout(6000);
-
-  document.getElementById('level-progress').remove();
-}
-
 
 fetch("/api/game")
   .then((response) => response.json())
