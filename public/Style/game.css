@@ -225,16 +225,6 @@ body {
   margin-top: 0.5rem;
 }
 
-#score {
-  font-size: 25pt;
-  font-weight: bold;
-  padding: 1rem;
-  border-radius: 50%;
-  position: absolute;
-  color: white;
-  background-color: #00000080;
-}
-
 /* For game */
 .ans-label {
   background-color: #ccd5ae;
@@ -1745,7 +1735,7 @@ td {
 
 #reward-img-1 {
   background-color: rgba(255, 255, 255, 0);
-  background-blend-mode: lighten;
+  background-blend-mode: darken;
   box-shadow: none;
 }
 
@@ -1849,35 +1839,92 @@ border-radius: 20px;
 }
 
 /* score bar */
-.vertical-bar {
-  width: 50px; /* Adjust width as needed */
-  height: 70%; /* Adjust height as needed */
-  border-radius: 25px; /* This makes it rounded */
-  overflow: hidden; /* Ensures child elements fit inside rounded corners */
+.arc-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
   position: absolute;
+  left: 35px;
+  top: 300px;
+  transform: scale(2.5) rotate(-40deg);
 }
 
-.section {
-  height: 25%; /* Each section will take 1/4th of the parent div */
-  width: 100%; /* Full width */
+.circular-chart {
+  width: 200px;
+  height: 100px; /* To display only the top arc (half of the circle) */
+  transform: rotate(-90deg); /* Rotating to position the arc horizontally */
+}
+
+.pointer-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100px; /* Matches the size of the arc */
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
 }
 
 .red {
-  background-color: green;
+  stroke: #ed051a;
 }
 
-.orange {
-  background-color: yellow;
+.dark-orange {
+  stroke: #fb7205;
+}
+
+.light-orange {
+  stroke: #f4ab08;
 }
 
 .yellow {
-  background-color: orange;
+  stroke: #b7c200;
 }
 
 .green {
-  background-color: red;
+  stroke: #028730;
 }
 
+#pointer {
+  /* fill: black; */
+  color: black;
+  position: absolute;
+  top: 400px;
+  left: 70px;
+  font-size: 2.5em;
+}
+
+#score {
+  text-align: center;
+  color: black;
+  position: absolute;
+  top: 370px;
+  left: 85px;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#starter-score{
+  position: absolute;
+  font-size: 2.5em;
+  top: 390px;
+  left: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+#end-score{
+  position: absolute;
+  font-size: 2.5em;
+  top: 390px;
+  left: 230px;
+  color: black;
+  font-weight: bold;
+}
 
 @media only screen and (min-width: 1800px) {
   #title-screen {
@@ -1984,11 +2031,6 @@ border-radius: 20px;
 
   .Btn-Container {
     width: 50%;
-  }
-
-  #score {
-    left: 80px;
-    color: white;
   }
 
   /* reward screen */

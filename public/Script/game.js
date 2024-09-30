@@ -94,7 +94,13 @@ window.toggleCard = function (card) {
 
 var check = 0;
 var lvlCounter = 1;
+var end = false;
+let cx = 100;
+let cy = 10;
 async function render(data) {
+  savetoLocalStorage();
+  let userData = JSON.parse(localStorage.getItem("userData")) || [];
+
   var cardHTML = ``;
 
   if (state.showReward == true) {
@@ -152,6 +158,8 @@ async function render(data) {
     // state.rewardImgStatus[1] = "50"
     // state.rewardImgStatus[0] = "30"
 
+    document.getElementById("left-side").innerHTML = `
+    `;
     if (state.score >= 80 && check == 3) {
       if (state.rewardImgStatus[2] == "") {
         state.rewardImgStatus[2] = "80";
@@ -159,9 +167,8 @@ async function render(data) {
         if (state.rewardImgStatus[1] == "50" && state.rewardImgStatus[0] == "30") {
           document.getElementById("game-area").innerHTML = endScreenHTML;
 
-          document.getElementById("reward-score").style.marginTop ="0%"
-          document.getElementById("reward-img").style.width = "70%"
-
+          document.getElementById("reward-score").style.marginTop = "0%";
+          document.getElementById("reward-img").style.width = "70%";
         } else if (state.rewardImgStatus[1] == "50" || state.rewardImgStatus[0] == "30") {
           document.getElementById("reward-title").textContent = "Try harder next time!";
           document.getElementById("reward-sub").textContent = "You were close but did not fully clear the image";
@@ -256,7 +263,7 @@ async function render(data) {
       `;
 
       document.getElementById("game-area").innerHTML += achievmentHtml;
-      document.getElementById("animation").style.marginTop ="700px"
+      document.getElementById("animation").style.marginTop = "700px";
 
       const animatedElements = [
         {
@@ -448,7 +455,7 @@ async function render(data) {
       allScores.sort((a, b) => b.questionScore.MCQ - a.questionScore.MCQ);
 
       var position = allScores.findIndex((u) => u.userName === user.userName) + 1;
-      
+
       // Generate leaderboard HTML
       var leaderboardHTML = `
   <div id="leaderboard">
@@ -530,7 +537,7 @@ async function render(data) {
       animatedElements.forEach((element) => {
         if (element.el) {
           element.el.classList.add(element.class); // Add the class
-          
+
           setTimeout(() => {
             element.el.classList.remove(element.class); // Remove the class after a delay
           }, 10000); // Adjust duration if needed
@@ -540,6 +547,70 @@ async function render(data) {
       function handleScreenSizeChange1(event) {
         if (event.matches) {
           document.getElementById("img-reward-1").style.filter = "blur(36px)";
+        }
+      }
+
+      handleScreenSizeChange1(mediaQuery);
+    } else if (check == 3) {
+      document.getElementById("reward-title").innerHTML = `Good effort!<br>Keep practicing!`;
+      document.getElementById("reward-sub").textContent = "";
+
+      function handleScreenSizeChange(event) {
+        if (event.matches) {
+          document.getElementById("img-reward-1").style.filter = "blur(100px)";
+        }
+      }
+
+      handleScreenSizeChange(mediaQuery);
+
+      document.getElementById("reward-title").style.margin = "0.5rem";
+      document.getElementById("reward-sub").style.margin = "0.5rem";
+      document.getElementById("img-reward-1").style.filter = "blur(6px)";
+
+      var allScores = tempScores;
+      allScores.push(user);
+
+      allScores.sort((a, b) => b.totalScore - a.totalScore);
+
+      var position = allScores.findIndex((u) => u.userName === user.userName) + 1;
+
+      // Generate leaderboard HTML
+      var leaderboardHTML = `
+  <div id="leaderboard">
+  <div class="ribbon"></div>
+    <table>
+`;
+
+      for (var i = 0; i < 3 && i < allScores.length; i++) {
+        leaderboardHTML += `
+      <tr>
+        <td class="number">${i + 1}</td>
+        <td class="name">${allScores[i].userName}</td>
+        <td class="points">${allScores[i].totalScore}</td>
+      </tr>
+    `;
+      }
+
+      if (position > 3) {
+        leaderboardHTML += `
+    <tr>
+      <td class="number">${position}</td>
+      <td class="name">${user.userName}</td>
+      <td class="points">${user.totalScore}</td>
+    </tr>
+  `;
+      }
+
+      leaderboardHTML += `
+    </table>
+  </div>
+`;
+
+      document.getElementById("game-area").innerHTML += leaderboardHTML;
+
+      function handleScreenSizeChange1(event) {
+        if (event.matches) {
+          document.getElementById("img-reward-1").style.filter = "blur(50px)";
         }
       }
 
@@ -679,21 +750,46 @@ async function render(data) {
         document.getElementById("age").style.border = "0.2rem solid red";
       }
       if (userName != "" && userAge != "") {
-        setState(
-          {
-            cardIndex: 0,
-            lvlIndex: 1 + state.lvlIndex,
-            checkAnswer: false,
-            score: state.score,
-            name: userName,
-            age: userAge,
-            rewardImgStatus: state.rewardImgStatus,
-            showReward: state.showReward,
-            confirmation: state.confirmation,
-            questionScore: state.questionScore,
-          },
-          data
-        );
+        let userData = JSON.parse(localStorage.getItem("userData")) || [];
+        var isExist = userData.findIndex((d) => d.id === String(userName));
+        
+        if (isExist !== -1) {
+          if(userData[isExist].state!= state){
+            setState(userData[isExist].state,data);
+          }else{
+            setState(
+              {
+                cardIndex: 0,
+                lvlIndex: 1 + state.lvlIndex,
+                checkAnswer: false,
+                score: state.score,
+                name: userName,
+                age: userAge,
+                rewardImgStatus: state.rewardImgStatus,
+                showReward: state.showReward,
+                confirmation: state.confirmation,
+                questionScore: state.questionScore,
+              },
+              data
+            );
+          }
+        } else {
+          setState(
+            {
+              cardIndex: 0,
+              lvlIndex: 1 + state.lvlIndex,
+              checkAnswer: false,
+              score: state.score,
+              name: userName,
+              age: userAge,
+              rewardImgStatus: state.rewardImgStatus,
+              showReward: state.showReward,
+              confirmation: state.confirmation,
+              questionScore: state.questionScore,
+            },
+            data
+          );
+        }
       }
     };
   } else if (state.lvlIndex == -1) {
@@ -771,9 +867,9 @@ async function render(data) {
       );
     };
   } else if (data[state.lvlIndex].type == "vocab") {
-    document.getElementById("next").style.margin = "1rem"
+    document.getElementById("next").style.margin = "1rem";
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
-    
+
     if ((data[state.lvlIndex].id == 1 || data[state.lvlIndex].id == 4 || data[state.lvlIndex].id == 7) && state.cardIndex == 0) {
       var initialHtML = `
         <audio autoplay>
@@ -819,24 +915,25 @@ async function render(data) {
         var currentIndexBar = data[state.lvlIndex].elements[state.cardIndex].id;
         var totalWordsBar = 0;
 
-        if(state.lvlIndex == 0 || state.lvlIndex == 1){
-          totalWordsBar = data[0].elements.length + data[1].elements.length
-        } else if(state.lvlIndex == 3 || state.lvlIndex == 4){
-          totalWordsBar = data[3].elements.length + data[4].elements.length
-        } else if(state.lvlIndex == 7){
-          totalWordsBar = data[7].elements.length
+        if (state.lvlIndex == 0 || state.lvlIndex == 1) {
+          totalWordsBar = data[0].elements.length + data[1].elements.length;
+        } else if (state.lvlIndex == 3 || state.lvlIndex == 4) {
+          totalWordsBar = data[3].elements.length + data[4].elements.length;
+        } else if (state.lvlIndex == 7) {
+          totalWordsBar = data[7].elements.length;
         }
 
-        var progressPrecentage = ((currentIndexBar) / totalWordsBar) * 100;
-        
-        if(data[state.lvlIndex].id != 7){
+        var progressPrecentage = (currentIndexBar / totalWordsBar) * 100;
+
+        if (data[state.lvlIndex].id != 7) {
           document.getElementById("left-side").innerHTML = `
           <div id="progress-bar-outside">
             <div id="progress-bar-inside" style="width:${progressPrecentage}%">  ${currentIndexBar}/${totalWordsBar} </div>
           </div>
         `;
-        } else{
-
+        } else {
+          document.getElementById("left-side").innerHTML = ``;
+          document.getElementById("next").style.removeProperty("margin");
         }
         cardHTML = `
           <svg id="tooltip2" fill="#000000" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" id="memory-tooltip-above"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 1H20V2H21V16H20V17H15V18H14V19H13V20H12V21H10V20H9V19H8V18H7V17H2V16H1V2H2V1M3 3V15H8V16H9V17H10V18H12V17H13V16H14V15H19V3H3Z"></path></g><div id="tip-2">Click on <br>the card<br> to view the <br>English word</div></svg>
@@ -911,25 +1008,25 @@ async function render(data) {
       var currentIndexBar = data[state.lvlIndex].elements[state.cardIndex].id;
       var totalWordsBar = 0;
 
-      if(state.lvlIndex == 0 || state.lvlIndex == 1){
-        totalWordsBar = data[0].elements.length + data[1].elements.length
-      } else if(state.lvlIndex == 3 || state.lvlIndex == 4){
-        totalWordsBar = data[3].elements.length + data[4].elements.length
-      } else if(state.lvlIndex == 7){
-        totalWordsBar = data[7].elements.length
+      if (state.lvlIndex == 0 || state.lvlIndex == 1) {
+        totalWordsBar = data[0].elements.length + data[1].elements.length;
+      } else if (state.lvlIndex == 3 || state.lvlIndex == 4) {
+        totalWordsBar = data[3].elements.length + data[4].elements.length;
+      } else if (state.lvlIndex == 7) {
+        totalWordsBar = data[7].elements.length;
       }
 
-      var progressPrecentage = ((currentIndexBar) / totalWordsBar) * 100;
-      
-      if(data[state.lvlIndex].id != 7){
+      var progressPrecentage = (currentIndexBar / totalWordsBar) * 100;
+
+      if (data[state.lvlIndex].id != 7) {
         document.getElementById("left-side").innerHTML = `
         <div id="progress-bar-outside">
           <div id="progress-bar-inside" style="width:${progressPrecentage}%">  ${currentIndexBar}/${totalWordsBar} </div>
         </div>
       `;
-      } else{
-        document.getElementById("left-side").innerHTML =``
-        document.getElementById("next").style.removeProperty('margin');
+      } else {
+        document.getElementById("left-side").innerHTML = ``;
+        document.getElementById("next").style.removeProperty("margin");
       }
       cardHTML = `
         <svg id="tooltip2" fill="#000000" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" id="memory-tooltip-above"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 1H20V2H21V16H20V17H15V18H14V19H13V20H12V21H10V20H9V19H8V18H7V17H2V16H1V2H2V1M3 3V15H8V16H9V17H10V18H12V17H13V16H14V15H19V3H3Z"></path></g><div id="tip-2">Click on <br>the card<br> to view the <br>English word</div></svg>
@@ -998,23 +1095,44 @@ async function render(data) {
       state.confirmation = true;
     }
   } else if (data[state.lvlIndex].type == "MCQ") {
-    document.getElementById("next").style.removeProperty('margin');
-    lvlCounter = 2
+    document.getElementById("next").style.removeProperty("margin");
+    lvlCounter = 2;
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
-    //     <p id="score">Score: ${state.score}</p>
-    document.getElementById("left-side").innerHTML = `
-    <div class="vertical-bar">
-  <div class="section red"></div>
-  <div class="section orange"></div>
-  <div class="section yellow"></div>
-  <div class="section green"></div>
-</div>
-<div id="score">🢘 Score: ${state.score}</div>
-    `;
+    var scoreStatus = "Poor";
 
-    var scorePosition= state.score*2.125
-    document.getElementById("score").style.bottom = `${scorePosition}px`
+    if (state.questionScore[0] == 10) {
+      scoreStatus = "Poor";
+    } else if (state.questionScore[0] == 20) {
+      scoreStatus = "Fair";
+    } else if (state.questionScore[0] == 30) {
+      scoreStatus = "Good";
+    } else if (state.questionScore[0] > 30) {
+      scoreStatus = "Excellent";
+      document.getElementById("score").style.left = "40px";
+    }
+
+    document.getElementById("left-side").innerHTML = `
+<div class="arc-container">
+  <svg viewBox="0 0 36 36" class="circular-chart">
+    <path class="circle red" stroke-dasharray="40, 100" d="M18 2 A 16 16 0 0 1 34 18" />
+    <path class="circle dark-orange" stroke-dasharray="20, 100" d="M34 18 A 16 16 0 0 1 26 30" />
+    <path class="circle light-orange" stroke-dasharray="10, 100" d="M26 30 A 16 16 0 0 1 18 34" />
+    <path class="circle yellow" stroke-dasharray="10, 100" d="M18 34 A 16 16 0 0 1 10 30" />
+    <path class="circle green" stroke-dasharray="20, 100" d="M10 30 A 16 16 0 0 1 2 18" />
+  </svg>
+</div>
+<p id="pointer">●</p>
+<div id="score">${state.score}<br><br>${scoreStatus}</div>
+<p id="starter-score">0</p>
+<p id="end-score">50</p>
+`;
+
+    if (scoreStatus == "Excellent") {
+      document.getElementById("score").style.left = "40px";
+    }
+
+    updatePointer(state.questionScore[0], 50);
 
     document.getElementById("next").innerHTML = `
     <span class="text">Next</span>
@@ -1033,6 +1151,8 @@ async function render(data) {
   </svg>
 </span>
 `;
+
+    document.getElementById("nav").style.display = "flex";
     const choicesHTML = data[state.lvlIndex].elements[state.cardIndex].choices
       .map(
         (c, i) => `
@@ -1087,23 +1207,48 @@ async function render(data) {
 
     document.getElementById("game-area").innerHTML = cardHTML;
   } else if (data[state.lvlIndex].type == "sort") {
-    document.getElementById("next").style.removeProperty('margin');
-    lvlCounter=4
+    document.getElementById("nav").style.display = "flex";
+    document.getElementById("next").style.removeProperty("margin");
+    lvlCounter = 4;
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
+    var scoreStatus = "Poor";
+
+    if (state.questionScore[2] <= 20) {
+      scoreStatus = "Poor";
+    } else if (state.questionScore[2] <= 50) {
+      scoreStatus = "Fair";
+    } else if (state.questionScore[2] <= 70) {
+      scoreStatus = "Good";
+    } else if (state.questionScore[2] > 100) {
+      scoreStatus = "Excellent";
+      document.getElementById("score").style.left = "40px";
+    }
+
     document.getElementById("left-side").innerHTML = `
-    <div class="vertical-bar">
-  <div class="section red"></div>
-  <div class="section orange"></div>
-  <div class="section yellow"></div>
-  <div class="section green"></div>
-</div>
-<div id="score">🢘 Score: ${state.score}</div>
+    <div class="arc-container">
+      <svg viewBox="0 0 36 36" class="circular-chart">
+        <path class="circle red" stroke-dasharray="40, 100" d="M18 2 A 16 16 0 0 1 34 18" />
+        <path class="circle dark-orange" stroke-dasharray="20, 100" d="M34 18 A 16 16 0 0 1 26 30" />
+        <path class="circle light-orange" stroke-dasharray="10, 100" d="M26 30 A 16 16 0 0 1 18 34" />
+        <path class="circle yellow" stroke-dasharray="10, 100" d="M18 34 A 16 16 0 0 1 10 30" />
+        <path class="circle green" stroke-dasharray="20, 100" d="M10 30 A 16 16 0 0 1 2 18" />
+      </svg>
+    </div>
+    <p id="pointer">●</p>
+    <div id="score">${state.questionScore[2]}<br><br>${scoreStatus}</div>
+    <p id="starter-score">0</p>
+    <p id="end-score">160</p>
     `;
 
-        var scorePosition= state.score*2.125
-    document.getElementById("score").style.bottom = `${scorePosition}px`
+    updatePointer(state.questionScore[2], 160);
+    if (scoreStatus == "Excellent") {
+      document.getElementById("score").style.left = "40px";
+    }
+    document.getElementById("starter-score").style.fontSize = "2em";
+    document.getElementById("end-score").style.fontSize = "2em";
 
+    document.getElementById("score").innerHTML = `${state.questionScore[2]}<br><br>${scoreStatus}`;
     document.getElementById("next").innerHTML = `
     <span class="text">Next</span>
 <span class="icon-Container">
@@ -1178,22 +1323,50 @@ async function render(data) {
       elements[i].style.fontSize = "2.5rem";
     }
   } else if (data[state.lvlIndex].type == "labels") {
-    document.getElementById("next").style.removeProperty('margin');
-    lvlCounter = 3
+    document.getElementById("nav").style.display = "flex";
+    document.getElementById("next").style.removeProperty("margin");
+    lvlCounter = 3;
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
+    var scoreStatus = "Poor";
+
+    if (state.questionScore[1] <= 10) {
+      scoreStatus = "Poor";
+    } else if (state.questionScore[1] <= 30) {
+      scoreStatus = "Fair";
+    } else if (state.questionScore[1] <= 60) {
+      scoreStatus = "Good";
+    } else if (state.questionScore[1] > 80) {
+      scoreStatus = "Excellent";
+      document.getElementById("score").style.left = "40px";
+    }
+
     document.getElementById("left-side").innerHTML = `
-    <div class="vertical-bar">
-  <div class="section red"></div>
-  <div class="section orange"></div>
-  <div class="section yellow"></div>
-  <div class="section green"></div>
-</div>
-<div id="score">🢘 Score: ${state.score}</div>
+    <div class="arc-container">
+      <svg viewBox="0 0 36 36" class="circular-chart">
+        <path class="circle red" stroke-dasharray="40, 100" d="M18 2 A 16 16 0 0 1 34 18" />
+        <path class="circle dark-orange" stroke-dasharray="20, 100" d="M34 18 A 16 16 0 0 1 26 30" />
+        <path class="circle light-orange" stroke-dasharray="10, 100" d="M26 30 A 16 16 0 0 1 18 34" />
+        <path class="circle yellow" stroke-dasharray="10, 100" d="M18 34 A 16 16 0 0 1 10 30" />
+        <path class="circle green" stroke-dasharray="20, 100" d="M10 30 A 16 16 0 0 1 2 18" />
+      </svg>
+    </div>
+    <p id="pointer">●</p>
+    <div id="score">${state.questionScore[1]}<br><br>${scoreStatus}</div>
+    <p id="starter-score">0</p>
+    <p id="end-score">110</p>
     `;
 
-        var scorePosition= state.score*2.125
-    document.getElementById("score").style.bottom = `${scorePosition}px`
+    if (scoreStatus == "Excellent") {
+      document.getElementById("score").style.left = "40px";
+    }
+
+    document.getElementById("score").innerHTML = `${state.questionScore[1]}<br><br>${scoreStatus}`;
+
+    document.getElementById("starter-score").style.fontSize = "2em";
+    document.getElementById("end-score").style.fontSize = "2em";
+
+    updatePointer(state.questionScore[1], 110);
 
     document.getElementById("next").innerHTML = `
     <span class="text">Next</span>
@@ -1276,6 +1449,15 @@ async function render(data) {
   document.getElementById("next").onclick = async () => {
     if (state.checkAnswer == true) {
       checkAnswer(data);
+    } else if (end) {
+      var cardHTML = `
+      <div class="card">
+        <h1 id="end-text">- End -</h1>
+      </div>
+           `;
+      document.getElementById("nav").style.opacity = "0%";
+      document.getElementById("game-area").innerHTML = cardHTML;
+      document.getElementById("end-text").style.fontSize = "10em";
     } else if (state.lvlIndex == -2 || state.lvlIndex == -1) {
       if (state.lvlIndex == -2) {
         var userName = document.getElementById("name").value;
@@ -1288,21 +1470,46 @@ async function render(data) {
           document.getElementById("age").style.border = "0.2rem solid red";
         }
         if (userName != "" && userAge != "") {
-          setState(
-            {
-              cardIndex: 0,
-              lvlIndex: 1 + state.lvlIndex,
-              checkAnswer: false,
-              score: state.score,
-              name: userName,
-              age: userAge,
-              rewardImgStatus: state.rewardImgStatus,
-              showReward: state.showReward,
-              confirmation: state.confirmation,
-              questionScore: state.questionScore,
-            },
-            data
-          );
+          let userData = JSON.parse(localStorage.getItem("userData")) || [];
+          var isExist = userData.findIndex((d) => d.id == state.name);
+
+          if (isExist !== -1) {
+            if(userData[isExist].state!= state){
+              setState(userData[isExist].state);
+            }else{
+              setState(
+                {
+                  cardIndex: 0,
+                  lvlIndex: 1 + state.lvlIndex,
+                  checkAnswer: false,
+                  score: state.score,
+                  name: userName,
+                  age: userAge,
+                  rewardImgStatus: state.rewardImgStatus,
+                  showReward: state.showReward,
+                  confirmation: state.confirmation,
+                  questionScore: state.questionScore,
+                },
+                data
+              );
+            }
+          } else {
+            setState(
+              {
+                cardIndex: 0,
+                lvlIndex: 1 + state.lvlIndex,
+                checkAnswer: false,
+                score: state.score,
+                name: userName,
+                age: userAge,
+                rewardImgStatus: state.rewardImgStatus,
+                showReward: state.showReward,
+                confirmation: state.confirmation,
+                questionScore: state.questionScore,
+              },
+              data
+            );
+          }
         }
       } else {
         setState(
@@ -1339,9 +1546,10 @@ async function render(data) {
         data
       );
       state.showReward = false;
+      // } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length && state.lvlIndex + 1 == data.length) {
     } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length && state.lvlIndex + 1 == data.length) {
       AddToLeaderboard();
-      document.getElementById("game-area").style.height = "100%";
+      document.getElementById("game-area").style.height = "90%";
       var cardHTML = `
  <div class="results-summary-container">
  <div>
@@ -1385,7 +1593,11 @@ async function render(data) {
   </div>
       `;
       document.getElementById("game-area").innerHTML = cardHTML;
-      document.getElementById("nav").style.opacity = "0%";
+      document.getElementById("left-side").innerHTML = `
+      `;
+      // document.getElementById("nav").style.opacity = "0%";
+      end = true;
+      removeFromLocalStorage()
     } else if (state.confirmation == true) {
       document.getElementById("next").innerHTML = `
                   <span class="text">If you go to next word, You cannot go back. Click again to confirm.</span>
@@ -1453,7 +1665,10 @@ function checkAnswer(data) {
             <source src="Style/fail.mp3" type="audio/mpeg">
         </audio>
     `;
+
+  var totalPossibleScore = 50;
   if (data[state.lvlIndex].type == "MCQ") {
+    totalPossibleScore = 50;
     var answer = document.querySelector(`input[name="choice"][value="${data[state.lvlIndex].elements[state.cardIndex].answer}"]`);
     var label = document.querySelector(`label[for="${answer.id}"]`);
     const textElement = document.getElementById("MCQ-Answer");
@@ -1492,7 +1707,24 @@ function checkAnswer(data) {
       state.questionScore[0] = state.questionScore[0] + 10;
       state.checkAnswer = false;
     }
+
+    var scoreStatus = "Poor";
+
+    if (state.questionScore[0] == 10) {
+      scoreStatus = "Poor";
+    } else if (state.questionScore[0] == 20) {
+      scoreStatus = "Fair";
+    } else if (state.questionScore[0] == 30) {
+      scoreStatus = "Good";
+    } else if (state.questionScore[0] > 30) {
+      scoreStatus = "Excellent";
+      document.getElementById("score").style.left = "40px";
+    }
+
+    document.getElementById("score").innerHTML = `${state.questionScore[0]}<br><br>${scoreStatus}`;
+    updatePointer(state.questionScore[0], totalPossibleScore);
   } else if (data[state.lvlIndex].type == "sort") {
+    totalPossibleScore = 160;
     var unanswered = false;
     var unansweredSort = [];
 
@@ -1538,21 +1770,45 @@ function checkAnswer(data) {
 
       var sentence = data[state.lvlIndex].elements[state.cardIndex].answer.map((item) => item.txt).join(" ");
 
-      if(isIncorrect == true){
-        sentence = `the answer is incorrect.<br>The correct answer is: ${sentence}`
-      }else{
-        var points = (data[state.lvlIndex].elements[state.cardIndex].answer.filter(a => a.ignore === false).length)*10;
-        sentence = `The answer is correct! You have earned ${points} points!`
+      if (isIncorrect == true) {
+        sentence = `the answer is incorrect.<br>The correct answer is: ${sentence}`;
+        document.getElementById("game-area").innerHTML += failSoundHtml;
+      } else {
+        var points = data[state.lvlIndex].elements[state.cardIndex].answer.filter((a) => a.ignore === false).length * 10;
+        sentence = `The answer is correct! You have earned ${points} points!`;
+        document.getElementById("game-area").innerHTML += sucessSoundHtml;
       }
       document.getElementById("sentence").innerHTML += `<h4 id="ans-sentence">${sentence}</h4>`;
       document.getElementById("sentence").classList.add("bounceInFromLeft");
-      document.getElementById("sentence").style.backgroundColor = "lightgreen";
+
+      if (document.getElementById("sentence").innerHTML.includes("incorrect")) {
+        document.getElementById("sentence").style.backgroundColor = "lightsalmon";
+      } else {
+        document.getElementById("sentence").style.backgroundColor = "lightgreen";
+      }
       document.getElementById("sentence").style.borderRadius = "10px";
       document.getElementById("sentence").style.textShadow = "0 0 15px white, 0 0 25px white, 0 0 50px white";
       document.getElementById("sentence").style.fontSize = "2em";
-      document.getElementById("ans-sentence").style.margin="1rem"
+      document.getElementById("ans-sentence").style.margin = "1rem";
     }
+
+    var scoreStatus = "Poor";
+
+    if (state.questionScore[2] <= 20) {
+      scoreStatus = "Poor";
+    } else if (state.questionScore[2] <= 50) {
+      scoreStatus = "Fair";
+    } else if (state.questionScore[2] <= 70) {
+      scoreStatus = "Good";
+    } else if (state.questionScore[2] > 100) {
+      scoreStatus = "Excellent";
+      document.getElementById("score").style.left = "40px";
+    }
+
+    document.getElementById("score").innerHTML = `${state.questionScore[2]}<br><br>${scoreStatus}`;
+    updatePointer(state.questionScore[2], totalPossibleScore);
   } else if (data[state.lvlIndex].type == "labels") {
+    totalPossibleScore = 110;
     var unanswered = false;
     var unansweredSort = [];
 
@@ -1592,19 +1848,31 @@ function checkAnswer(data) {
       `;
 
         if (studentAns.toLowerCase() == a.label.toLowerCase()) {
-          document.getElementById(`zone-${i}`).style.backgroundColor = "lightgreen";
+          document.getElementById(`zone-${i}`).style.setProperty("background-color", "lightgreen", "important");
           state.questionScore[1] = state.questionScore[1] + 10;
           state.score = state.score + 10;
         } else {
-          document.getElementById(`zone-${i}`).style.backgroundColor = "lightsalmon";
+          document.getElementById(`zone-${i}`).style.setProperty("background-color", "lightsalmon", "important");
         }
       });
     }
-  }
 
-  document.getElementById("score").innerHTML = `🢘 Score: ${state.score}`;
-  var scorePosition= state.score*2.125
-  document.getElementById("score").style.bottom = `${scorePosition}px`
+    var scoreStatus = "Poor";
+
+    if (state.questionScore[1] <= 10) {
+      scoreStatus = "Poor";
+    } else if (state.questionScore[1] <= 30) {
+      scoreStatus = "Fair";
+    } else if (state.questionScore[1] <= 60) {
+      scoreStatus = "Good";
+    } else if (state.questionScore[1] > 80) {
+      scoreStatus = "Excellent";
+      document.getElementById("score").style.left = "40px";
+    }
+
+    document.getElementById("score").innerHTML = `${state.questionScore[1]}<br><br>${scoreStatus}`;
+    updatePointer(state.questionScore[1], totalPossibleScore);
+  }
 
   if (data[state.lvlIndex].type != "vocab" && data[state.lvlIndex].elements.length == state.cardIndex + 1) {
     state.showReward = true;
@@ -1664,7 +1932,7 @@ document.addEventListener("DOMContentLoaded", function () {
 'Restaurante 
 Español'!
 `,
-`¡Hola!
+    `¡Hola!
 We use “¡” at the 
 beginning of 
 Spanish sentence to 
@@ -1706,13 +1974,70 @@ and have fun!
       setTimeout(() => {
         index = 0;
         textIndex++;
-        textContainer.innerHTML = ""; 
+        textContainer.innerHTML = "";
         typeLetter();
-      }, 1000); 
+      }, 1000);
     } else {
-      document.getElementById("play-btn").style.opacity = "100%";
+      if (document.getElementById("play-btn") != null) {
+        document.getElementById("play-btn").style.opacity = "100%";
+      }
     }
   }
 
   typeLetter();
 });
+
+window.updatePointer = function (score, totalPossibleScore) {
+  const centerX = 125; // X-coordinate of the center (middle of arc)
+  const centerY = 330; // Y-coordinate of the center (middle of arc)
+  const radius = 70; // The radius of the arc (distance from center to first point)
+
+  const angle = Math.PI + (score / totalPossibleScore) * (1.3 * Math.PI);
+
+  let left = centerX + radius * Math.cos(angle);
+  let top = centerY + radius * Math.sin(angle);
+
+  if (score == 0) {
+    left = 75;
+    top = 370;
+  }
+
+  pointer.style.left = `${left}px`;
+  pointer.style.top = `${top}px`;
+};
+
+window.savetoLocalStorage = function () {
+  if (state.name != "") {
+    let data = JSON.parse(localStorage.getItem("userData")) || [];
+
+    var isExist = data.findIndex((d) => d.id == state.name);
+
+    if (isExist !== -1) {
+      data[isExist] = {
+        id: state.name,
+        state: state,
+      };
+    } else {
+      data.push({
+        id: state.name,
+        state: state,
+      });
+    }
+
+    localStorage.setItem("userData", JSON.stringify(data));
+  }
+};
+
+window.removeFromLocalStorage = function () {
+  if (state.name != "") {
+    let data = JSON.parse(localStorage.getItem("userData")) || [];
+
+    var isExist = data.findIndex((d) => d.id == state.name);
+
+    if (isExist !== -1) {
+      data.splice(isExist, 1); // Corrected: Use splice to remove the element
+    }
+
+    localStorage.setItem("userData", JSON.stringify(data));
+  }
+};
