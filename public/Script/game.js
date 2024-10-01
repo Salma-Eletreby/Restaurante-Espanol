@@ -152,7 +152,7 @@ async function render(data) {
     `;
 
     //to check the reward screen - comment out when unused
-    // state.score = 100
+    // state.questionScore[2] = 100
     // check =3
     // state.rewardImgStatus[1] = "50"
     // state.rewardImgStatus[0] = "30"
@@ -160,7 +160,7 @@ async function render(data) {
     document.getElementById("left-side").innerHTML = `
     `;
 
-    if (state.questionScore[2] >= 90 && check == 3) {
+    if (state.questionScore[2] >= 80 && check == 3) {
       document.getElementById("game-area").innerHTML = endScreenHTML;
       document.getElementById("reward-score").style.marginTop = "0%";
       document.getElementById("reward-img").style.width = "70%";
@@ -1535,6 +1535,17 @@ async function render(data) {
     } else if (state.cardIndex + 1 == data[state.lvlIndex].elements.length && state.lvlIndex + 1 == data.length) {
       AddToLeaderboard();
       document.getElementById("game-area").style.height = "90%";
+
+      let finalStatus = "Keep Improving";
+
+      if (state.score <80) {
+        finalStatus = "Keep Improving";
+      } else if (state.score < 160) {
+        finalStatus = "Good Job!";
+      } else if (state.score >= 160) {
+        finalStatus = "Excellent";
+      }
+
       var cardHTML = `
  <div class="results-summary-container">
  <div>
@@ -1567,7 +1578,7 @@ async function render(data) {
         <!-- <p class="result">of 100</p> -->
       </div>
       <div class="result-text-box">
-        <div class="heading-secondary">excellent</div>
+        <div class="heading-secondary">${finalStatus}</div>
         <p class="paragraph">
           We will send a certificate to your email to share your success with family and friends!
         </p>

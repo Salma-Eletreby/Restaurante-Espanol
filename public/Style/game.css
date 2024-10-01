@@ -1820,16 +1820,13 @@ border-radius: 20px;
   animation: fadeIn 1s forwards; /* Fade in with a duration of 1 second */
 }
 
-#tapas-text-1 {
-  animation-delay: 0.5s; /* Appear after 0.5 seconds */
-}
 
 #tapas-text-2 {
-  animation-delay: 2.5s; /* Appear after 2 seconds */
+  animation-delay: 0.5s; /* Appear after 2 seconds */
 }
 
 #tapas-text-3 {
-  animation-delay: 4s; /* Appear after 3.5 seconds */
+  animation-delay: 2.5s; /* Appear after 3.5 seconds */
 }
 
 #labelled-reward{
