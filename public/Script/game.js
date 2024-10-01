@@ -1542,8 +1542,10 @@ async function render(data) {
         finalStatus = "Keep Improving";
       } else if (state.score < 160) {
         finalStatus = "Good Job!";
-      } else if (state.score >= 160) {
+      } else if (state.score >= 160 && state.questionScore[2] >= 80) {
         finalStatus = "Excellent";
+      } else if (state.score >= 160){
+        finalStatus = "Good Job!";
       }
 
       var cardHTML = `
