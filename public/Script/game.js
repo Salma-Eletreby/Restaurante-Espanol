@@ -142,7 +142,6 @@ async function render(data) {
               <h1>This is a picture of tapas</h1>
             </div>
             <p id="reward-text">
-              <span class="tapas-text" id="tapas-text-1">These are Delicious tapas!</span><br><br>
               <span class="tapas-text" id="tapas-text-2">Tapas is a famous traditional Spanish appetizer or snack that can be served hot or cold. <br>
               </span> <br><br>
               <span class="tapas-text" id="tapas-text-3">The term comes from the Spanish verb tapar, meaning 'to cover,' akin to the English 'top'  <br>
@@ -160,7 +159,8 @@ async function render(data) {
 
     document.getElementById("left-side").innerHTML = `
     `;
-    if (state.score >= 80 && check == 3) {
+
+    if (state.questionScore[2] >= 90 && check == 3) {
       document.getElementById("game-area").innerHTML = endScreenHTML;
       document.getElementById("reward-score").style.marginTop = "0%";
       document.getElementById("reward-img").style.width = "70%";
@@ -279,7 +279,7 @@ async function render(data) {
       }
 
       handleScreenSizeChange1(mediaQuery);
-    } else if (state.score >= 50 && check == 2) {
+    } else if (state.questionScore[1] >= 50 && check == 2) {
       if (state.rewardImgStatus[1] == "") {
         state.rewardImgStatus[1] = "50";
 
@@ -409,7 +409,7 @@ async function render(data) {
       }
 
       handleScreenSizeChange1(mediaQuery);
-    } else if (state.score >= 30 && check == 1) {
+    } else if (state.questionScore[0] >= 30 && check == 1) {
       if (state.rewardImgStatus[0] == "") {
         state.rewardImgStatus[0] = "30";
 
@@ -1201,9 +1201,9 @@ async function render(data) {
       scoreStatus = "Score";
     } else if (state.questionScore[2] <= 50) {
       scoreStatus = "Fair";
-    } else if (state.questionScore[2] <= 90) {
+    } else if (state.questionScore[2] <= 100) {
       scoreStatus = "Good";
-    } else if (state.questionScore[2] >= 100) {
+    } else if (state.questionScore[2] >= 110) {
       scoreStatus = "Excellent";
       document.getElementById("score").style.left = "40px";
     }
@@ -1783,9 +1783,9 @@ function checkAnswer(data) {
       scoreStatus = "Score";
     } else if (state.questionScore[2] <= 50) {
       scoreStatus = "Fair";
-    } else if (state.questionScore[2] <= 90) {
+    } else if (state.questionScore[2] <= 100) {
       scoreStatus = "Good";
-    } else if (state.questionScore[2] >= 100) {
+    } else if (state.questionScore[2] >= 110) {
       scoreStatus = "Excellent";
       document.getElementById("score").style.left = "40px";
     }
