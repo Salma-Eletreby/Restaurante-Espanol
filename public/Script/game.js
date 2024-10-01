@@ -161,26 +161,9 @@ async function render(data) {
     document.getElementById("left-side").innerHTML = `
     `;
     if (state.score >= 80 && check == 3) {
-      if (state.rewardImgStatus[2] == "") {
-        state.rewardImgStatus[2] = "80";
-
-        if (state.rewardImgStatus[1] == "50" && state.rewardImgStatus[0] == "30") {
-          document.getElementById("game-area").innerHTML = endScreenHTML;
-
-          document.getElementById("reward-score").style.marginTop = "0%";
-          document.getElementById("reward-img").style.width = "70%";
-        } else if (state.rewardImgStatus[1] == "50" || state.rewardImgStatus[0] == "30") {
-          document.getElementById("reward-title").textContent = "Try harder next time!";
-          document.getElementById("reward-sub").textContent = "You were close but did not fully clear the image";
-        } else {
-          document.getElementById("reward-title").textContent = "Amazing!";
-          document.getElementById("reward-sub").textContent = "You have cleared part of the image";
-        }
-      } else {
-        state.rewardImgStatus.push("fail");
-        document.getElementById("reward-title").textContent = "Oops!";
-        document.getElementById("reward-sub").textContent = "No clarity gained. try next round";
-      }
+      document.getElementById("game-area").innerHTML = endScreenHTML;
+      document.getElementById("reward-score").style.marginTop = "0%";
+      document.getElementById("reward-img").style.width = "70%";
 
       function handleScreenSizeChange(event) {
         if (event.matches) {
@@ -426,7 +409,7 @@ async function render(data) {
       }
 
       handleScreenSizeChange1(mediaQuery);
-    } else if (state.score >= 30) {
+    } else if (state.score >= 30 && check == 1) {
       if (state.rewardImgStatus[0] == "") {
         state.rewardImgStatus[0] = "30";
 
@@ -1099,10 +1082,10 @@ async function render(data) {
     lvlCounter = 2;
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
-    var scoreStatus = "Poor";
+    var scoreStatus = "Score";
 
     if (state.questionScore[0] == 10) {
-      scoreStatus = "Poor";
+      scoreStatus = "Score";
     } else if (state.questionScore[0] == 20) {
       scoreStatus = "Fair";
     } else if (state.questionScore[0] == 30) {
@@ -1212,15 +1195,15 @@ async function render(data) {
     lvlCounter = 4;
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
-    var scoreStatus = "Poor";
+    var scoreStatus = "Score";
 
     if (state.questionScore[2] <= 20) {
-      scoreStatus = "Poor";
+      scoreStatus = "Score";
     } else if (state.questionScore[2] <= 50) {
       scoreStatus = "Fair";
-    } else if (state.questionScore[2] <= 70) {
+    } else if (state.questionScore[2] <= 90) {
       scoreStatus = "Good";
-    } else if (state.questionScore[2] > 100) {
+    } else if (state.questionScore[2] >= 100) {
       scoreStatus = "Excellent";
       document.getElementById("score").style.left = "40px";
     }
@@ -1242,9 +1225,11 @@ async function render(data) {
     `;
 
     updatePointer(state.questionScore[2], 160);
+
     if (scoreStatus == "Excellent") {
       document.getElementById("score").style.left = "40px";
     }
+
     document.getElementById("starter-score").style.fontSize = "2em";
     document.getElementById("end-score").style.fontSize = "2em";
 
@@ -1328,15 +1313,15 @@ async function render(data) {
     lvlCounter = 3;
     document.getElementById("body").style.backgroundImage = `url(${data[state.lvlIndex].bkg})`;
 
-    var scoreStatus = "Poor";
+    var scoreStatus = "Score";
 
     if (state.questionScore[1] <= 10) {
-      scoreStatus = "Poor";
-    } else if (state.questionScore[1] <= 30) {
+      scoreStatus = "Score";
+    } else if (state.questionScore[1] <= 40) {
       scoreStatus = "Fair";
-    } else if (state.questionScore[1] <= 60) {
+    } else if (state.questionScore[1] <= 70) {
       scoreStatus = "Good";
-    } else if (state.questionScore[1] > 80) {
+    } else if (state.questionScore[1] >= 80) {
       scoreStatus = "Excellent";
       document.getElementById("score").style.left = "40px";
     }
@@ -1708,10 +1693,10 @@ function checkAnswer(data) {
       state.checkAnswer = false;
     }
 
-    var scoreStatus = "Poor";
+    var scoreStatus = "Score";
 
     if (state.questionScore[0] == 10) {
-      scoreStatus = "Poor";
+      scoreStatus = "Score";
     } else if (state.questionScore[0] == 20) {
       scoreStatus = "Fair";
     } else if (state.questionScore[0] == 30) {
@@ -1792,15 +1777,15 @@ function checkAnswer(data) {
       document.getElementById("ans-sentence").style.margin = "1rem";
     }
 
-    var scoreStatus = "Poor";
+    var scoreStatus = "Score";
 
     if (state.questionScore[2] <= 20) {
-      scoreStatus = "Poor";
+      scoreStatus = "Score";
     } else if (state.questionScore[2] <= 50) {
       scoreStatus = "Fair";
-    } else if (state.questionScore[2] <= 70) {
+    } else if (state.questionScore[2] <= 90) {
       scoreStatus = "Good";
-    } else if (state.questionScore[2] > 100) {
+    } else if (state.questionScore[2] >= 100) {
       scoreStatus = "Excellent";
       document.getElementById("score").style.left = "40px";
     }
@@ -1857,15 +1842,15 @@ function checkAnswer(data) {
       });
     }
 
-    var scoreStatus = "Poor";
+    var scoreStatus = "Score";
 
     if (state.questionScore[1] <= 10) {
-      scoreStatus = "Poor";
-    } else if (state.questionScore[1] <= 30) {
+      scoreStatus = "Score";
+    } else if (state.questionScore[1] <= 40) {
       scoreStatus = "Fair";
-    } else if (state.questionScore[1] <= 60) {
+    } else if (state.questionScore[1] <= 70) {
       scoreStatus = "Good";
-    } else if (state.questionScore[1] > 80) {
+    } else if (state.questionScore[1] >= 80) {
       scoreStatus = "Excellent";
       document.getElementById("score").style.left = "40px";
     }
